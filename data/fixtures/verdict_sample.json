@@ -1,0 +1,19 @@
+{
+  "req_id": "MECH-3.4.2",
+  "status": "NON_CONFORMANCE",
+  "required": ">= 500 TR @ 35C ambient",
+  "submitted": "480 TR @ 35C ambient",
+  "delta_pct": -4.0,
+  "reason": "",
+  "extraction_confidence": 0.93,
+  "spec_evidence": {
+    "source_doc": "spec.pdf",
+    "source_page": 1,
+    "source_bbox": [72.0, 690.0, 540.0, 730.0]
+  },
+  "submittal_evidence": {
+    "source_doc": "submittal.pdf",
+    "source_page": 1,
+    "source_bbox": [72.0, 600.0, 400.0, 630.0]
+  }
+}

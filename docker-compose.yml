@@ -31,7 +31,9 @@ services:
       - qdrant
 
   frontend:
-    build: ./frontend
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
     environment:
       NEXT_PUBLIC_API_URL: http://localhost:8000
     ports:
