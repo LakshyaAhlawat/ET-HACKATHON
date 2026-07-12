@@ -24,6 +24,14 @@ services:
     environment:
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/epc
       QDRANT_URL: http://qdrant:6333
+    # /api/verify reads data/extracted/*.json at request time (precomputed
+    # offline, per CLAUDE.md). The backend image's WORKDIR is /app with code
+    # at /app/app/..., so EXTRACTED_DIR's relative walk up from
+    # app/api/verify.py lands at /data — mount host ./data there to match,
+    # same relative depth as backend/app/api/verify.py -> repo_root/data
+    # in local dev.
+    volumes:
+      - ./data:/data:ro
     ports:
       - "8000:8000"
     depends_on:
@@ -36,6 +44,7 @@ services:
       dockerfile: frontend/Dockerfile
     environment:
       NEXT_PUBLIC_API_URL: http://localhost:8000
+      API_INTERNAL_URL: http://backend:8000
     ports:
       - "3000:3000"
     depends_on:

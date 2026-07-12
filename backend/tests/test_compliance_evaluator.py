@@ -209,3 +209,114 @@ def test_picks_highest_confidence_when_multiple_unconditioned_matches() -> None:
 
     assert verdict.status == "PASS"
     assert verdict.submitted == "550.0 TR"
+
+
+def test_1688_kw_resolves_to_480_tr_not_480_kw() -> None:
+    # The literal trap from CLAUDE.md: 1688 kW must be unit-converted to ~480
+    # TR before comparison (delta ~0%), not compared as a raw magnitude
+    # against 480 (which would be wildly, obviously wrong: -71.6%).
+    req = make_requirement(operator=">=", value=480.0, unit="TR")
+    ev = make_extracted(value=1688.0, unit="kW")
+
+    verdict = evaluate_requirement(req, [ev])
+
+    assert verdict.status == "NON_CONFORMANCE"  # 479.97 TR is a hair under the 480 TR boundary
+    assert verdict.delta_pct == pytest.approx(0.0, abs=0.1)
+
+
+def test_dimensionless_ratio_iplv_pass() -> None:
+    req = make_requirement(parameter="iplv", operator=">=", value=6.2, unit="")
+    ev = make_extracted(parameter="iplv", value=6.5, unit="")
+
+    verdict = evaluate_requirement(req, [ev])
+
+    assert verdict.status == "PASS"
+
+
+def test_dimensionless_ratio_cop_non_conformance() -> None:
+    req = make_requirement(parameter="cop", operator=">=", value=3.5, unit="")
+    ev = make_extracted(parameter="cop", value=3.2, unit="")
+
+    verdict = evaluate_requirement(req, [ev])
+
+    assert verdict.status == "NON_CONFORMANCE"
+
+
+def test_kva_to_kw_with_stated_power_factor_pass() -> None:
+    # Generator rated >= 1500 kVA @0.8 PF; submittal states 1300 kW @0.8 PF.
+    # 1300 kW / 0.8 PF = 1625 kVA >= 1500 -> PASS.
+    req = make_requirement(
+        equipment_class="generator",
+        parameter="prime_power_rating",
+        operator=">=",
+        value=1500.0,
+        unit="kVA",
+        condition="@0.8 lagging power factor",
+    )
+    ev = make_extracted(
+        equipment_class="generator",
+        parameter="prime_power_rating",
+        value=1300.0,
+        unit="kW",
+        condition="@0.8 lagging power factor",
+    )
+
+    verdict = evaluate_requirement(req, [ev])
+
+    assert verdict.status == "PASS"
+
+
+def test_kva_to_kw_without_power_factor_is_insufficient_data() -> None:
+    # THE FALSE-PASS TRAP: pint treats kVA and kW as dimensionally identical
+    # (both reduce to the same SI power dimension) and would silently permit
+    # `.to()` between them with no conversion at all — meaning "1500 kW"
+    # would naively satisfy "1500 kVA" even though real vs. apparent power
+    # are only related via a power factor. Without a stated PF anywhere, the
+    # evaluator must refuse to compare rather than silently treat them as equal.
+    req = make_requirement(
+        equipment_class="generator",
+        parameter="prime_power_rating",
+        operator=">=",
+        value=1500.0,
+        unit="kVA",
+        condition=None,
+    )
+    ev = make_extracted(
+        equipment_class="generator",
+        parameter="prime_power_rating",
+        value=1500.0,
+        unit="kW",
+        condition=None,
+    )
+
+    verdict = evaluate_requirement(req, [ev])
+
+    assert verdict.status == "INSUFFICIENT_DATA"
+    assert "power factor" in verdict.reason.lower()
+
+
+def test_kw_to_kva_with_stated_power_factor_non_conformance() -> None:
+    # Requirement in kW, submittal in kVA. As in a real cut-sheet, kVA/PF are
+    # stated together as one rating, so both sides restate the condition —
+    # the evaluator must not fall back to an unconditioned value (session
+    # rule), so the condition has to match before PF conversion even applies.
+    # 1000 kVA * 0.8 PF = 800 kW < 1000 kW required -> NON_CONFORMANCE.
+    req = make_requirement(
+        equipment_class="generator",
+        parameter="prime_power_rating",
+        operator=">=",
+        value=1000.0,
+        unit="kW",
+        condition="@0.8 PF",
+    )
+    ev = make_extracted(
+        equipment_class="generator",
+        parameter="prime_power_rating",
+        value=1000.0,
+        unit="kVA",
+        condition="@0.8 PF",
+    )
+
+    verdict = evaluate_requirement(req, [ev])
+
+    assert verdict.status == "NON_CONFORMANCE"

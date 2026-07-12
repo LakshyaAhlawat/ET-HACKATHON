@@ -3,7 +3,12 @@ from collections.abc import Callable
 
 import pint
 
-from app.core.units import ureg
+from app.core.units import (
+    convert_apparent_real_power,
+    extract_power_factor,
+    is_power_factor_pair,
+    ureg,
+)
 from app.models.schema import ExtractedValue, Requirement, SourceRegion, Verdict
 
 _OPERATORS: dict[str, Callable[[float, float], bool]] = {
@@ -101,23 +106,46 @@ def evaluate_requirement(
 
     match = max(candidates, key=lambda ev: ev.extraction_confidence)
 
-    try:
-        actual_quantity = ureg.Quantity(match.value, match.unit).to(requirement.unit)
-    except pint.errors.DimensionalityError:
-        return _insufficient_data(
-            requirement,
-            reason=(
-                f"Submittal unit '{match.unit}' is not compatible with required unit "
-                f"'{requirement.unit}' for {requirement.equipment_class}.{requirement.parameter}"
-            ),
-            required_text=required_text,
+    if is_power_factor_pair(match.unit, requirement.unit):
+        power_factor = extract_power_factor(requirement.condition) or extract_power_factor(
+            match.condition
         )
-    except pint.errors.UndefinedUnitError as exc:
-        return _insufficient_data(
-            requirement,
-            reason=f"Unrecognized unit while comparing submittal to requirement: {exc}",
-            required_text=required_text,
+        if power_factor is None:
+            # THE FALSE-PASS TRAP: apparent power (kVA) and real power (kW)
+            # share a pint dimension, so a bare conversion would silently
+            # treat "1500 kVA" and "1500 kW" as equal. Without a stated power
+            # factor we cannot relate them — refuse rather than guess.
+            return _insufficient_data(
+                requirement,
+                reason=(
+                    f"Cannot compare '{match.unit}' to '{requirement.unit}' for "
+                    f"{requirement.equipment_class}.{requirement.parameter} without a stated "
+                    "power factor"
+                ),
+                required_text=required_text,
+            )
+        actual_value = convert_apparent_real_power(
+            match.value, match.unit, requirement.unit, power_factor
         )
+    else:
+        try:
+            actual_value = ureg.Quantity(match.value, match.unit).to(requirement.unit).magnitude
+        except pint.errors.DimensionalityError:
+            return _insufficient_data(
+                requirement,
+                reason=(
+                    f"Submittal unit '{match.unit}' is not compatible with required unit "
+                    f"'{requirement.unit}' for {requirement.equipment_class}."
+                    f"{requirement.parameter}"
+                ),
+                required_text=required_text,
+            )
+        except pint.errors.UndefinedUnitError as exc:
+            return _insufficient_data(
+                requirement,
+                reason=f"Unrecognized unit while comparing submittal to requirement: {exc}",
+                required_text=required_text,
+            )
 
     if requirement.operator not in _OPERATORS:
         return _insufficient_data(
@@ -126,7 +154,6 @@ def evaluate_requirement(
             required_text=required_text,
         )
 
-    actual_value = actual_quantity.magnitude
     passes = _OPERATORS[requirement.operator](actual_value, requirement.value)
     delta_pct = (actual_value - requirement.value) / requirement.value * 100
 
