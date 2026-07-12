@@ -13,6 +13,11 @@ frontend/.next/
 frontend/out/
 frontend/public/pdf.worker.min.mjs
 
+# Generated/trained ML artifacts (regenerate via sld.dataset / sld.train)
+backend/yolov8n.pt
+data/sld_dataset/
+data/sld_runs/
+
 # Env
 .env
 .env.local

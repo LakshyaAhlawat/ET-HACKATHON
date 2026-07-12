@@ -1,0 +1,735 @@
+[
+  {
+    "topology_id": "sld-01",
+    "image_path": "/sld/sld-01.png",
+    "nodes": [
+      {
+        "node_id": "det-0",
+        "node_class": "breaker",
+        "bbox": [
+          89.01811981201172,
+          187.90086364746094,
+          151.8315887451172,
+          251.0673065185547
+        ],
+        "confidence": 0.9664263725280762,
+        "tag": "\u0103 BRK-A1"
+      },
+      {
+        "node_id": "det-1",
+        "node_class": "breaker",
+        "bbox": [
+          86.63292694091797,
+          487.9016418457031,
+          151.1376953125,
+          552.4278564453125
+        ],
+        "confidence": 0.9239193797111511,
+        "tag": "\u0103 BRK-A2"
+      },
+      {
+        "node_id": "det-2",
+        "node_class": "breaker",
+        "bbox": [
+          665.9552612304688,
+          486.5331726074219,
+          731.6762084960938,
+          551.710205078125
+        ],
+        "confidence": 0.9095034599304199,
+        "tag": "\u0117 BRK-B2"
+      },
+      {
+        "node_id": "det-3",
+        "node_class": "transformer",
+        "bbox": [
+          89.80131530761719,
+          70.7223129272461,
+          155.363525390625,
+          133.3201904296875
+        ],
+        "confidence": 0.8784899115562439,
+        "tag": "8 TX-012000kVA"
+      },
+      {
+        "node_id": "det-4",
+        "node_class": "breaker",
+        "bbox": [
+          667.324462890625,
+          188.2100067138672,
+          731.6416625976562,
+          248.64833068847656
+        ],
+        "confidence": 0.872614324092865,
+        "tag": "\u0103 BRK-31"
+      },
+      {
+        "node_id": "det-5",
+        "node_class": "it_load",
+        "bbox": [
+          378.09228515625,
+          587.6966552734375,
+          443.2479553222656,
+          651.9345703125
+        ],
+        "confidence": 0.8619125485420227,
+        "tag": "IT-LOAD-01"
+      },
+      {
+        "node_id": "det-6",
+        "node_class": "transformer",
+        "bbox": [
+          669.1614379882812,
+          69.76105499267578,
+          737.0916137695312,
+          133.23483276367188
+        ],
+        "confidence": 0.84403395652771,
+        "tag": "# TX-022000kVA"
+      },
+      {
+        "node_id": "det-7",
+        "node_class": "breaker",
+        "bbox": [
+          86.93155670166016,
+          386.1278991699219,
+          152.80880737304688,
+          449.36431884765625
+        ],
+        "confidence": 0.6441013813018799,
+        "tag": "BUS-A \u56fd UPS-A 500kVA"
+      },
+      {
+        "node_id": "det-8",
+        "node_class": "breaker",
+        "bbox": [
+          672.96826171875,
+          388.6373291015625,
+          734.6506958007812,
+          448.52020263671875
+        ],
+        "confidence": 0.42864760756492615,
+        "tag": "BUS-3 \u4e2d UPS-3 500kVA"
+      }
+    ],
+    "edges": [
+      {
+        "source_node_id": "det-0",
+        "target_node_id": "det-3",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-0",
+        "target_node_id": "det-7",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-1",
+        "target_node_id": "det-5",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-2",
+        "target_node_id": "det-5",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-4",
+        "target_node_id": "det-6",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-4",
+        "target_node_id": "det-8",
+        "confidence": 1.0
+      }
+    ],
+    "redundancy": {
+      "source_doc": "sld-01",
+      "claimed_redundancy": "2N",
+      "holds": false,
+      "reason": "Only 0 path(s) found from source to IT-load; 2N requires at least two",
+      "failure_paths": [],
+      "spof_node_id": null,
+      "traced_paths": []
+    },
+    "name": "True 2N (fully redundant)"
+  },
+  {
+    "topology_id": "sld-02",
+    "image_path": "/sld/sld-02.png",
+    "nodes": [
+      {
+        "node_id": "det-0",
+        "node_class": "breaker",
+        "bbox": [
+          379.28106689453125,
+          528.1058959960938,
+          442.9476318359375,
+          591.108642578125
+        ],
+        "confidence": 0.9750530123710632,
+        "tag": "\u0103"
+      },
+      {
+        "node_id": "det-1",
+        "node_class": "breaker",
+        "bbox": [
+          88.71244049072266,
+          187.638427734375,
+          152.40545654296875,
+          251.62135314941406
+        ],
+        "confidence": 0.9655788540840149,
+        "tag": "\u0103 BRK-A1 \u2463 UPS-A 400kVA"
+      },
+      {
+        "node_id": "det-2",
+        "node_class": "breaker",
+        "bbox": [
+          667.18505859375,
+          187.77012634277344,
+          731.924560546875,
+          248.7542266845703
+        ],
+        "confidence": 0.9059658050537109,
+        "tag": "\u2611 BRK-31 \u5c71 UPS-B 400kVA"
+      },
+      {
+        "node_id": "det-3",
+        "node_class": "it_load",
+        "bbox": [
+          378.3954772949219,
+          607.2530517578125,
+          442.6138916015625,
+          668.0237426757812
+        ],
+        "confidence": 0.898071825504303,
+        "tag": "BRK-DUT IT-LOAD-01"
+      },
+      {
+        "node_id": "det-4",
+        "node_class": "transformer",
+        "bbox": [
+          90.00843811035156,
+          70.7612075805664,
+          155.6019744873047,
+          133.10867309570312
+        ],
+        "confidence": 0.8895247578620911,
+        "tag": "8 TX-01 1600kVA"
+      },
+      {
+        "node_id": "det-5",
+        "node_class": "ats",
+        "bbox": [
+          380.7664489746094,
+          428.0711669921875,
+          444.9637451171875,
+          493.0103454589844
+        ],
+        "confidence": 0.8859812617301941,
+        "tag": "ATS-01"
+      },
+      {
+        "node_id": "det-6",
+        "node_class": "transformer",
+        "bbox": [
+          669.4008178710938,
+          69.81356048583984,
+          736.5758056640625,
+          132.73023986816406
+        ],
+        "confidence": 0.8318809866905212,
+        "tag": "# TX-021600kVA"
+      }
+    ],
+    "edges": [
+      {
+        "source_node_id": "det-0",
+        "target_node_id": "det-5",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-1",
+        "target_node_id": "det-4",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-2",
+        "target_node_id": "det-6",
+        "confidence": 1.0
+      }
+    ],
+    "redundancy": {
+      "source_doc": "sld-02",
+      "claimed_redundancy": "2N",
+      "holds": false,
+      "reason": "Only 0 path(s) found from source to IT-load; 2N requires at least two",
+      "failure_paths": [],
+      "spof_node_id": null,
+      "traced_paths": []
+    },
+    "name": "SPOF: shared ATS before load"
+  },
+  {
+    "topology_id": "sld-03",
+    "image_path": "/sld/sld-03.png",
+    "nodes": [
+      {
+        "node_id": "det-0",
+        "node_class": "breaker",
+        "bbox": [
+          87.28191375732422,
+          166.9840087890625,
+          152.10565185546875,
+          230.67080688476562
+        ],
+        "confidence": 0.9281992316246033,
+        "tag": "\u0103 BRK-A1"
+      },
+      {
+        "node_id": "det-1",
+        "node_class": "busbar",
+        "bbox": [
+          377.7636413574219,
+          266.0721740722656,
+          445.8943786621094,
+          333.83935546875
+        ],
+        "confidence": 0.9158217906951904,
+        "tag": "BUS-MAIN"
+      },
+      {
+        "node_id": "det-2",
+        "node_class": "breaker",
+        "bbox": [
+          666.8154296875,
+          168.00003051757812,
+          731.1251220703125,
+          231.58642578125
+        ],
+        "confidence": 0.8297052383422852,
+        "tag": "\u0117 BRK-B1"
+      },
+      {
+        "node_id": "det-3",
+        "node_class": "transformer",
+        "bbox": [
+          90.01895904541016,
+          50.51726150512695,
+          155.64016723632812,
+          112.03804016113281
+        ],
+        "confidence": 0.7983691692352295,
+        "tag": "8 TX-012000kVA"
+      },
+      {
+        "node_id": "det-4",
+        "node_class": "it_load",
+        "bbox": [
+          376.5145568847656,
+          531.0370483398438,
+          443.5575256347656,
+          594.292724609375
+        ],
+        "confidence": 0.7149956822395325,
+        "tag": "IT-LOAD-01"
+      },
+      {
+        "node_id": "det-5",
+        "node_class": "transformer",
+        "bbox": [
+          671.8257446289062,
+          51.50248718261719,
+          737.1734008789062,
+          111.64775085449219
+        ],
+        "confidence": 0.709402859210968,
+        "tag": "8 TX-022000kVA"
+      },
+      {
+        "node_id": "det-6",
+        "node_class": "ups",
+        "bbox": [
+          537.0341186523438,
+          386.83331298828125,
+          604.1286010742188,
+          452.1758117675781
+        ],
+        "confidence": 0.4829174280166626,
+        "tag": "A UPS-B 500kVA"
+      },
+      {
+        "node_id": "det-7",
+        "node_class": "ups",
+        "bbox": [
+          219.29403686523438,
+          386.60784912109375,
+          285.3818359375,
+          450.1139831542969
+        ],
+        "confidence": 0.4495497941970825,
+        "tag": "\u7f51 UPS-A 500kA"
+      }
+    ],
+    "edges": [
+      {
+        "source_node_id": "det-0",
+        "target_node_id": "det-1",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-0",
+        "target_node_id": "det-3",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-1",
+        "target_node_id": "det-2",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-1",
+        "target_node_id": "det-6",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-1",
+        "target_node_id": "det-7",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-2",
+        "target_node_id": "det-5",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-4",
+        "target_node_id": "det-6",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-4",
+        "target_node_id": "det-7",
+        "confidence": 1.0
+      }
+    ],
+    "redundancy": {
+      "source_doc": "sld-03",
+      "claimed_redundancy": "2N",
+      "holds": false,
+      "reason": "Every path from source to IT-load shares node 'det-1' \u2014 single point of failure",
+      "failure_paths": [
+        [
+          "det-3",
+          "det-0",
+          "det-1",
+          "det-6",
+          "det-4"
+        ],
+        [
+          "det-3",
+          "det-0",
+          "det-1",
+          "det-7",
+          "det-4"
+        ],
+        [
+          "det-5",
+          "det-2",
+          "det-1",
+          "det-6",
+          "det-4"
+        ],
+        [
+          "det-5",
+          "det-2",
+          "det-1",
+          "det-7",
+          "det-4"
+        ]
+      ],
+      "spof_node_id": "det-1",
+      "traced_paths": [
+        [
+          "det-3",
+          "det-0",
+          "det-1",
+          "det-6",
+          "det-4"
+        ],
+        [
+          "det-3",
+          "det-0",
+          "det-1",
+          "det-7",
+          "det-4"
+        ]
+      ]
+    },
+    "name": "SPOF: shared busbar upstream"
+  },
+  {
+    "topology_id": "sld-04",
+    "image_path": "/sld/sld-04.png",
+    "nodes": [
+      {
+        "node_id": "det-0",
+        "node_class": "breaker",
+        "bbox": [
+          157.03530883789062,
+          268.0412292480469,
+          223.6752471923828,
+          331.1124267578125
+        ],
+        "confidence": 0.9444829821586609,
+        "tag": "ATS-A \u0103 BRK-A1"
+      },
+      {
+        "node_id": "det-1",
+        "node_class": "generator",
+        "bbox": [
+          229.2184600830078,
+          47.75753402709961,
+          293.2481689453125,
+          111.56878662109375
+        ],
+        "confidence": 0.9210734963417053,
+        "tag": "9 GEN-01 1500kW"
+      },
+      {
+        "node_id": "det-2",
+        "node_class": "breaker",
+        "bbox": [
+          667.1892700195312,
+          188.14901733398438,
+          731.8328857421875,
+          249.5695037841797
+        ],
+        "confidence": 0.9045920968055725,
+        "tag": "\u0103 BRK-31"
+      },
+      {
+        "node_id": "det-3",
+        "node_class": "transformer",
+        "bbox": [
+          89.82292175292969,
+          49.241146087646484,
+          155.97471618652344,
+          111.697265625
+        ],
+        "confidence": 0.8998192548751831,
+        "tag": "Q TX-01 2000kVA"
+      },
+      {
+        "node_id": "det-4",
+        "node_class": "it_load",
+        "bbox": [
+          375.9106140136719,
+          529.8370971679688,
+          444.2300109863281,
+          593.5473022460938
+        ],
+        "confidence": 0.8226897716522217,
+        "tag": "IT-LOAD-01"
+      },
+      {
+        "node_id": "det-5",
+        "node_class": "transformer",
+        "bbox": [
+          671.4689331054688,
+          51.672916412353516,
+          736.3347778320312,
+          112.55371856689453
+        ],
+        "confidence": 0.7481831312179565,
+        "tag": "8 TX-022000kVA"
+      },
+      {
+        "node_id": "det-6",
+        "node_class": "transformer",
+        "bbox": [
+          157.75262451171875,
+          374.21630859375,
+          224.781494140625,
+          441.1447448730469
+        ],
+        "confidence": 0.45972296595573425,
+        "tag": "\u2191 UPS-A 500kVA"
+      },
+      {
+        "node_id": "det-7",
+        "node_class": "ups",
+        "bbox": [
+          667.3533935546875,
+          375.3564453125,
+          736.8355712890625,
+          442.6494445800781
+        ],
+        "confidence": 0.4134436249732971,
+        "tag": "\u2193 UPS-B 500kVA"
+      }
+    ],
+    "edges": [
+      {
+        "source_node_id": "det-0",
+        "target_node_id": "det-3",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-0",
+        "target_node_id": "det-6",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-2",
+        "target_node_id": "det-5",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-2",
+        "target_node_id": "det-7",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-4",
+        "target_node_id": "det-6",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-4",
+        "target_node_id": "det-7",
+        "confidence": 1.0
+      }
+    ],
+    "redundancy": {
+      "source_doc": "sld-04",
+      "claimed_redundancy": "2N",
+      "holds": true,
+      "reason": "Found node-disjoint paths: det-3 -> det-0 -> det-6 -> det-4 and det-5 -> det-2 -> det-7 -> det-4",
+      "failure_paths": [],
+      "spof_node_id": null,
+      "traced_paths": [
+        [
+          "det-3",
+          "det-0",
+          "det-6",
+          "det-4"
+        ],
+        [
+          "det-5",
+          "det-2",
+          "det-7",
+          "det-4"
+        ]
+      ]
+    },
+    "name": "True 2N with generator backup on path A"
+  },
+  {
+    "topology_id": "sld-05",
+    "image_path": "/sld/sld-05.png",
+    "nodes": [
+      {
+        "node_id": "det-0",
+        "node_class": "breaker",
+        "bbox": [
+          88.74404907226562,
+          187.6570281982422,
+          152.33203125,
+          251.5913848876953
+        ],
+        "confidence": 0.9684043526649475,
+        "tag": "\u0103 BRK-A1 \u2193 UPS-A 500kVA"
+      },
+      {
+        "node_id": "det-1",
+        "node_class": "it_load",
+        "bbox": [
+          378.285400390625,
+          548.043212890625,
+          443.70703125,
+          609.9631958007812
+        ],
+        "confidence": 0.9667311906814575,
+        "tag": "IT-LOAD-01"
+      },
+      {
+        "node_id": "det-2",
+        "node_class": "breaker",
+        "bbox": [
+          378.6663818359375,
+          428.22528076171875,
+          443.7588195800781,
+          492.0450134277344
+        ],
+        "confidence": 0.9647861123085022,
+        "tag": "\u0103 BRK-FINAL"
+      },
+      {
+        "node_id": "det-3",
+        "node_class": "breaker",
+        "bbox": [
+          667.1590576171875,
+          187.88731384277344,
+          731.8948974609375,
+          248.71090698242188
+        ],
+        "confidence": 0.9060725569725037,
+        "tag": "\u2611 BRK-31 \u5c71 UPS-B 500kVA"
+      },
+      {
+        "node_id": "det-4",
+        "node_class": "transformer",
+        "bbox": [
+          89.93074798583984,
+          70.7596206665039,
+          155.37803649902344,
+          133.2024688720703
+        ],
+        "confidence": 0.8847794532775879,
+        "tag": "8 TX-012000kVA"
+      },
+      {
+        "node_id": "det-5",
+        "node_class": "transformer",
+        "bbox": [
+          669.2200317382812,
+          69.77605438232422,
+          737.0787353515625,
+          133.125
+        ],
+        "confidence": 0.8485783934593201,
+        "tag": "# TX-022000kVA"
+      }
+    ],
+    "edges": [
+      {
+        "source_node_id": "det-0",
+        "target_node_id": "det-4",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-1",
+        "target_node_id": "det-2",
+        "confidence": 1.0
+      },
+      {
+        "source_node_id": "det-3",
+        "target_node_id": "det-5",
+        "confidence": 1.0
+      }
+    ],
+    "redundancy": {
+      "source_doc": "sld-05",
+      "claimed_redundancy": "2N",
+      "holds": false,
+      "reason": "Only 0 path(s) found from source to IT-load; 2N requires at least two",
+      "failure_paths": [],
+      "spof_node_id": null,
+      "traced_paths": []
+    },
+    "name": "SPOF: shared final breaker before load"
+  }
+]
