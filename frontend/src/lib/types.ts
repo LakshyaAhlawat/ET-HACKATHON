@@ -39,3 +39,15 @@ export type Verdict = {
   spec_evidence: SourceRegion;
   submittal_evidence: SourceRegion | null;
 };
+
+export type MitigationCandidate = {
+  intervention_id: string;
+  name: string;
+  description: string;
+  cost_inr: number;
+  baseline_p_slip: number;
+  mitigated_p_slip: number;
+  delta_p_slip: number;
+  efficiency_per_inr: number | null;
+  is_zero_cost: boolean;
+};

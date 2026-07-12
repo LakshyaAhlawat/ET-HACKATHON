@@ -1,0 +1,46 @@
+[
+  {
+    "intervention_id": "resequence_trades",
+    "name": "Resequence trades: fast-track LV electrical off transformer install",
+    "description": "LV panel installation currently waits for the transformer's FULL site acceptance test, but it only actually needs the transformer physically placed. Depend on install completion instead of SAT completion \u2014 a pure scheduling fix, no cost.",
+    "cost_inr": 0.0,
+    "baseline_p_slip": 0.3414,
+    "mitigated_p_slip": 0.2344,
+    "delta_p_slip": 0.10699999999999998,
+    "efficiency_per_inr": null,
+    "is_zero_cost": true
+  },
+  {
+    "intervention_id": "split_ist_phases",
+    "name": "Split the integrated systems test into concurrent phases",
+    "description": "Run power, mechanical, life-safety, and IT integration checks concurrently under coordinated test engineering instead of one long serial IST window.",
+    "cost_inr": 400000.0,
+    "baseline_p_slip": 0.3414,
+    "mitigated_p_slip": 0.2556,
+    "delta_p_slip": 0.08579999999999999,
+    "efficiency_per_inr": 2.1449999999999997e-07,
+    "is_zero_cost": false
+  },
+  {
+    "intervention_id": "second_crew_transformer_install",
+    "name": "Add a second crew to the transformer install",
+    "description": "Mobilize a second crew for the outdoor switchyard transformer install to roughly halve its on-site duration.",
+    "cost_inr": 900000.0,
+    "baseline_p_slip": 0.3414,
+    "mitigated_p_slip": 0.2016,
+    "delta_p_slip": 0.13979999999999998,
+    "efficiency_per_inr": 1.5533333333333332e-07,
+    "is_zero_cost": false
+  },
+  {
+    "intervention_id": "air_freight_transformer",
+    "name": "Air-freight the transformer",
+    "description": "Recover ~2.5 of the 3 delayed weeks by air-freighting the transformer instead of sea freight.",
+    "cost_inr": 2800000.0,
+    "baseline_p_slip": 0.3414,
+    "mitigated_p_slip": 0.076,
+    "delta_p_slip": 0.26539999999999997,
+    "efficiency_per_inr": 9.478571428571428e-08,
+    "is_zero_cost": false
+  }
+]

@@ -1,0 +1,1450 @@
+[
+  {
+    "task_id": "CIVIL-MOBILIZE",
+    "name": "Site Mobilization",
+    "discipline": "CIVIL",
+    "phase": "civil",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CIVIL-EXCAVATE",
+    "name": "Excavation & Earthwork",
+    "discipline": "CIVIL",
+    "phase": "civil",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "CIVIL-MOBILIZE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CIVIL-SWITCHYARD",
+    "name": "Outdoor Switchyard Civil Works",
+    "discipline": "CIVIL",
+    "phase": "civil",
+    "duration_mean_days": 15.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "CIVIL-EXCAVATE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CIVIL-FOUNDATION",
+    "name": "Foundation & Footings",
+    "discipline": "CIVIL",
+    "phase": "civil",
+    "duration_mean_days": 20.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "CIVIL-EXCAVATE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CIVIL-STRUCTURE",
+    "name": "Structural Steel & Slab",
+    "discipline": "CIVIL",
+    "phase": "civil",
+    "duration_mean_days": 35.0,
+    "duration_std_days": 6.0,
+    "predecessors": [
+      "CIVIL-FOUNDATION"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CIVIL-ENVELOPE",
+    "name": "Building Envelope & Roofing",
+    "discipline": "CIVIL",
+    "phase": "civil",
+    "duration_mean_days": 25.0,
+    "duration_std_days": 5.0,
+    "predecessors": [
+      "CIVIL-STRUCTURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CIVIL-RAISEDFLOOR",
+    "name": "Raised Floor Install",
+    "discipline": "CIVIL",
+    "phase": "civil",
+    "duration_mean_days": 10.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "CIVIL-ENVELOPE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CIVIL-CONTAINMENT",
+    "name": "Cable Tray & Containment",
+    "discipline": "CIVIL",
+    "phase": "civil",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "CIVIL-RAISEDFLOOR"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CIVIL-FITOUT",
+    "name": "Interior Fit-Out & Finishes",
+    "discipline": "CIVIL",
+    "phase": "civil",
+    "duration_mean_days": 18.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "CIVIL-CONTAINMENT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "XFMR-DESIGN",
+    "name": "Utility Transformer: Design & Submittal Approval",
+    "discipline": "XFMR",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "XFMR-PROCURE",
+    "name": "Utility Transformer: Procurement / PO Issuance",
+    "discipline": "XFMR",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "XFMR-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "XFMR-MFG",
+    "name": "Utility Transformer: Manufacturing",
+    "discipline": "XFMR",
+    "phase": "manufacture",
+    "duration_mean_days": 70.0,
+    "duration_std_days": 10.0,
+    "predecessors": [
+      "XFMR-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "XFMR-FAT",
+    "name": "Utility Transformer: Factory Acceptance Test",
+    "discipline": "XFMR",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "XFMR-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "XFMR-SHIP",
+    "name": "Utility Transformer: Shipping & Delivery",
+    "discipline": "XFMR",
+    "phase": "ship",
+    "duration_mean_days": 21.0,
+    "duration_std_days": 5.0,
+    "predecessors": [
+      "XFMR-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "XFMR-RECEIVE",
+    "name": "Utility Transformer: Site Receiving & Inspection",
+    "discipline": "XFMR",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "XFMR-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "XFMR-INSTALL",
+    "name": "Utility Transformer: Site Installation",
+    "discipline": "XFMR",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "XFMR-RECEIVE",
+      "CIVIL-SWITCHYARD"
+    ],
+    "seasonal_window": {
+      "start_day": 150.0,
+      "end_day": 210.0,
+      "multiplier": 1.35
+    },
+    "is_milestone": true
+  },
+  {
+    "task_id": "XFMR-SAT",
+    "name": "Utility Transformer: Site Acceptance Test",
+    "discipline": "XFMR",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "XFMR-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "DG-DESIGN",
+    "name": "Diesel Generator: Design & Submittal Approval",
+    "discipline": "DG",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "DG-PROCURE",
+    "name": "Diesel Generator: Procurement / PO Issuance",
+    "discipline": "DG",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "DG-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "DG-MFG",
+    "name": "Diesel Generator: Manufacturing",
+    "discipline": "DG",
+    "phase": "manufacture",
+    "duration_mean_days": 60.0,
+    "duration_std_days": 9.0,
+    "predecessors": [
+      "DG-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "DG-FAT",
+    "name": "Diesel Generator: Factory Acceptance Test",
+    "discipline": "DG",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "DG-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "DG-SHIP",
+    "name": "Diesel Generator: Shipping & Delivery",
+    "discipline": "DG",
+    "phase": "ship",
+    "duration_mean_days": 18.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "DG-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "DG-RECEIVE",
+    "name": "Diesel Generator: Site Receiving & Inspection",
+    "discipline": "DG",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "DG-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "DG-INSTALL",
+    "name": "Diesel Generator: Site Installation",
+    "discipline": "DG",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "DG-RECEIVE",
+      "CIVIL-FITOUT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "DG-SAT",
+    "name": "Diesel Generator: Site Acceptance Test",
+    "discipline": "DG",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "DG-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CHW-DESIGN",
+    "name": "Chiller Plant: Design & Submittal Approval",
+    "discipline": "CHW",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "CHW-PROCURE",
+    "name": "Chiller Plant: Procurement / PO Issuance",
+    "discipline": "CHW",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "CHW-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "CHW-MFG",
+    "name": "Chiller Plant: Manufacturing",
+    "discipline": "CHW",
+    "phase": "manufacture",
+    "duration_mean_days": 55.0,
+    "duration_std_days": 8.0,
+    "predecessors": [
+      "CHW-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "CHW-FAT",
+    "name": "Chiller Plant: Factory Acceptance Test",
+    "discipline": "CHW",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "CHW-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "CHW-SHIP",
+    "name": "Chiller Plant: Shipping & Delivery",
+    "discipline": "CHW",
+    "phase": "ship",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "CHW-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "CHW-RECEIVE",
+    "name": "Chiller Plant: Site Receiving & Inspection",
+    "discipline": "CHW",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "CHW-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "CHW-INSTALL",
+    "name": "Chiller Plant: Site Installation",
+    "discipline": "CHW",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "CHW-RECEIVE",
+      "CIVIL-FITOUT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "CHW-SAT",
+    "name": "Chiller Plant: Site Acceptance Test",
+    "discipline": "CHW",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "CHW-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "UPS-DESIGN",
+    "name": "UPS & Battery: Design & Submittal Approval",
+    "discipline": "UPS",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "UPS-PROCURE",
+    "name": "UPS & Battery: Procurement / PO Issuance",
+    "discipline": "UPS",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "UPS-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "UPS-MFG",
+    "name": "UPS & Battery: Manufacturing",
+    "discipline": "UPS",
+    "phase": "manufacture",
+    "duration_mean_days": 35.0,
+    "duration_std_days": 6.0,
+    "predecessors": [
+      "UPS-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "UPS-FAT",
+    "name": "UPS & Battery: Factory Acceptance Test",
+    "discipline": "UPS",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "UPS-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "UPS-SHIP",
+    "name": "UPS & Battery: Shipping & Delivery",
+    "discipline": "UPS",
+    "phase": "ship",
+    "duration_mean_days": 10.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "UPS-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "UPS-RECEIVE",
+    "name": "UPS & Battery: Site Receiving & Inspection",
+    "discipline": "UPS",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "UPS-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "UPS-INSTALL",
+    "name": "UPS & Battery: Site Installation",
+    "discipline": "UPS",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "UPS-RECEIVE",
+      "CIVIL-FITOUT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "UPS-SAT",
+    "name": "UPS & Battery: Site Acceptance Test",
+    "discipline": "UPS",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "UPS-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "FLS-DESIGN",
+    "name": "Fire & Life Safety: Design & Submittal Approval",
+    "discipline": "FLS",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "FLS-PROCURE",
+    "name": "Fire & Life Safety: Procurement / PO Issuance",
+    "discipline": "FLS",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "FLS-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "FLS-MFG",
+    "name": "Fire & Life Safety: Manufacturing",
+    "discipline": "FLS",
+    "phase": "manufacture",
+    "duration_mean_days": 25.0,
+    "duration_std_days": 5.0,
+    "predecessors": [
+      "FLS-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "FLS-FAT",
+    "name": "Fire & Life Safety: Factory Acceptance Test",
+    "discipline": "FLS",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "FLS-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "FLS-SHIP",
+    "name": "Fire & Life Safety: Shipping & Delivery",
+    "discipline": "FLS",
+    "phase": "ship",
+    "duration_mean_days": 7.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "FLS-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "FLS-RECEIVE",
+    "name": "Fire & Life Safety: Site Receiving & Inspection",
+    "discipline": "FLS",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "FLS-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "FLS-INSTALL",
+    "name": "Fire & Life Safety: Site Installation",
+    "discipline": "FLS",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "FLS-RECEIVE",
+      "CIVIL-FITOUT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "FLS-SAT",
+    "name": "Fire & Life Safety: Site Acceptance Test",
+    "discipline": "FLS",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "FLS-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "ITN-DESIGN",
+    "name": "IT Networking & Security: Design & Submittal Approval",
+    "discipline": "ITN",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ITN-PROCURE",
+    "name": "IT Networking & Security: Procurement / PO Issuance",
+    "discipline": "ITN",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "ITN-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ITN-MFG",
+    "name": "IT Networking & Security: Manufacturing",
+    "discipline": "ITN",
+    "phase": "manufacture",
+    "duration_mean_days": 20.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "ITN-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ITN-FAT",
+    "name": "IT Networking & Security: Factory Acceptance Test",
+    "discipline": "ITN",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "ITN-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ITN-SHIP",
+    "name": "IT Networking & Security: Shipping & Delivery",
+    "discipline": "ITN",
+    "phase": "ship",
+    "duration_mean_days": 7.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "ITN-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ITN-RECEIVE",
+    "name": "IT Networking & Security: Site Receiving & Inspection",
+    "discipline": "ITN",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "ITN-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ITN-INSTALL",
+    "name": "IT Networking & Security: Site Installation",
+    "discipline": "ITN",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "ITN-RECEIVE",
+      "CIVIL-FITOUT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "ITN-SAT",
+    "name": "IT Networking & Security: Site Acceptance Test",
+    "discipline": "ITN",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "ITN-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "BMS-DESIGN",
+    "name": "Building Management System: Design & Submittal Approval",
+    "discipline": "BMS",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "BMS-PROCURE",
+    "name": "Building Management System: Procurement / PO Issuance",
+    "discipline": "BMS",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "BMS-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "BMS-MFG",
+    "name": "Building Management System: Manufacturing",
+    "discipline": "BMS",
+    "phase": "manufacture",
+    "duration_mean_days": 22.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "BMS-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "BMS-FAT",
+    "name": "Building Management System: Factory Acceptance Test",
+    "discipline": "BMS",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "BMS-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "BMS-SHIP",
+    "name": "Building Management System: Shipping & Delivery",
+    "discipline": "BMS",
+    "phase": "ship",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "BMS-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "BMS-RECEIVE",
+    "name": "Building Management System: Site Receiving & Inspection",
+    "discipline": "BMS",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "BMS-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "BMS-INSTALL",
+    "name": "Building Management System: Site Installation",
+    "discipline": "BMS",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "BMS-RECEIVE",
+      "CIVIL-FITOUT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "BMS-SAT",
+    "name": "Building Management System: Site Acceptance Test",
+    "discipline": "BMS",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "BMS-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "ELEC-DESIGN",
+    "name": "LV Electrical Distribution: Design & Submittal Approval",
+    "discipline": "ELEC",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ELEC-PROCURE",
+    "name": "LV Electrical Distribution: Procurement / PO Issuance",
+    "discipline": "ELEC",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "ELEC-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ELEC-MFG",
+    "name": "LV Electrical Distribution: Manufacturing",
+    "discipline": "ELEC",
+    "phase": "manufacture",
+    "duration_mean_days": 30.0,
+    "duration_std_days": 5.0,
+    "predecessors": [
+      "ELEC-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ELEC-FAT",
+    "name": "LV Electrical Distribution: Factory Acceptance Test",
+    "discipline": "ELEC",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "ELEC-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ELEC-SHIP",
+    "name": "LV Electrical Distribution: Shipping & Delivery",
+    "discipline": "ELEC",
+    "phase": "ship",
+    "duration_mean_days": 9.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "ELEC-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ELEC-RECEIVE",
+    "name": "LV Electrical Distribution: Site Receiving & Inspection",
+    "discipline": "ELEC",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "ELEC-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "ELEC-INSTALL",
+    "name": "LV Electrical Distribution: Site Installation",
+    "discipline": "ELEC",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "ELEC-RECEIVE",
+      "CIVIL-FITOUT",
+      "XFMR-SAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "ELEC-SAT",
+    "name": "LV Electrical Distribution: Site Acceptance Test",
+    "discipline": "ELEC",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "ELEC-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "SCAC-DESIGN",
+    "name": "Structured Cabling & Access Control: Design & Submittal Approval",
+    "discipline": "SCAC",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "SCAC-PROCURE",
+    "name": "Structured Cabling & Access Control: Procurement / PO Issuance",
+    "discipline": "SCAC",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "SCAC-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "SCAC-MFG",
+    "name": "Structured Cabling & Access Control: Manufacturing",
+    "discipline": "SCAC",
+    "phase": "manufacture",
+    "duration_mean_days": 18.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "SCAC-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "SCAC-FAT",
+    "name": "Structured Cabling & Access Control: Factory Acceptance Test",
+    "discipline": "SCAC",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "SCAC-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "SCAC-SHIP",
+    "name": "Structured Cabling & Access Control: Shipping & Delivery",
+    "discipline": "SCAC",
+    "phase": "ship",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "SCAC-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "SCAC-RECEIVE",
+    "name": "Structured Cabling & Access Control: Site Receiving & Inspection",
+    "discipline": "SCAC",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "SCAC-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "SCAC-INSTALL",
+    "name": "Structured Cabling & Access Control: Site Installation",
+    "discipline": "SCAC",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "SCAC-RECEIVE",
+      "CIVIL-FITOUT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "SCAC-SAT",
+    "name": "Structured Cabling & Access Control: Site Acceptance Test",
+    "discipline": "SCAC",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "SCAC-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "PLMB-DESIGN",
+    "name": "Plumbing & Water Treatment: Design & Submittal Approval",
+    "discipline": "PLMB",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "PLMB-PROCURE",
+    "name": "Plumbing & Water Treatment: Procurement / PO Issuance",
+    "discipline": "PLMB",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "PLMB-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "PLMB-MFG",
+    "name": "Plumbing & Water Treatment: Manufacturing",
+    "discipline": "PLMB",
+    "phase": "manufacture",
+    "duration_mean_days": 24.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "PLMB-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "PLMB-FAT",
+    "name": "Plumbing & Water Treatment: Factory Acceptance Test",
+    "discipline": "PLMB",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "PLMB-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "PLMB-SHIP",
+    "name": "Plumbing & Water Treatment: Shipping & Delivery",
+    "discipline": "PLMB",
+    "phase": "ship",
+    "duration_mean_days": 7.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "PLMB-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "PLMB-RECEIVE",
+    "name": "Plumbing & Water Treatment: Site Receiving & Inspection",
+    "discipline": "PLMB",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "PLMB-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "PLMB-INSTALL",
+    "name": "Plumbing & Water Treatment: Site Installation",
+    "discipline": "PLMB",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "PLMB-RECEIVE",
+      "CIVIL-FITOUT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "PLMB-SAT",
+    "name": "Plumbing & Water Treatment: Site Acceptance Test",
+    "discipline": "PLMB",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "PLMB-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "VERT-DESIGN",
+    "name": "Elevators & Vertical Transport: Design & Submittal Approval",
+    "discipline": "VERT",
+    "phase": "design",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "VERT-PROCURE",
+    "name": "Elevators & Vertical Transport: Procurement / PO Issuance",
+    "discipline": "VERT",
+    "phase": "procure",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "VERT-DESIGN"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "VERT-MFG",
+    "name": "Elevators & Vertical Transport: Manufacturing",
+    "discipline": "VERT",
+    "phase": "manufacture",
+    "duration_mean_days": 45.0,
+    "duration_std_days": 7.0,
+    "predecessors": [
+      "VERT-PROCURE"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "VERT-FAT",
+    "name": "Elevators & Vertical Transport: Factory Acceptance Test",
+    "discipline": "VERT",
+    "phase": "fat",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "VERT-MFG"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "VERT-SHIP",
+    "name": "Elevators & Vertical Transport: Shipping & Delivery",
+    "discipline": "VERT",
+    "phase": "ship",
+    "duration_mean_days": 12.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "VERT-FAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "VERT-RECEIVE",
+    "name": "Elevators & Vertical Transport: Site Receiving & Inspection",
+    "discipline": "VERT",
+    "phase": "receive",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "VERT-SHIP"
+    ],
+    "seasonal_window": null,
+    "is_milestone": false
+  },
+  {
+    "task_id": "VERT-INSTALL",
+    "name": "Elevators & Vertical Transport: Site Installation",
+    "discipline": "VERT",
+    "phase": "install",
+    "duration_mean_days": 14.0,
+    "duration_std_days": 4.0,
+    "predecessors": [
+      "VERT-RECEIVE",
+      "CIVIL-FITOUT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "VERT-SAT",
+    "name": "Elevators & Vertical Transport: Site Acceptance Test",
+    "discipline": "VERT",
+    "phase": "test",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "VERT-INSTALL"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "IST-POWER",
+    "name": "IST - Power Systems",
+    "discipline": "IST",
+    "phase": "ist",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "XFMR-SAT",
+      "DG-SAT",
+      "UPS-SAT",
+      "ELEC-SAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "IST-MECH",
+    "name": "IST - Mechanical Systems",
+    "discipline": "IST",
+    "phase": "ist",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "CHW-SAT",
+      "BMS-SAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "IST-LIFE-SAFETY",
+    "name": "IST - Fire & Life Safety",
+    "discipline": "IST",
+    "phase": "ist",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "FLS-SAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "IST-IT",
+    "name": "IST - IT & Security Systems",
+    "discipline": "IST",
+    "phase": "ist",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "ITN-SAT",
+      "SCAC-SAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "IST-VERT-PLMB",
+    "name": "IST - Vertical Transport & Plumbing",
+    "discipline": "IST",
+    "phase": "ist",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "VERT-SAT",
+      "PLMB-SAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "IST-INTEGRATED",
+    "name": "Integrated Systems Test (Full Building)",
+    "discipline": "IST",
+    "phase": "ist",
+    "duration_mean_days": 10.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "IST-POWER",
+      "IST-MECH",
+      "IST-LIFE-SAFETY",
+      "IST-IT",
+      "IST-VERT-PLMB"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "COMM-L3",
+    "name": "Commissioning Level 3 (System Function)",
+    "discipline": "FINAL",
+    "phase": "commissioning",
+    "duration_mean_days": 7.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "IST-INTEGRATED"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "COMM-L4",
+    "name": "Commissioning Level 4 (Integrated Function)",
+    "discipline": "FINAL",
+    "phase": "commissioning",
+    "duration_mean_days": 9.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "COMM-L3"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "COMM-L5",
+    "name": "Commissioning Level 5 (Load / Stress Test)",
+    "discipline": "FINAL",
+    "phase": "commissioning",
+    "duration_mean_days": 8.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "COMM-L4"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "REGULATORY-UTILITY",
+    "name": "Utility Energization Approval",
+    "discipline": "FINAL",
+    "phase": "closeout",
+    "duration_mean_days": 10.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "XFMR-SAT"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "REGULATORY-FIRE",
+    "name": "Fire Marshal Inspection",
+    "discipline": "FINAL",
+    "phase": "closeout",
+    "duration_mean_days": 5.0,
+    "duration_std_days": 1.5,
+    "predecessors": [
+      "IST-LIFE-SAFETY"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "REGULATORY-OCCUPANCY",
+    "name": "Occupancy Certificate",
+    "discipline": "FINAL",
+    "phase": "closeout",
+    "duration_mean_days": 6.0,
+    "duration_std_days": 2.0,
+    "predecessors": [
+      "REGULATORY-FIRE",
+      "REGULATORY-UTILITY",
+      "COMM-L5"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "PUNCHLIST",
+    "name": "Punch List & Snagging",
+    "discipline": "FINAL",
+    "phase": "closeout",
+    "duration_mean_days": 10.0,
+    "duration_std_days": 3.0,
+    "predecessors": [
+      "COMM-L5"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  },
+  {
+    "task_id": "HANDOVER",
+    "name": "Client Handover",
+    "discipline": "FINAL",
+    "phase": "closeout",
+    "duration_mean_days": 3.0,
+    "duration_std_days": 1.0,
+    "predecessors": [
+      "REGULATORY-OCCUPANCY",
+      "PUNCHLIST"
+    ],
+    "seasonal_window": null,
+    "is_milestone": true
+  }
+]
