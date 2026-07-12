@@ -1,3 +1,5 @@
+from typing import Any
+
 import pytest
 
 from app.models.schema import ExtractedValue, Requirement
@@ -7,7 +9,7 @@ SPEC_DOC = "spec.pdf"
 SUBMITTAL_DOC = "vendor_submittal.pdf"
 
 
-def make_requirement(**overrides) -> Requirement:
+def make_requirement(**overrides: Any) -> Requirement:
     defaults = dict(
         req_id="MECH-3.4.2",
         equipment_class="chiller",
@@ -21,10 +23,10 @@ def make_requirement(**overrides) -> Requirement:
         source_bbox=(10.0, 20.0, 200.0, 60.0),
     )
     defaults.update(overrides)
-    return Requirement(**defaults)
+    return Requirement(**defaults)  # type: ignore[arg-type]
 
 
-def make_extracted(**overrides) -> ExtractedValue:
+def make_extracted(**overrides: Any) -> ExtractedValue:
     defaults = dict(
         equipment_class="chiller",
         parameter="cooling_capacity",
@@ -37,10 +39,10 @@ def make_extracted(**overrides) -> ExtractedValue:
         extraction_confidence=0.95,
     )
     defaults.update(overrides)
-    return ExtractedValue(**defaults)
+    return ExtractedValue(**defaults)  # type: ignore[arg-type]
 
 
-def test_pass_simple_same_unit():
+def test_pass_simple_same_unit() -> None:
     req = make_requirement()
     ev = make_extracted(value=550.0, unit="TR")
 
@@ -56,7 +58,7 @@ def test_pass_simple_same_unit():
     assert verdict.submittal_evidence.source_doc == SUBMITTAL_DOC
 
 
-def test_non_conformance_simple():
+def test_non_conformance_simple() -> None:
     req = make_requirement()
     ev = make_extracted(value=480.0, unit="TR")
 
@@ -67,7 +69,7 @@ def test_non_conformance_simple():
     assert verdict.submitted == "480.0 TR"
 
 
-def test_unit_conversion_kw_pass():
+def test_unit_conversion_kw_pass() -> None:
     # 500 TR ~= 1758.43 kW; 1900 kW ~= 540.3 TR -> PASS
     req = make_requirement()
     ev = make_extracted(value=1900.0, unit="kW")
@@ -79,7 +81,7 @@ def test_unit_conversion_kw_pass():
     assert verdict.delta_pct == pytest.approx(540.2556831106596 / 500.0 * 100 - 100, rel=1e-6)
 
 
-def test_unit_conversion_kw_non_conformance():
+def test_unit_conversion_kw_non_conformance() -> None:
     # 1700 kW ~= 483.4 TR -> below 500 TR requirement
     req = make_requirement()
     ev = make_extracted(value=1700.0, unit="kW")
@@ -87,10 +89,11 @@ def test_unit_conversion_kw_non_conformance():
     verdict = evaluate_requirement(req, [ev])
 
     assert verdict.status == "NON_CONFORMANCE"
+    assert verdict.delta_pct is not None
     assert verdict.delta_pct < 0
 
 
-def test_condition_required_but_missing_is_insufficient_data():
+def test_condition_required_but_missing_is_insufficient_data() -> None:
     req = make_requirement(condition="@35C ambient")
     ev = make_extracted(value=550.0, unit="TR", condition=None)
 
@@ -102,7 +105,7 @@ def test_condition_required_but_missing_is_insufficient_data():
     assert "@35C ambient" in verdict.reason
 
 
-def test_condition_mismatch_is_insufficient_data():
+def test_condition_mismatch_is_insufficient_data() -> None:
     req = make_requirement(condition="@35C ambient")
     ev = make_extracted(value=550.0, unit="TR", condition="@25C ambient")
 
@@ -112,7 +115,7 @@ def test_condition_mismatch_is_insufficient_data():
     assert verdict.submitted is None
 
 
-def test_condition_match_pass():
+def test_condition_match_pass() -> None:
     req = make_requirement(condition="@35C ambient")
     ev = make_extracted(value=550.0, unit="TR", condition="@35C ambient")
 
@@ -123,7 +126,7 @@ def test_condition_match_pass():
     assert verdict.submitted == "550.0 TR @35C ambient"
 
 
-def test_condition_match_is_case_and_whitespace_insensitive():
+def test_condition_match_is_case_and_whitespace_insensitive() -> None:
     req = make_requirement(condition="@35C ambient")
     ev = make_extracted(value=550.0, unit="TR", condition="  @35c Ambient ")
 
@@ -132,7 +135,7 @@ def test_condition_match_is_case_and_whitespace_insensitive():
     assert verdict.status == "PASS"
 
 
-def test_no_matching_equipment_is_insufficient_data():
+def test_no_matching_equipment_is_insufficient_data() -> None:
     req = make_requirement()
     ev = make_extracted(equipment_class="pump", parameter="flow_rate", value=100.0, unit="TR")
 
@@ -143,7 +146,7 @@ def test_no_matching_equipment_is_insufficient_data():
     assert "no submittal data" in verdict.reason.lower()
 
 
-def test_no_extracted_values_at_all_is_insufficient_data():
+def test_no_extracted_values_at_all_is_insufficient_data() -> None:
     req = make_requirement()
 
     verdict = evaluate_requirement(req, [])
@@ -151,7 +154,7 @@ def test_no_extracted_values_at_all_is_insufficient_data():
     assert verdict.status == "INSUFFICIENT_DATA"
 
 
-def test_incompatible_units_is_insufficient_data():
+def test_incompatible_units_is_insufficient_data() -> None:
     req = make_requirement()
     ev = make_extracted(value=550.0, unit="meter")
 
@@ -161,7 +164,7 @@ def test_incompatible_units_is_insufficient_data():
     assert "unit" in verdict.reason.lower()
 
 
-def test_equality_operator_pass():
+def test_equality_operator_pass() -> None:
     req = make_requirement(operator="==", value=500.0)
     ev = make_extracted(value=500.0, unit="TR")
 
@@ -170,7 +173,7 @@ def test_equality_operator_pass():
     assert verdict.status == "PASS"
 
 
-def test_equality_operator_non_conformance():
+def test_equality_operator_non_conformance() -> None:
     req = make_requirement(operator="==", value=500.0)
     ev = make_extracted(value=500.5, unit="TR")
 
@@ -179,7 +182,7 @@ def test_equality_operator_non_conformance():
     assert verdict.status == "NON_CONFORMANCE"
 
 
-def test_not_equal_operator():
+def test_not_equal_operator() -> None:
     req = make_requirement(operator="!=", value=500.0)
     ev = make_extracted(value=500.0, unit="TR")
 
@@ -188,7 +191,7 @@ def test_not_equal_operator():
     assert verdict.status == "NON_CONFORMANCE"
 
 
-def test_less_than_or_equal_operator():
+def test_less_than_or_equal_operator() -> None:
     req = make_requirement(operator="<=", value=500.0)
     ev = make_extracted(value=480.0, unit="TR")
 
@@ -197,7 +200,7 @@ def test_less_than_or_equal_operator():
     assert verdict.status == "PASS"
 
 
-def test_picks_highest_confidence_when_multiple_unconditioned_matches():
+def test_picks_highest_confidence_when_multiple_unconditioned_matches() -> None:
     req = make_requirement()
     low_conf = make_extracted(value=480.0, unit="TR", extraction_confidence=0.4)
     high_conf = make_extracted(value=550.0, unit="TR", extraction_confidence=0.9)

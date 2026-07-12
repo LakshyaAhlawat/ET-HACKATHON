@@ -1,0 +1,946 @@
+{
+  "total_clauses": 20,
+  "total_expected_requirements": 25,
+  "total_matched_requirements": 16,
+  "accuracy": 0.64,
+  "clauses": [
+    {
+      "clause_id": "GT-01",
+      "text": "Each chiller shall be capable of delivering not less than 500 TR at 35C ambient, with a minimum IPLV of 6.2.",
+      "expected_count": 2,
+      "extracted_count": 2,
+      "matched_count": 2,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "chiller",
+            "parameter": "cooling_capacity",
+            "operator": ">=",
+            "value": 500.0,
+            "unit": "TR",
+            "condition": "@35C ambient"
+          },
+          "matched": true
+        },
+        {
+          "expected": {
+            "equipment_class": "chiller",
+            "parameter": "iplv",
+            "operator": ">=",
+            "value": 6.2,
+            "unit": "",
+            "condition": null
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "chiller",
+          "parameter": "cooling_capacity",
+          "operator": ">=",
+          "value": 500.0,
+          "unit": "TR",
+          "condition": "@35C ambient",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "req_id": "ground_truth-p1-1",
+          "equipment_class": "chiller",
+          "parameter": "iplv",
+          "operator": ">=",
+          "value": 6.2,
+          "unit": "",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-02",
+      "text": "The diesel generator set shall have a prime power rating of not less than 1500 kVA at 0.8 lagging power factor.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 0,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "generator",
+            "parameter": "prime_power_rating",
+            "operator": ">=",
+            "value": 1500.0,
+            "unit": "kVA",
+            "condition": "@0.8 lagging power factor"
+          },
+          "matched": false
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "generator",
+          "parameter": "power_rating",
+          "operator": ">=",
+          "value": 1500.0,
+          "unit": "kVA",
+          "condition": "at 0.8 lagging power factor",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-03",
+      "text": "UPS modules shall provide a minimum output capacity of 800 kVA, scalable in increments of 200 kVA, with input THDi not exceeding 5% at full load.",
+      "expected_count": 2,
+      "extracted_count": 3,
+      "matched_count": 2,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "ups",
+            "parameter": "output_capacity",
+            "operator": ">=",
+            "value": 800.0,
+            "unit": "kVA",
+            "condition": null
+          },
+          "matched": true
+        },
+        {
+          "expected": {
+            "equipment_class": "ups",
+            "parameter": "input_thdi",
+            "operator": "<=",
+            "value": 5.0,
+            "unit": "%",
+            "condition": "@full load"
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "ups",
+          "parameter": "output_capacity",
+          "operator": ">=",
+          "value": 800.0,
+          "unit": "kVA",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "req_id": "ground_truth-p1-1",
+          "equipment_class": "ups",
+          "parameter": "output_capacity_increment",
+          "operator": "==",
+          "value": 200.0,
+          "unit": "kVA",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "req_id": "ground_truth-p1-2",
+          "equipment_class": "ups",
+          "parameter": "input_thdi",
+          "operator": "<=",
+          "value": 5.0,
+          "unit": "%",
+          "condition": "at full load",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-04",
+      "text": "The busway shall be rated for a continuous current of not less than 4000A.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 1,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "busway",
+            "parameter": "continuous_current",
+            "operator": ">=",
+            "value": 4000.0,
+            "unit": "A",
+            "condition": null
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "busway",
+          "parameter": "continuous_current",
+          "operator": ">=",
+          "value": 4000.0,
+          "unit": "A",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-05",
+      "text": "Cable sizing shall ensure a maximum voltage drop of 3% under full load conditions.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 1,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "cable",
+            "parameter": "voltage_drop",
+            "operator": "<=",
+            "value": 3.0,
+            "unit": "%",
+            "condition": "@full load"
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "cable",
+          "parameter": "voltage_drop",
+          "operator": "<=",
+          "value": 3.0,
+          "unit": "%",
+          "condition": "under full load conditions",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-06",
+      "text": "The CRAC units shall maintain a sensible cooling capacity of at least 30 TR each at a return air temperature of 24C DB / 50% RH.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 1,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "crac",
+            "parameter": "sensible_cooling_capacity",
+            "operator": ">=",
+            "value": 30.0,
+            "unit": "TR",
+            "condition": "@24C DB / 50% RH return air"
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "crac",
+          "parameter": "sensible_cooling_capacity",
+          "operator": ">=",
+          "value": 30.0,
+          "unit": "TR",
+          "condition": "at a return air temperature of 24C DB / 50% RH",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-07",
+      "text": "Transformers shall be rated not less than 2000 kVA with an impedance of 6% plus or minus 0.5%.",
+      "expected_count": 2,
+      "extracted_count": 2,
+      "matched_count": 2,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "transformer",
+            "parameter": "power_rating",
+            "operator": ">=",
+            "value": 2000.0,
+            "unit": "kVA",
+            "condition": null
+          },
+          "matched": true
+        },
+        {
+          "expected": {
+            "equipment_class": "transformer",
+            "parameter": "impedance",
+            "operator": "==",
+            "value": 6.0,
+            "unit": "%",
+            "condition": null
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "transformer",
+          "parameter": "power_rating",
+          "operator": ">=",
+          "value": 2000.0,
+          "unit": "kVA",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "req_id": "ground_truth-p1-1",
+          "equipment_class": "transformer",
+          "parameter": "impedance",
+          "operator": "==",
+          "value": 6.0,
+          "unit": "%",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-08",
+      "text": "Fire pump shall deliver not less than 750 GPM at 100 psi.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 1,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "fire_pump",
+            "parameter": "flow_rate",
+            "operator": ">=",
+            "value": 750.0,
+            "unit": "GPM",
+            "condition": "@100 psi"
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "fire_pump",
+          "parameter": "flow_rate",
+          "operator": ">=",
+          "value": 750.0,
+          "unit": "GPM",
+          "condition": "@100 psi",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-09",
+      "text": "The standby generator shall achieve full load acceptance within 10 seconds of utility failure.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 0,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "generator",
+            "parameter": "load_acceptance_time",
+            "operator": "<=",
+            "value": 10.0,
+            "unit": "s",
+            "condition": null
+          },
+          "matched": false
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "generator",
+          "parameter": "load_acceptance_time",
+          "operator": "<=",
+          "value": 10.0,
+          "unit": "seconds",
+          "condition": "within 10 seconds of utility failure",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-10",
+      "text": "Server room air handling units shall not exceed a sound power level of 85 dBA at 1 meter.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 1,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "ahu",
+            "parameter": "sound_power_level",
+            "operator": "<=",
+            "value": 85.0,
+            "unit": "dBA",
+            "condition": "@1 meter"
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "ahu",
+          "parameter": "sound_power_level",
+          "operator": "<=",
+          "value": 85.0,
+          "unit": "dBA",
+          "condition": "at 1 meter",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-11",
+      "text": "PDU output shall maintain voltage regulation within plus or minus 1% under balanced load.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 0,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "pdu",
+            "parameter": "voltage_regulation",
+            "operator": "<=",
+            "value": 1.0,
+            "unit": "%",
+            "condition": "@balanced load"
+          },
+          "matched": false
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "pdu",
+          "parameter": "voltage_regulation",
+          "operator": "==",
+          "value": 1.0,
+          "unit": "%",
+          "condition": "under balanced load",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-12",
+      "text": "Batteries shall provide a minimum backup runtime of 15 minutes at full UPS load.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 1,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "battery",
+            "parameter": "backup_runtime",
+            "operator": ">=",
+            "value": 15.0,
+            "unit": "min",
+            "condition": "@full UPS load"
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "battery",
+          "parameter": "backup_runtime",
+          "operator": ">=",
+          "value": 15.0,
+          "unit": "minutes",
+          "condition": "at full UPS load",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-13",
+      "text": "The chilled water pumps shall be sized for a minimum flow rate of 1200 GPM and a maximum total dynamic head of 150 ft.",
+      "expected_count": 2,
+      "extracted_count": 2,
+      "matched_count": 2,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "pump",
+            "parameter": "flow_rate",
+            "operator": ">=",
+            "value": 1200.0,
+            "unit": "GPM",
+            "condition": null
+          },
+          "matched": true
+        },
+        {
+          "expected": {
+            "equipment_class": "pump",
+            "parameter": "total_dynamic_head",
+            "operator": "<=",
+            "value": 150.0,
+            "unit": "ft",
+            "condition": null
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "pump",
+          "parameter": "flow_rate",
+          "operator": ">=",
+          "value": 1200.0,
+          "unit": "GPM",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "req_id": "ground_truth-p1-1",
+          "equipment_class": "pump",
+          "parameter": "total_dynamic_head",
+          "operator": "<=",
+          "value": 150.0,
+          "unit": "ft",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-14",
+      "text": "Data centre white space shall maintain a maximum power density of 10 kW per rack.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 0,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "whitespace",
+            "parameter": "power_density",
+            "operator": "<=",
+            "value": 10.0,
+            "unit": "kW",
+            "condition": "@per rack"
+          },
+          "matched": false
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "whitespace",
+          "parameter": "power_density",
+          "operator": "<=",
+          "value": 10.0,
+          "unit": "kW per rack",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-15",
+      "text": "The automatic transfer switch shall be rated for not less than 4000A at 480V, 3-phase.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 0,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "ats",
+            "parameter": "current_rating",
+            "operator": ">=",
+            "value": 4000.0,
+            "unit": "A",
+            "condition": "@480V 3-phase"
+          },
+          "matched": false
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "ats",
+          "parameter": "power_rating",
+          "operator": ">=",
+          "value": 4000.0,
+          "unit": "A",
+          "condition": "at 480V, 3-phase",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-16",
+      "text": "Raised floor systems shall support a minimum concentrated load of 1000 lbs over a 1 square inch area.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 0,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "raised_floor",
+            "parameter": "concentrated_load",
+            "operator": ">=",
+            "value": 1000.0,
+            "unit": "lbf",
+            "condition": "@1 sq in area"
+          },
+          "matched": false
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "raised_floor",
+          "parameter": "concentrated_load",
+          "operator": ">=",
+          "value": 1000.0,
+          "unit": "lbs",
+          "condition": "over a 1 square inch area",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-17",
+      "text": "The generator fuel storage tank shall provide a minimum of 72 hours of runtime at 100% rated load.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 1,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "generator",
+            "parameter": "fuel_runtime",
+            "operator": ">=",
+            "value": 72.0,
+            "unit": "hr",
+            "condition": "@100% rated load"
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "generator",
+          "parameter": "fuel_runtime",
+          "operator": ">=",
+          "value": 72.0,
+          "unit": "hours",
+          "condition": "at 100% rated load",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-18",
+      "text": "Smoke detectors shall activate at a sensitivity not exceeding 2.5% obscuration per foot.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 1,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "smoke_detector",
+            "parameter": "sensitivity",
+            "operator": "<=",
+            "value": 2.5,
+            "unit": "%/ft",
+            "condition": null
+          },
+          "matched": true
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "smoke_detector",
+          "parameter": "sensitivity",
+          "operator": "<=",
+          "value": 2.5,
+          "unit": "%/ft",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-19",
+      "text": "The lightning protection system shall achieve strike termination coverage as per NFPA 780 using the rolling sphere method with a radius of 45 meters.",
+      "expected_count": 1,
+      "extracted_count": 1,
+      "matched_count": 0,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "lightning_protection",
+            "parameter": "rolling_sphere_radius",
+            "operator": "==",
+            "value": 45.0,
+            "unit": "m",
+            "condition": null
+          },
+          "matched": false
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "lightning_protection",
+          "parameter": "strike_termination_coverage",
+          "operator": "==",
+          "value": 45.0,
+          "unit": "meters",
+          "condition": "using the rolling sphere method",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "clause_id": "GT-20",
+      "text": "Emergency lighting shall maintain a minimum illumination of 1 foot-candle along egress paths for not less than 90 minutes.",
+      "expected_count": 2,
+      "extracted_count": 2,
+      "matched_count": 0,
+      "matches": [
+        {
+          "expected": {
+            "equipment_class": "emergency_lighting",
+            "parameter": "illumination",
+            "operator": ">=",
+            "value": 1.0,
+            "unit": "fc",
+            "condition": "@egress paths"
+          },
+          "matched": false
+        },
+        {
+          "expected": {
+            "equipment_class": "emergency_lighting",
+            "parameter": "duration",
+            "operator": ">=",
+            "value": 90.0,
+            "unit": "min",
+            "condition": null
+          },
+          "matched": false
+        }
+      ],
+      "extracted": [
+        {
+          "req_id": "ground_truth-p1-0",
+          "equipment_class": "emergency_lighting",
+          "parameter": "illumination",
+          "operator": ">=",
+          "value": 1.0,
+          "unit": "foot-candle",
+          "condition": "along egress paths",
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "req_id": "ground_truth-p1-1",
+          "equipment_class": "emergency_lighting",
+          "parameter": "runtime",
+          "operator": ">=",
+          "value": 90.0,
+          "unit": "minutes",
+          "condition": null,
+          "source_doc": "ground_truth",
+          "source_page": 1,
+          "source_bbox": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "Model outputs (the \"extracted\" field per clause) are from a real live Groq run. Re-scored against the CURRENT matching logic in evaluate_requirements.py (pint-based unit comparison incl. GPM/dBA/footcandle aliases added to app/core/units.py after this run completed) without any new API calls. A fresh end-to-end run was blocked by a Groq free-tier daily token quota; re-run python -m ingestion.evaluate_requirements once quota allows to regenerate from scratch."
+}

@@ -14,6 +14,7 @@ dependencies = [
     "docling>=2.5",
     "camelot-py[cv]>=0.11",
     "paddleocr>=2.9",
+    "paddlepaddle>=3.0",
     "qdrant-client>=1.11",
     "rank-bm25>=0.2.2",
     "networkx>=3.4",
@@ -53,7 +54,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["app*"]
+include = ["app*", "ingestion*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
