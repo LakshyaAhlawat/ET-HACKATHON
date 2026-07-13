@@ -1,0 +1,549 @@
+{
+  "metadata": {
+    "project": "ET AI Hackathon 2026 — PS4 Data Centre EPC Intelligence",
+    "total_questions": 50,
+    "categories": {
+      "planted_deviations": 15,
+      "multi_hop": 10,
+      "sld_topology": 10,
+      "rfi_dedup": 10,
+      "cascade_scenarios": 5
+    },
+    "instructions": "Do not adjust this key based on system output. This is the ground truth. If the system gets a question wrong, that's the system's fault, not the key's fault."
+  },
+  "questions": [
+    {
+      "id": "DEV_001",
+      "category": "planted_deviations",
+      "type": "capacity_undersized",
+      "question": "Specification MECH-3.4.2 requires chiller cooling capacity of not less than 500 TR at 35°C ambient. Vendor submittal (Vertiv CentraVac page 3) states cooling capacity 1688 kW. Is this compliant?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "1688 kW converts to approximately 480 TR, which is 4% under the 500 TR minimum at the specified ambient condition.",
+      "evidence": {
+        "spec_clause": "MECH-3.4.2",
+        "spec_document": "Mechanical Specification Division 23",
+        "spec_required": ">=500 TR @ 35°C ambient",
+        "submittal_document": "Vertiv CentraVac product cut sheet",
+        "submittal_page": 3,
+        "submittal_value": "1688 kW",
+        "unit_conversion": "1688 kW / 3.517 kW per TR = 480 TR",
+        "delta_percent": -4.0
+      }
+    },
+    {
+      "id": "DEV_002",
+      "category": "planted_deviations",
+      "type": "ip_rating_wrong",
+      "question": "Electrical Specification DIV-16 Section 16.1.2 requires all outdoor equipment enclosures to be minimum NEMA 4X (IP66 equivalent). Schneider Electric ATS (Automatic Transfer Switch) submittal lists enclosure rating as NEMA 4 (IP65). Is this acceptable?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "NEMA 4 (IP65) does not meet the IP66 requirement. While both are weather-tight, IP66 requires protection against heavy seas and high-pressure jets; IP65 does not.",
+      "evidence": {
+        "spec_clause": "DIV-16 §16.1.2",
+        "spec_required": "NEMA 4X (IP66 minimum)",
+        "submittal_value": "NEMA 4 (IP65)",
+        "nema_iec_mapping": "NEMA 4 = IP65, NEMA 4X = IP66",
+        "risk": "Corrosion ingress under high-pressure wash-down or monsoon conditions"
+      }
+    },
+    {
+      "id": "DEV_003",
+      "category": "planted_deviations",
+      "type": "missing_condition",
+      "question": "Specification ELEC-2.8.1 requires UPS runtime of 'not less than 20 minutes at full load at 25°C ambient'. Vertiv UPS submittal states runtime 20 minutes but does not specify ambient temperature or load condition. Is this sufficient to close the non-conformance?",
+      "expected_answer": "INSUFFICIENT_DATA",
+      "reason": "The requirement is conditional on '@25°C ambient' and '@full load'. The submittal value is unconditioned. We cannot verify compliance without these parameters stated explicitly.",
+      "evidence": {
+        "spec_clause": "ELEC-2.8.1",
+        "spec_condition": "@25°C ambient, @full load",
+        "submittal_value": "20 minutes (condition not stated)",
+        "risk": "Runtime degrades significantly at higher ambient; if not at 25°C, actual runtime may be 12–15 minutes",
+        "mitigation": "Request vendor to confirm performance curve or datasheet page specifying test conditions"
+      }
+    },
+    {
+      "id": "DEV_004",
+      "category": "planted_deviations",
+      "type": "redundancy_missing",
+      "question": "Tier III SLA requires N+1 generator redundancy (two independent generators, any one can carry full IT load). Project schedules one 2500 kVA generator with no standby unit. Does this meet Tier III power requirements?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "N+1 redundancy means two independent generators. One generator, regardless of capacity, is N (no redundancy). Tier III mandates N+1.",
+      "evidence": {
+        "requirement": "TIA-942 Tier III power train requirement",
+        "required": "Two independent generators, each capable of carrying full IT load (2500 kVA each minimum)",
+        "submitted": "One 2500 kVA generator",
+        "sla_impact": "Generator failure → immediate handover to facility generator → SLA breach"
+      }
+    },
+    {
+      "id": "DEV_005",
+      "category": "planted_deviations",
+      "type": "iplv_below_minimum",
+      "question": "Chiller specification requires minimum IPLV (Integrated Part Load Value) of 6.2 EER. Vendor submittal (Trane Sintesis page 12) lists IPLV 6.0 EER. Gap?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "6.0 EER is 3.2% below the 6.2 EER minimum. While seemingly close, IPLV is a standard efficiency metric and the spec is explicit.",
+      "evidence": {
+        "spec_clause": "MECH-3.4.3",
+        "spec_minimum": "6.2 EER",
+        "submitted": "6.0 EER",
+        "delta_percent": -3.2,
+        "annual_operating_cost_impact": "~₹12L higher per year at full capacity"
+      }
+    },
+    {
+      "id": "DEV_006",
+      "category": "planted_deviations",
+      "type": "switchgear_coordination_missing",
+      "question": "Specification requires single-line electrical diagram with coordination study showing breaker coordination (each upstream breaker clears faster than downstream). Vendor submits SLD but states 'coordination study available upon request, not included in this package'. Conformance?",
+      "expected_answer": "INSUFFICIENT_DATA",
+      "reason": "The spec requires the coordination study to be submitted as part of the electrical design package. A promise to provide it later is not compliance.",
+      "evidence": {
+        "spec_clause": "ELEC-4.2.1",
+        "spec_requirement": "Coordination study demonstrating proper breaker selectivity",
+        "submittal": "SLD only; study deferred",
+        "risk": "Cascading breaker trips; nuisance outages if coordination is poor",
+        "mitigation": "Reject submittal; require resubmission with coordination study included"
+      }
+    },
+    {
+      "id": "DEV_007",
+      "category": "planted_deviations",
+      "type": "unit_conversion_trap_kva_kw",
+      "question": "UPS specification requires minimum power capacity of 250 kW at 0.9 power factor. Vendor submittal rates UPS as 250 kVA. Is the UPS adequately sized?",
+      "expected_answer": "INSUFFICIENT_DATA",
+      "reason": "At 0.9 PF, 250 kVA UPS delivers 250 × 0.9 = 225 kW. This is 10% below the required 250 kW. Alternatively, to deliver 250 kW at 0.9 PF requires a 278 kVA UPS minimum. Submittal does not state PF or actual kW output.",
+      "evidence": {
+        "spec_requirement": "250 kW @ 0.9 PF minimum",
+        "submitted_value": "250 kVA (PF not stated)",
+        "correction": "For 250 kW @ 0.9 PF, UPS must be rated ≥278 kVA",
+        "this_error": "Undersizes by ~30 kW, leading to IT load shedding under peak demand"
+      }
+    },
+    {
+      "id": "DEV_008",
+      "category": "planted_deviations",
+      "type": "redundant_path_vio",
+      "question": "Two independent chilled water loops are required for Tier III redundancy (any one loop can cool the entire facility). Piping plan shows both loops from the same chiller plant header without isolation valves. Compliant?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "Without isolation, both loops fail together if the header fails. True redundancy requires independent chiller units and separate headers, or at minimum isolation valves such that one loop can operate in isolation.",
+      "evidence": {
+        "requirement": "TIA-942 Tier III cooling redundancy (2N)",
+        "submitted_design": "Dual loops from single header, no isolation",
+        "failure_mode": "Cooling header leak → both loops affected → facility fails",
+        "correction": "Require two independent chiller units with isolated headers or add isolation valves with bypass logic"
+      }
+    },
+    {
+      "id": "DEV_009",
+      "category": "planted_deviations",
+      "type": "documentation_incomplete",
+      "question": "Specification Section QUAL-2.3 requires 'all vendor submittals shall include a certificate of compliance, test reports for the equipment, and warranty documentation'. Chiller vendor provides only product cut sheet and warranty. Missing?",
+      "expected_answer": "INSUFFICIENT_DATA",
+      "reason": "Submittal is incomplete. Certificate of compliance and test reports are contractually required and are not included.",
+      "evidence": {
+        "spec_clause": "QUAL-2.3",
+        "required_documents": ["product cut sheet", "certificate of compliance", "test reports", "warranty"],
+        "provided": ["product cut sheet", "warranty"],
+        "missing": ["certificate of compliance", "test reports"],
+        "mitigation": "Request vendor to provide missing documents or obtain third-party test certification"
+      }
+    },
+    {
+      "id": "DEV_010",
+      "category": "planted_deviations",
+      "type": "acoustic_noise_limit",
+      "question": "Chiller noise limit specified as maximum 82 dB(A) at 1 meter under full-load conditions. Vertiv submittal lists 84 dB(A). Over limit?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "84 dB(A) exceeds the 82 dB(A) specification by 2 dB. While seemingly small, 2 dB is a ~58% increase in acoustic intensity and is perceptually loud.",
+      "evidence": {
+        "spec": "82 dB(A) max @ 1 m, full load",
+        "submitted": "84 dB(A)",
+        "excess": "2 dB (58% higher)",
+        "impact": "Elevated noise in data hall; potential regulatory non-compliance if facility has acoustic zoning requirements"
+      }
+    },
+    {
+      "id": "DEV_011",
+      "category": "planted_deviations",
+      "type": "vibration_spec_violation",
+      "question": "Vibration specification limits chiller bearing vibration to 2.8 mm/s RMS. CMS (Condition Monitoring System) baseline measurement shows 3.1 mm/s. Acceptable?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "3.1 mm/s exceeds 2.8 mm/s limit. ISO 10816 guidance for Class II machines suggests this level indicates 'unsatisfactory' condition. Escalation path required.",
+      "evidence": {
+        "spec_limit": "2.8 mm/s RMS",
+        "observed": "3.1 mm/s RMS",
+        "iso_10816_reference": "Class II machines; 2.8 = Zone B (acceptable), 3.1 = Zone C (marginal, requires monitoring)",
+        "risk": "Bearing wear accelerated; failure risk elevated"
+      }
+    },
+    {
+      "id": "DEV_012",
+      "category": "planted_deviations",
+      "type": "thermal_interface_material",
+      "question": "CPU cooler specification requires thermal interface material (TIM) thermal conductivity of minimum 3.5 W/m·K. Vendor specifies TIM conductivity 3.2 W/m·K. Compliant?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "3.2 W/m·K is below the 3.5 W/m·K minimum. This degrades heat transfer and increases die temperature by ~2–3°C under load.",
+      "evidence": {
+        "spec": "≥3.5 W/m·K",
+        "submitted": "3.2 W/m·K",
+        "impact": "Core temperature rises ~2–3°C; throttling risk under peak load; lifespan reduction"
+      }
+    },
+    {
+      "id": "DEV_013",
+      "category": "planted_deviations",
+      "type": "fire_rating_cable",
+      "question": "Fire safety spec requires all power cable in cable trays within 10 meters of IT equipment to be rated IEC 60332-1 Category A (non-propagating flame). Vendor submits specification for IEC 60332-1 Category B cable. Acceptable?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "Category B is lower than Category A. Category B cable supports flame propagation for longer distance. Tier III fire safety demands Category A in sensitive zones.",
+      "evidence": {
+        "spec": "IEC 60332-1 Cat A (non-propagating within 1 m)",
+        "submitted": "IEC 60332-1 Cat B (flame propagates 2–3 m)",
+        "risk": "Fire propagation risk in cable tray; potential facility-wide outage",
+        "correction": "Require Category A cable or re-route cable away from IT equipment zone"
+      }
+    },
+    {
+      "id": "DEV_014",
+      "category": "planted_deviations",
+      "type": "mean_time_between_failure",
+      "question": "Specification requires MTBF (Mean Time Between Failure) of minimum 100,000 hours for all UPS modules. Vendor datasheet lists MTBF 95,000 hours. Compliant?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "95,000 hours is 5% below the 100,000-hour minimum. While close, the spec is explicit and MTBF is a contractual performance metric.",
+      "evidence": {
+        "spec": "MTBF ≥100,000 hours",
+        "submitted": "95,000 hours",
+        "gap_percent": -5,
+        "annualized_failure_risk": "Increases by ~5% per year across the UPS fleet"
+      }
+    },
+    {
+      "id": "DEV_015",
+      "category": "planted_deviations",
+      "type": "lead_time_extension",
+      "question": "Procurement specification requires equipment delivery within 16 weeks of order placement. Vendor quote states 'standard lead time 18 weeks, expedite available at 15% premium'. Does quote meet the specification?",
+      "expected_answer": "NON_CONFORMANCE",
+      "reason": "Standard lead time (18 weeks) exceeds the 16-week requirement. Expediting is a cost adder and was not requested in the specification.",
+      "evidence": {
+        "spec_requirement": "Delivery within 16 weeks",
+        "quote_lead_time": "18 weeks standard, 15% premium for 15-week expedite",
+        "compliance": "Does not meet spec as quoted; would require expedite at additional cost",
+        "schedule_impact": "2-week critical-path slip unless expedite is absorbed by project budget"
+      }
+    },
+    {
+      "id": "MULTI_001",
+      "category": "multi_hop",
+      "type": "vendor_to_timeline",
+      "question": "Which vendors supply equipment on the critical path for the Tier III power train, and what is the aggregate lead time for delivery?",
+      "expected_answer": "Schneider (ATS, 14 wks) + Caterpillar (generator, 16 wks) + Vertiv (UPS, 12 wks). Parallel procurement: max(14, 16, 12) = 16 weeks on the critical path.",
+      "reasoning": "Answer requires: (1) identify Tier III power train equipment types (ATS, generator, UPS), (2) find which vendors supply each, (3) cross-reference procurement schedules, (4) identify critical path.",
+      "evidence_pointers": ["Electrical Single-Line Diagram", "Vendor list / Approved Manufacturers", "Procurement schedule", "Critical path analysis"]
+    },
+    {
+      "id": "MULTI_002",
+      "category": "multi_hop",
+      "type": "equipment_conflict",
+      "question": "Chiller manufacturer Trane specifies water inlet temperature max 54°C; cooling tower manufacturer Marley specifies minimum water exit temperature 32°C at design ambient 35°C. Can Trane and Marley equipment be combined in the proposed cooling loop without conflict?",
+      "expected_answer": "INSUFFICIENT_DATA (conflicting or marginal)",
+      "reasoning": "Chiller inlet max 54°C means outlet should be ~6°C cooler (typical chiller approach); Marley exit 32°C at 35°C ambient leaves little margin. Requires detailed cooling load analysis and balance-point calculation.",
+      "evidence_pointers": ["Trane chiller datasheet", "Marley cooling tower selection guide", "Cooling load calculation", "System schematic"]
+    },
+    {
+      "id": "MULTI_003",
+      "category": "multi_hop",
+      "type": "regulatory_compliance_linkage",
+      "question": "Local building code requires emergency power backup for all safety systems. The facility has emergency lighting, fire suppression control, and HVAC safety interlocks. Are all three systems backed up by the UPS?",
+      "expected_answer": "INSUFFICIENT_DATA",
+      "reasoning": "Requires cross-reference: (1) building code safety system list, (2) facility systems list, (3) UPS load inventory. If UPS does not include fire suppression or HVAC safety control, there is a code violation.",
+      "evidence_pointers": ["Local building code / safety requirements", "UPS load summary", "System single-line diagram"]
+    },
+    {
+      "id": "MULTI_004",
+      "category": "multi_hop",
+      "type": "budget_vs_schedule",
+      "question": "Expediting the transformer delivery from 18 weeks to 14 weeks costs ₹45 lakh. If the delay pushes commissioning past the monsoon window (adding 4 weeks to testing), what is the net cost of expediting?",
+      "expected_answer": "Expedite cost ₹45 lakh is justified; net savings ≈ ₹180 lakh (4 weeks × ~₹45 lakh/week crew and facility rental).",
+      "reasoning": "Requires: (1) expedite cost, (2) delay impact (months), (3) cost of delay (crew, facility, rental). Compares marginal cost of expedite vs. cost of extended schedule.",
+      "evidence_pointers": ["Vendor quote", "Project schedule", "Facility rental and crew cost estimates"]
+    },
+    {
+      "id": "MULTI_005",
+      "category": "multi_hop",
+      "type": "single_point_of_failure",
+      "question": "If the single-point-of-failure chiller in the cooling loop fails mid-project, which scheduled tasks cannot proceed?",
+      "expected_answer": "Cooling system test, integrated systems test (IST), and commissioning all depend on chiller operation. A chiller failure delays commissioning by ≥4 weeks (lead time for replacement).",
+      "reasoning": "Requires: (1) identify all downstream dependencies on chiller, (2) map to project schedule, (3) compute delay impact.",
+      "evidence_pointers": ["Project schedule network", "Commissioning prerequisites", "Critical path"]
+    },
+    {
+      "id": "MULTI_006",
+      "category": "multi_hop",
+      "type": "redundancy_activation",
+      "question": "Per Tier III SLA, upon ATS failure, the facility must failover to the backup generator within 4 milliseconds. What equipment and procedures are required to achieve this?",
+      "expected_answer": "Requires: (1) dual independent ATS units in series, (2) fast-transfer logic in PLC, (3) generator rated to accept load within 2–3 ms, (4) static transfer switch bypass. Procedures include testing and maintenance schedules.",
+      "reasoning": "Answer spans electrical design, automation, and operational readiness — requires cross-referencing SLA, spec, and design documents.",
+      "evidence_pointers": ["Electrical spec", "Tier III SLA definition", "Automation logic diagram", "Equipment datasheets"]
+    },
+    {
+      "id": "MULTI_007",
+      "category": "multi_hop",
+      "type": "warranty_coordination",
+      "question": "Chiller warranty is void if water quality does not meet ISO 11162 standard (particle count, pH, corrosion inhibitor). Who in the project team is responsible for verifying water treatment before commissioning?",
+      "expected_answer": "Mechanical engineering team (pre-commission), facility operations team (ongoing). Requires coordination between chiller vendor, water treatment vendor, and facility team. Verification via water sampling and lab analysis.",
+      "reasoning": "Requires cross-reference: warranty terms, ISO standard, project responsibilities, testing procedures.",
+      "evidence_pointers": ["Chiller warranty", "ISO 11162", "Water treatment spec", "RACI matrix"]
+    },
+    {
+      "id": "MULTI_008",
+      "category": "multi_hop",
+      "type": "spare_parts_criticality",
+      "question": "Which 3 pieces of equipment are on the critical path for spare parts, and what minimum inventory is required on-site during operations?",
+      "expected_answer": "Generator fuel filters (consumable, 1-month stock), UPS battery cells (high lead time, 1 set on-site), ATS control board (long lead time, 1 spare on-site). Answer requires vendor lead times, failure rates, and operational MTBF targets.",
+      "reasoning": "Multi-hop across vendor catalogs, failure statistics, project procurement plan, and operational procedures.",
+      "evidence_pointers": ["Vendor datasheets", "Spare parts list", "Failure rate analysis", "Operational manual"]
+    },
+    {
+      "id": "MULTI_009",
+      "category": "multi_hop",
+      "type": "thermal_design_iteration",
+      "question": "If the data hall ambient temperature rises 2°C above design (from 24°C to 26°C), which chilled water supply temperature is required to maintain target IT inlet temperature of 27°C?",
+      "expected_answer": "Requires detailed thermal modeling: cooler approach temperature, delta-T across IT equipment, and adjustment. Typically requires 2–3°C reduction in chilled water supply (e.g., from 12°C to 9°C), which may stress chiller capacity.",
+      "reasoning": "Cross-discipline: thermal design, chiller capacity, cooling loop balance, operational flexibility.",
+      "evidence_pointers": ["Thermal design report", "Chiller performance curves", "IT equipment inlet limits"]
+    },
+    {
+      "id": "MULTI_010",
+      "category": "multi_hop",
+      "type": "change_order_impact",
+      "question": "A change order increases IT equipment capacity by 15%, requiring additional cooling. What is the cascading impact on: (1) chiller size, (2) cooling tower size, (3) pump capacity, (4) electrical distribution, and (5) handover timeline?",
+      "expected_answer": "Requires re-sizing all cooling loop components (~15–20% increase), re-engineering electrical load calcs, potential re-procurement if equipment lead times are exceeded. Likely 6–8 week delay.",
+      "reasoning": "Systems thinking: one change triggers cascading re-engineering across multiple disciplines and potentially re-procurement.",
+      "evidence_pointers": ["Design basis memo", "Equipment datasheets", "Project schedule", "Vendor lead times"]
+    },
+    {
+      "id": "SLD_001",
+      "category": "sld_topology",
+      "type": "redundancy_path_count",
+      "question": "Examining the single-line diagram for the IT power distribution (from generator input to IT load), how many independent paths exist from generator to IT distribution panel?",
+      "expected_answer": "Two independent paths (2N redundancy): Generator A → ATS A → UPS A → Switchboard A → IT Load, and Generator B → ATS B → UPS B → Switchboard B → IT Load. Paths must share NO common node except the generator inputs.",
+      "reasoning": "Requires visual inspection of SLD topology to trace all paths from source to load and verify they do not share an intermediate node.",
+      "evidence_pointers": ["Single-line electrical diagram"]
+    },
+    {
+      "id": "SLD_002",
+      "category": "sld_topology",
+      "type": "single_point_of_failure",
+      "question": "In the submitted SLD, both the Cooling Tower fans (emergency manual failover) and the Building HVAC system (safety interlocks) are fed from the same 125A feeder breaker (CB-07). If CB-07 trips, what systems are affected?",
+      "expected_answer": "Both cooling tower fans AND building HVAC safety interlocks lose power. If this happens during peak IT load, facility cooling collapses and safety systems fail. This is a single point of failure and violates Tier III design principles.",
+      "reasoning": "Requires tracing the SLD to identify shared circuit; evaluates design redundancy.",
+      "evidence_pointers": ["Single-line diagram", "One-line feeder details"]
+    },
+    {
+      "id": "SLD_003",
+      "category": "sld_topology",
+      "type": "breaker_selectivity",
+      "question": "Verify breaker coordination: if a fault occurs downstream of Breaker CB-05 (125A, 3-phase), will CB-05 trip before its upstream breaker CB-02 (300A)? (Assume typical TCC curves for ABB ACB breakers.)",
+      "expected_answer": "Requires access to time-current curves (TCCs) for both breakers. CB-05 should trip faster (lower current threshold at any fault magnitude) so that CB-05 clears the fault in isolation. If CB-02 clears first, selectivity is lost and a localized fault trips the main feeder.",
+      "reasoning": "SLD includes breaker sizes and types; answer requires cross-reference to TCC curves to verify coordination.",
+      "evidence_pointers": ["Single-line diagram", "Breaker datasheets / TCC curves", "Coordination study (if provided)"]
+    },
+    {
+      "id": "SLD_004",
+      "category": "sld_topology",
+      "type": "transformer_phasing",
+      "question": "The incoming utility feeder and the backup generator are both connected to the facility through a 5-MVA transformer via separate ATSs. If both are live and connected simultaneously, what is the risk?",
+      "expected_answer": "Phase rotation mismatch or voltage phase angle mismatch between utility and generator causes a destructive short circuit through the transformer, damaging both the transformer and the generator. This is a hard electrical fault and must be prevented by interlocking the ATS (only one source live at a time).",
+      "reasoning": "Requires understanding of 3-phase power systems, ATS interlocks, and fault analysis.",
+      "evidence_pointers": ["Single-line diagram", "ATS control logic", "Generator specifications"]
+    },
+    {
+      "id": "SLD_005",
+      "category": "sld_topology",
+      "type": "load_distribution",
+      "question": "The SLD shows two UPS units (UPS-A and UPS-B) supplying an IT distribution panel. If UPS-A capacity is 150 kW and UPS-B is 100 kW, and IT equipment load is estimated at 180 kW, what is the state of the system?",
+      "expected_answer": "Combined UPS capacity (250 kW) exceeds peak load (180 kW), so all IT load is backed up. However, each UPS should be sized for full load independently (N+1 redundancy). Here, UPS-B alone (100 kW) cannot sustain a failure of UPS-A (loss of 150 kW while load is 180 kW → shortfall of 80 kW). This violates N+1 design.",
+      "reasoning": "Requires capacity analysis and redundancy principles.",
+      "evidence_pointers": ["Single-line diagram", "UPS specifications", "Load calculations"]
+    },
+    {
+      "id": "SLD_006",
+      "category": "sld_topology",
+      "type": "grounding_distribution",
+      "question": "In the grounding schematic (part of the SLD), is there a single point of grounding for all equipment, or are multiple ground paths established? What is the risk of each approach?",
+      "expected_answer": "Single point of grounding (star grounding): lower noise, better EMI control, but single-point failure risk. Multiple paths: better fault tolerance but higher loop inductance and potential ground loops. Tier III typically mandates star grounding with redundant ground paths.",
+      "reasoning": "Requires understanding of power system grounding philosophies and EMI considerations.",
+      "evidence_pointers": ["Grounding diagram", "Equipment EMC specs", "Electrical code requirements"]
+    },
+    {
+      "id": "SLD_007",
+      "category": "sld_topology",
+      "type": "neutral_grounding_resistance",
+      "question": "The SLD specifies a neutral grounding resistor (NGR) rated 6.25 Ohms. For a 3-phase 415V system with line-to-ground fault, calculate the fault current magnitude. Is this safe?",
+      "expected_answer": "Fault current ≈ 415 / 6.25 ≈ 66 A (line-to-ground). For a 415V industrial system, this is a moderate fault current and should be cleared in <1 second by protective relays to prevent transformer heating. Requires confirmation that protection relays are coordinated.",
+      "reasoning": "Calculation + safety evaluation.",
+      "evidence_pointers": ["SLD", "NGR datasheet", "Protective relay settings"]
+    },
+    {
+      "id": "SLD_008",
+      "category": "sld_topology",
+      "type": "harmonic_distortion_path",
+      "question": "VFD (variable frequency drive) motors introduce harmonic currents. If VFDs are connected to the same switchboard as sensitive IT equipment, what filtering is required?",
+      "expected_answer": "VFDs generate 5th, 7th, 11th, 13th harmonics. Sensitive IT equipment (servers, storage) is vulnerable to harmonic distortion >5% THD. Mitigation: line reactors on VFD inputs and/or active harmonic filters on the switchboard.",
+      "reasoning": "Requires understanding of power quality, harmonic sources, and filtering strategies.",
+      "evidence_pointers": ["SLD", "VFD datasheets", "Power quality spec", "Harmonic filter design"]
+    },
+    {
+      "id": "SLD_009",
+      "category": "sld_topology",
+      "type": "transient_overvoltage",
+      "question": "When a large inductive load (chiller compressor motor) is switched off by a contactor, a voltage transient spike can damage downstream equipment. What protection is shown on the SLD?",
+      "expected_answer": "SLD should show surge protection devices (SPDs / varistors) or RC snubber circuits across the contactor coil or load. Absence of these indicates a design gap that could cause nuisance equipment failures.",
+      "reasoning": "Transient analysis; equipment protection design.",
+      "evidence_pointers": ["Single-line diagram", "Control schematics", "Component datasheets"]
+    },
+    {
+      "id": "SLD_010",
+      "category": "sld_topology",
+      "type": "utility_vs_backup_synchronization",
+      "question": "If the facility is connected to the utility grid and also has an on-site generator, how does the SLD ensure they do not attempt to supply load simultaneously when the ATS switches between them?",
+      "expected_answer": "SLD must show make-before-break or break-before-make ATS logic. Modern static transfer switches (STS) have zero-transfer-time capability, but traditional mechanical ATS require a brief transfer period (10–50 ms) where load is momentarily unsupplied. SLD should clarify this in the transfer logic annotation.",
+      "reasoning": "Synchronization and transfer logic.",
+      "evidence_pointers": ["SLD", "ATS control logic", "ATS datasheets"]
+    },
+    {
+      "id": "RFI_001",
+      "category": "rfi_dedup",
+      "type": "water_temp_setpoint",
+      "question": "RFI-0124 (2024-03-15): What is the required chilled water supply temperature setpoint for the cooling loop? Response: 12°C ± 1°C. RFI-0287 (2024-09-22): Chiller is sized for 13°C supply temperature, can we operate at 13°C instead of 12°C? Contradiction detected?",
+      "expected_answer": "YES, contradiction. RFI-0124 mandates 12°C ± 1°C (allowable range 11–13°C). RFI-0287 proposes 13°C operation to match chiller sizing, which is at the upper limit of the allowable range. If the facility IT inlet limits demand 12°C, then 13°C is marginal. Clarification required: does IT equipment allow 13°C inlet, or is chiller undersized?",
+      "reasoning": "RFI consistency check; identifies contradictory vendor responses.",
+      "evidence_pointers": ["RFI-0124 resolution", "RFI-0287 resolution", "IT equipment inlet specifications", "Chiller datasheet"]
+    },
+    {
+      "id": "RFI_002",
+      "category": "rfi_dedup",
+      "type": "generator_fuel_type",
+      "question": "RFI-0089 (2024-01-12): Can the backup generator run on biodiesel fuel? Response: Yes, ISO 8675 biodiesel approved. RFI-0156 (2024-05-08): Does biodiesel fuel affect warranty? Response: Biodiesel use voids manufacturer warranty unless biodiesel is specified in original equipment submittal. Conflict?",
+      "expected_answer": "YES, conflict. RFI-0089 approves biodiesel without caveat. RFI-0156 conditions approval on original warranty terms. If the generator was not originally specified for biodiesel, using it voids warranty. Mitigation: update equipment specification to explicitly approve biodiesel, or reject biodiesel use.",
+      "reasoning": "RFI consistency; identifies warranty implications.",
+      "evidence_pointers": ["RFI-0089", "RFI-0156", "Generator specifications", "Fuel supplier certification"]
+    },
+    {
+      "id": "RFI_003",
+      "category": "rfi_dedup",
+      "type": "transformer_oil_type",
+      "question": "RFI-0201 (2024-04-30): Is transformer oil type eco-friendly (vegetable-based) acceptable? Response: Yes, vegetable oil acceptable per IEEE C57.147. RFI-0245 (2024-07-11): Eco-friendly oil reduces transformer life, correct? Response: Yes, vegetable oil has lower temperature rating (65°C rise vs. 55°C for mineral), requiring derating. Conflict or clarification?",
+      "expected_answer": "CLARIFICATION REQUIRED. Both RFIs are individually accurate but create a conflict: eco-oil is acceptable but requires derating. The project must decide: (1) accept eco-oil with reduced capacity (derating), or (2) reject eco-oil and use mineral oil for full capacity. This decision affects transformer sizing.",
+      "reasoning": "RFI coherence; identifies hidden tradeoffs.",
+      "evidence_pointers": ["RFI-0201", "RFI-0245", "IEEE C57.147", "Transformer capacity derate tables"]
+    },
+    {
+      "id": "RFI_004",
+      "category": "rfi_dedup",
+      "type": "hvac_setpoint",
+      "question": "RFI-0076 (2024-02-14): What HVAC temperature setpoint is required for data hall ambient? Response: 24°C ± 2°C (allowable 22–26°C). RFI-0167 (2024-06-20): Can we loosen setpoint to 26–28°C to save energy? Response: Energy savings possible but IT equipment inlet temps may exceed 30°C, risking thermal shutdown. Recommendation: maintain 24°C ± 2°C per specification.",
+      "expected_answer": "NO conflict, but RFI-0167 correctly identifies the risk. Response confirms the 24°C setpoint is not arbitrary but tied to IT thermal limits. Using RFI-0167 response as evidence, a deviation to 26–28°C would be out-of-spec and risky.",
+      "reasoning": "RFI consistency; confirms spec reasoning.",
+      "evidence_pointers": ["RFI-0076", "RFI-0167", "IT equipment datasheets", "Thermal design report"]
+    },
+    {
+      "id": "RFI_005",
+      "category": "rfi_dedup",
+      "type": "ups_battery_chemistry",
+      "question": "RFI-0098 (2024-03-05): What UPS battery chemistry is approved? Response: Valve-regulated lead-acid (VRLA) or lithium-ion, vendor choice. RFI-0178 (2024-07-01): Lithium-ion UPS battery — how often must it be replaced? Response: 10-year design life, replacement every 10 years. RFI-0201 (2024-08-15): VRLA batteries — replacement interval? Response: 5-year design life, replacement every 5 years. Implication?",
+      "expected_answer": "RFI responses show lithium-ion offers 2× the life of VRLA. While both are acceptable per RFI-0098, total cost-of-ownership favors lithium-ion (fewer replacements, lower labor). This should be reflected in the vendor evaluation and cost-benefit analysis.",
+      "reasoning": "RFI discovery of hidden cost drivers; requires synthesis across multiple RFIs.",
+      "evidence_pointers": ["RFI-0098", "RFI-0178", "RFI-0201", "UPS battery supplier quotes"]
+    },
+    {
+      "id": "RFI_006",
+      "category": "rfi_dedup",
+      "type": "crac_unit_control",
+      "question": "RFI-0132 (2024-04-10): What control strategy is used for CRAC (Computer Room Air Conditioner) units? Response: Temperature-based on-off control; when supply air <20°C, CRAC shuts down; when >24°C, CRAC energises. RFI-0219 (2024-08-30): Can CRAC units run in variable-capacity mode for efficiency? Response: Yes, modulating valve control available at +₹8L cost per unit. Trade-off?",
+      "expected_answer": "RFI-0132 specifies on-off control. RFI-0219 offers modulation as a cost adder. Project must choose: (1) on-off (lower cost, higher energy variability, potential hunting), or (2) modulating (higher cost, smoother operation, lower energy). No contradiction, but a cost-benefit decision point.",
+      "reasoning": "RFI reveals design option space and cost tradeoffs.",
+      "evidence_pointers": ["RFI-0132", "RFI-0219", "CRAC datasheets", "Energy cost models"]
+    },
+    {
+      "id": "RFI_007",
+      "category": "rfi_dedup",
+      "type": "monitoring_scope",
+      "question": "RFI-0145 (2024-05-22): What systems require real-time monitoring dashboards? Response: Power (UPS, generator, ATS status), cooling (chiller, CRAC temps), and IT environmental sensors. RFI-0236 (2024-09-01): Do fire suppression and security systems also need monitoring dashboards? Response: Fire suppression monitoring required per fire code; security is separate system, not included in environmental dashboard. Clarification?",
+      "expected_answer": "CLARIFICATION: Scope of monitoring is power + cooling + IT environment + fire suppression. Security is explicitly out of scope for this project. This correctly partitions responsibilities between the EPC team (power/cooling) and the building systems integrator (fire/security).",
+      "reasoning": "RFI clarity on project scope and responsibility boundaries.",
+      "evidence_pointers": ["RFI-0145", "RFI-0236", "Project scope statement", "Fire code requirements"]
+    },
+    {
+      "id": "RFI_008",
+      "category": "rfi_dedup",
+      "type": "commissioning_personnel",
+      "question": "RFI-0167 (2024-06-18): Who is responsible for conducting IST (Integrated Systems Test)? Response: EPC contractor + equipment manufacturer representatives. RFI-0251 (2024-09-10): Can facility operations team participate in IST, or does it compromise independent verification? Response: Facility team observes but does not conduct test. Independent third-party agency can be hired for additional verification. Practice?",
+      "expected_answer": "RFI-0251 clarifies the role distinction: EPC + OEM conduct; facility observes; third-party provides independent assurance. This is standard practice for Tier III commissioning and ensures objectivity.",
+      "reasoning": "RFI confirms industry best practice and governance structure.",
+      "evidence_pointers": ["RFI-0167", "RFI-0251", "Commissioning plan", "Uptime Institute Tier definitions"]
+    },
+    {
+      "id": "RFI_009",
+      "category": "rfi_dedup",
+      "type": "test_data_retention",
+      "question": "RFI-0189 (2024-07-15): How long must IST test records and logs be retained? Response: Per TIA-942 Tier III, minimum 10 years for major systems, 5 years for auxiliary. RFI-0267 (2024-09-25): Can test records be stored digitally, or must paper copies be retained? Response: Digital records acceptable if certified and access-controlled; paper copies recommended for critical tests. Dual approach?",
+      "expected_answer": "CLARIFICATION: Dual approach is recommended by RFI-0267: digital primary (for efficiency and searchability), paper backup for critical tests (for audit trail and legal defensibility). Both are acceptable if retention periods per RFI-0189 are met.",
+      "reasoning": "RFI reveals compliance nuance and risk management trade-off.",
+      "evidence_pointers": ["RFI-0189", "RFI-0267", "TIA-942 Tier III standards", "Records management policy"]
+    },
+    {
+      "id": "RFI_010",
+      "category": "rfi_dedup",
+      "type": "change_control_authority",
+      "question": "RFI-0213 (2024-08-02): Who can approve design changes after equipment is ordered? Response: Change Control Board (CCB) comprising client, EPC, and major equipment vendors. RFI-0284 (2024-10-05): If a change is minor (e.g., +5% load increase), does it require full CCB approval? Response: Yes, any change ≥1% cost or schedule impact requires CCB approval; 'minor' is not defined. Scope creep risk?",
+      "expected_answer": "RFI-0284 correctly closes the loophole: even small changes require CCB approval if they affect cost or schedule. This prevents scope creep and ensures design integrity. Implication: project must track and formally approve all changes, no matter how small.",
+      "reasoning": "RFI enforces governance discipline and identifies change control risk.",
+      "evidence_pointers": ["RFI-0213", "RFI-0284", "Change control procedure", "Project schedule baseline"]
+    },
+    {
+      "id": "CASCADE_001",
+      "category": "cascade_scenarios",
+      "type": "transformer_delay",
+      "question": "Transformer delivery is delayed from week 16 to week 19 (3-week slip). Switchgear installation depends on transformer delivery. Switchgear-to-IST is 6 weeks. IST-to-handover is 2 weeks. Target handover: week 35. What is the new handover date?",
+      "expected_answer": "Original: Transformer (W16) → Switchgear install (W16–W22) → IST (W22–W28) → Handover (W28–W30, call W30). Delay: Transformer now W19. Switchgear (W19–W25) → IST (W25–W31) → Handover W33. Slip from W30 to W33 = 3 weeks. **But check monsoon window:** if monsoon is W31–W40, IST now occurs in monsoon season, adding 4 weeks. New handover = W37.",
+      "reasoning": "Requires DAG traversal + seasonal window impact.",
+      "evidence_pointers": ["Project schedule", "Critical path", "Seasonal calendar"]
+    },
+    {
+      "id": "CASCADE_002",
+      "category": "cascade_scenarios",
+      "type": "concurrent_delay",
+      "question": "Both transformer (–3 weeks) and generator (–2 weeks) are delayed. Both are on the critical path for power-train IST. What is the aggregate critical-path slip?",
+      "expected_answer": "Both delays occur in series (generator tested after transformer is installed), so aggregate slip = max(3, 2) = 3 weeks (the transformer delay dominates because it's earlier). If both block the same IST window, aggregate = 3 weeks, not 5 weeks.",
+      "reasoning": "Critical-path analysis; parallel vs. sequential delays.",
+      "evidence_pointers": ["Project schedule", "Equipment dependencies"]
+    },
+    {
+      "id": "CASCADE_003",
+      "category": "cascade_scenarios",
+      "type": "mitigation_cost_benefit",
+      "question": "Mitigation option A: air-freight transformer (₹45 lakh adder, recovers 3 weeks). Mitigation option B: split IST into two phases, resequence to overlap (₹0 adder, recovers 1.5 weeks). Monsoon window loss = 4 weeks. Which mitigation is cost-effective?",
+      "expected_answer": "Without mitigation, handover slips 3 weeks into monsoon (IST delayed 3 weeks, then monsoon adds 4 more = 7-week total slip = ₹315 lakh cost). Option A: ₹45 lakh cost, recovers 3 weeks, leaves 4-week monsoon impact = ₹180 lakh cost, net gain ₹90 lakh. Option B: ₹0 cost, recovers 1.5 weeks, leaves 5.5-week monsoon impact = ₹247 lakh cost, net loss. **Option A is justified.** Run numerical simulation to confirm.",
+      "reasoning": "Cost-benefit analysis with seasonal impact multiplication.",
+      "evidence_pointers": ["Project budget", "Facility rental costs", "Crew costs", "Vendor quotes"]
+    },
+    {
+      "id": "CASCADE_004",
+      "category": "cascade_scenarios",
+      "type": "resource_constraint",
+      "question": "The installation crew is fully booked W20–W32. If switchgear installation is delayed from W20–W26 to W25–W31, does the crew schedule conflict? What is the mitigation?",
+      "expected_answer": "Conflict: switchgear now ends in W31, but crew is unavailable W25–W31. Mitigations: (1) hire a second crew for W25–W31 (+₹30 lakh), (2) delay other tasks to free up crew, or (3) reduce crew size and extend duration (crew constraints + monsoon risk). Requires RCPM (Resource-Constrained Project Management) analysis.",
+      "reasoning": "Resource leveling; identifies labor bottlenecks.",
+      "evidence_pointers": ["Project schedule", "Crew allocation", "Budget"]
+    },
+    {
+      "id": "CASCADE_005",
+      "category": "cascade_scenarios",
+      "type": "handover_threshold",
+      "question": "Client has stated 'handover after 31 March 2025 incurs ₹1 crore/week penalty; any handover after 30 June triggers contract termination clause'. With a 7-week monsoon slip, handover is now 15 August 2025. What is the penalty and is the project at risk of termination?",
+      "expected_answer": "Handover date: 15 August = 46 days after 30 June = 6.5 weeks past termination threshold. Penalty and termination both apply. **This is an existential project risk.** Mitigations must recover at least 3 weeks to avoid termination (by 21 July). Air-freight transformer recovers 3 weeks + IST resequencing recovers 1.5 weeks = 4.5 weeks recovery → handover ~22 July = 22 days past 30 June = 3+ week penalty = ₹3 crore, but termination avoided.",
+      "reasoning": "Schedule risk with contractual consequences.",
+      "evidence_pointers": ["Contract terms", "Penalty clause", "Delay cascade", "Mitigation options"]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "note": "Not part of the official 50-question ground-truth key (ground_truth_50.json). These five synthesized compliant cases exist solely to give scoring.py a negative class for the precision/recall curve on deviation detection -- see data/fixtures/benchmark_corpus/control_pass_cases.md for the source text and provenance disclosure.",
+  "questions": [
+    {"id": "CTRL_001", "category": "planted_deviations", "req_id": "CTRL-1", "expected_answer": "PASS", "question": "Generator prime power specification requires not less than 1500 kVA at 0.8 lagging PF. Caterpillar submittal states 1600 kVA at 0.8 lagging PF. Compliant?"},
+    {"id": "CTRL_002", "category": "planted_deviations", "req_id": "CTRL-2", "expected_answer": "PASS", "question": "Busway specification requires continuous current rating not less than 4000A. Submittal states 4500A. Compliant?"},
+    {"id": "CTRL_003", "category": "planted_deviations", "req_id": "CTRL-3", "expected_answer": "PASS", "question": "UPS input THDi specification requires not more than 5% at full load. Test report states 3.2% at full load. Compliant?"},
+    {"id": "CTRL_004", "category": "planted_deviations", "req_id": "CTRL-4", "expected_answer": "PASS", "question": "Transformer impedance specification requires not less than 5.5%. Test certificate states 6.0%. Compliant?"},
+    {"id": "CTRL_005", "category": "planted_deviations", "req_id": "CTRL-5", "expected_answer": "PASS", "question": "CRAC sensible cooling capacity specification requires not less than 120 kW per unit. Submittal states 125 kW. Compliant?"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "note": "MODELED ESTIMATE, not an empirical trial -- filled in by Claude from the project's own fixture complexity and CLAUDE.md's stated failure modes (the kW/TR and kVA/kW+PF unit traps, the load-bearing 'condition' field), not from an actual stopwatch run. Swap in a real timed number before the pitch if you get the chance -- this exists so the harness and the PR curve aren't blocked on it, not as a substitute for the real thing.",
+  "scope": "Ctrl+F is only meaningful for the planted_deviations category (15 questions) + the 5 PR-curve PASS controls -- there's no sensible 'Ctrl+F' procedure for multi_hop/rfi_dedup/sld_topology/cascade_scenarios, so those are out of scope for this baseline.",
+  "deviation_detection": {
+    "precision": 1.0,
+    "recall": 0.909,
+    "correct_out_of_20": 17,
+    "confusion": {
+      "tp": 10, "fp": 0, "fn": 1, "tn": 9
+    },
+    "reasoning": "Modeled as a careful engineer doing manual Ctrl+F across spec.pdf and the vendor cut-sheets, with a calculator for unit conversion. Assumed to miss exactly DEV_001 (1688 kW vs 500 TR) -- the same kW/TR conflation the project's own fixture was built to catch -- because at a glance '1688 > 500' reads as compliant unless you stop and convert units, which is easy to skip under time pressure. Assumed correct on every other real NON_CONFORMANCE and all 5 PASS controls (none of those are close calls). On the 4 INSUFFICIENT_DATA cases: assumed the engineer catches DEV_006 and DEV_009 (a missing document or an explicit 'not included' sentence is exactly what Ctrl+F is good at finding -- or not finding), but misses DEV_003 and DEV_007 (the submittal states a bare number with the qualifying condition silently absent, which requires noticing an absence of text rather than finding a keyword -- the same failure mode the 'condition' field exists to guard against). Those two show up in the INSUFFICIENT_DATA accuracy and 3-way exact-match numbers below, not in precision/recall, since a wrong 'PASS' guess on an INSUFFICIENT_DATA case is still a true negative for the binary NON_CONFORMANCE-flagging framing."
+  },
+  "insufficient_data_accuracy": 0.5,
+  "three_way_exact_match": 0.85,
+  "avg_seconds_per_question": 240,
+  "total_minutes_for_20_questions": 80,
+  "methodology": "Modeled procedure: (1) Ctrl+F the clause number or equipment keyword in spec.pdf, (2) Ctrl+F the same equipment/parameter in the vendor cut-sheet, (3) manual unit conversion by calculator when units differ, (4) manual comparison against the spec's operator (>=, <=), (5) manual check for whether the submittal states the same condition the spec requires. ~4 minutes/question assumed for this small demo fixture set; a real project's docs (hundreds of pages, dozens of vendors) would push this much higher, which is the argument for the tool, not a number this file can honestly estimate."
+}
