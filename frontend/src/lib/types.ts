@@ -51,3 +51,45 @@ export type MitigationCandidate = {
   efficiency_per_inr: number | null;
   is_zero_cost: boolean;
 };
+
+export type SldNodeClass =
+  | "transformer"
+  | "breaker"
+  | "ats"
+  | "ups"
+  | "generator"
+  | "busbar"
+  | "it_load";
+
+export type SLDNode = {
+  node_id: string;
+  node_class: SldNodeClass | string;
+  bbox: [number, number, number, number];
+  confidence: number;
+  tag: string | null;
+};
+
+export type SLDEdge = {
+  source_node_id: string;
+  target_node_id: string;
+  confidence: number;
+};
+
+export type RedundancyResult = {
+  source_doc: string;
+  claimed_redundancy: string;
+  holds: boolean;
+  reason: string;
+  failure_paths: string[][];
+  spof_node_id: string | null;
+  traced_paths: string[][];
+};
+
+export type SldTopologyResult = {
+  topology_id: string;
+  name: string;
+  image_path: string;
+  nodes: SLDNode[];
+  edges: SLDEdge[];
+  redundancy: RedundancyResult;
+};
