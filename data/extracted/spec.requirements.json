@@ -1,0 +1,19 @@
+[
+  {
+    "req_id": "spec.pdf-p1-0",
+    "equipment_class": "chiller",
+    "parameter": "cooling_capacity",
+    "operator": ">=",
+    "value": 500.0,
+    "unit": "TR",
+    "condition": "@35C ambient",
+    "source_doc": "spec.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      695.93,
+      351.00999999999993,
+      705.18
+    ]
+  }
+]

@@ -135,6 +135,19 @@ def test_condition_match_is_case_and_whitespace_insensitive() -> None:
     assert verdict.status == "PASS"
 
 
+def test_condition_match_is_insensitive_to_internal_whitespace() -> None:
+    # Two independent LLM extractions of the same physical condition don't
+    # reliably agree on whether there's a space right after "@" -- that's
+    # formatting noise, not a different condition, and must not by itself
+    # turn a real deviation into a false INSUFFICIENT_DATA.
+    req = make_requirement(condition="@35C ambient")
+    ev = make_extracted(value=550.0, unit="TR", condition="@ 35C Ambient")
+
+    verdict = evaluate_requirement(req, [ev])
+
+    assert verdict.status == "PASS"
+
+
 def test_no_matching_equipment_is_insufficient_data() -> None:
     req = make_requirement()
     ev = make_extracted(equipment_class="pump", parameter="flow_rate", value=100.0, unit="TR")

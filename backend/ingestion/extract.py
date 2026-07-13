@@ -117,6 +117,12 @@ Rules:
 - If the clause states a req_id/clause number (e.g. "3.4.2"), extract it
   verbatim. Otherwise leave req_id null.
 - Extract only what the text states. Never invent a constraint that isn't there.
+- Document chunking sometimes hands you a bare title, section heading, or
+  page label with no actual constraint in it (e.g. "MECHANICAL SPECIFICATION
+  - SECTION 3.4" or "3.4.2 Chiller Cooling Capacity" on its own, with no
+  number+unit requirement stated). If the chunk contains no explicit
+  numeric constraint, return an empty list. Do not manufacture a plausible-
+  sounding requirement to fill the gap.
 
 """ + _CANONICAL_VOCABULARY + """
 Example 1:
@@ -157,6 +163,11 @@ Rules:
 - Set extraction_confidence lower (< 0.7) when the text is ambiguous, uses
   non-standard phrasing, or the value/unit pairing is unclear.
 - Extract only what the text states. Never invent a value that isn't there.
+- Document chunking sometimes hands you a bare title or product name with no
+  actual value in it (e.g. "Cut Sheet: Centrifugal Water-Cooled Chiller" on
+  its own, with no number+unit stated). If the chunk contains no explicit
+  stated value, return an empty list. Do not manufacture a plausible-sounding
+  value to fill the gap.
 
 """ + _CANONICAL_VOCABULARY + """
 Example:

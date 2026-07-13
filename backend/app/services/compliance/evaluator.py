@@ -20,9 +20,14 @@ _OPERATORS: dict[str, Callable[[float, float], bool]] = {
 
 
 def _normalize_condition(condition: str | None) -> str | None:
+    """Case- and whitespace-insensitive, including whitespace *inside* the
+    string (e.g. "@35C ambient" vs "@ 35C Ambient" from two independent LLM
+    extractions of the same physical condition) -- collapsing runs to a
+    single space isn't enough, since "@" with or without a following space
+    still produces a different token count after a plain .split()."""
     if condition is None:
         return None
-    return " ".join(condition.split()).lower()
+    return "".join(condition.split()).lower()
 
 
 def _format_quantity(value: float, unit: str, condition: str | None) -> str:

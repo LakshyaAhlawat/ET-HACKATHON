@@ -31,10 +31,18 @@ def draw_spec_pdf(path: Path, bbox: tuple[float, float, float, float]) -> None:
     c.setFont("Helvetica-Bold", 11)
     c.drawString(x0, y1 - 15, "3.4.2  Chiller Cooling Capacity")
     c.setFont("Helvetica", 10)
+    # "35C ambient" (not "...ambient dry-bulb") deliberately matches the
+    # submittal's condition wording below verbatim -- evaluate_requirement()
+    # matches condition text after normalization but does not do fuzzy/
+    # synonym matching, so two independently-worded phrasings of the same
+    # physical condition would otherwise produce INSUFFICIENT_DATA instead
+    # of the intended NON_CONFORMANCE. Real spec/submittal pairs really do
+    # drift like this; this fixture is written to demo the deviation, not
+    # the wording-mismatch case.
     c.drawString(
         x0,
         y0 + 8,
-        "Each chiller shall provide not less than 500 TR at 35C ambient dry-bulb.",
+        "Each chiller shall provide not less than 500 TR at 35C ambient.",
     )
 
     c.setFont("Helvetica", 8)

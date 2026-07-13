@@ -22,8 +22,30 @@
         "has_unstated_caveat": true
       },
       "reason": "RFI-0124 answers unconditionally on chilled_water_supply_temperature; RFI-0287 reveals a caveat/condition on the same subject that the other never mentioned."
+    },
+    {
+      "rfi_a_id": "RFI-0089",
+      "rfi_b_id": "RFI-0156",
+      "topic_similarity": 0.5328651666641235,
+      "claim_a": {
+        "subject": "generator_biodiesel_approval",
+        "stated_value": 1.0,
+        "unit": "boolean",
+        "condition": null,
+        "is_definitive": true,
+        "has_unstated_caveat": false
+      },
+      "claim_b": {
+        "subject": "generator_biodiesel_approval",
+        "stated_value": 1.0,
+        "unit": "boolean",
+        "condition": "biodiesel specified in original equipment submittal",
+        "is_definitive": true,
+        "has_unstated_caveat": true
+      },
+      "reason": "RFI-0089 answers unconditionally on generator_biodiesel_approval; RFI-0156 reveals a caveat/condition on the same subject that the other never mentioned."
     }
   ],
-  "hours_saved_estimate": 6.0,
-  "hours_saved_methodology": "1 contradiction(s) flagged x 6.0h avoided rework/coordination each, plus 0 duplicate RFI(s) matched instantly instead of manually researched x 2.5h each. Hours, not percentages, because the cost of a missed contradiction is engineer time spent re-litigating a decision, not a score."
+  "hours_saved_estimate": 12.0,
+  "hours_saved_methodology": "2 contradiction(s) flagged x 6.0h avoided rework/coordination each, plus 0 duplicate RFI(s) matched instantly instead of manually researched x 2.5h each. Hours, not percentages, because the cost of a missed contradiction is engineer time spent re-litigating a decision, not a score."
 }

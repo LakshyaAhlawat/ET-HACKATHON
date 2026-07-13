@@ -24,14 +24,26 @@ services:
     environment:
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/epc
       QDRANT_URL: http://qdrant:6333
-    # /api/verify reads data/extracted/*.json at request time (precomputed
-    # offline, per CLAUDE.md). The backend image's WORKDIR is /app with code
-    # at /app/app/..., so EXTRACTED_DIR's relative walk up from
+      # Demo/offline mode: embeddings and the reranker are precomputed and
+      # cached (see retrieval/precompute.py); these two flags stop
+      # sentence-transformers/huggingface_hub from attempting an update
+      # check over the network before falling back to the local cache, so
+      # a demo never depends on internet being up. GROQ_API_KEY (from
+      # .env) is the only genuinely live call in the app (query
+      # classification, RFI contradiction re-runs) -- everything else in
+      # the demo path reads a precomputed file.
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    # /api/verify, /api/graph, /api/rfi read data/*.json at request time
+    # (precomputed offline, per CLAUDE.md). The backend image's WORKDIR is
+    # /app with code at /app/app/..., so the relative walk up from e.g.
     # app/api/verify.py lands at /data — mount host ./data there to match,
     # same relative depth as backend/app/api/verify.py -> repo_root/data
-    # in local dev.
+    # in local dev. Not read-only: retrieval/hybrid.py opens the embedded
+    # Qdrant collection at data/qdrant_local/, which needs to write its
+    # lock file even for read-only queries.
     volumes:
-      - ./data:/data:ro
+      - ./data:/data
     ports:
       - "8000:8000"
     depends_on:

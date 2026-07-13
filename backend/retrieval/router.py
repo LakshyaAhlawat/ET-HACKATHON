@@ -11,11 +11,23 @@ answers the question. It never itself renders a PASS/NON_CONFORMANCE
 verdict, a redundancy verdict, or a schedule number -- those still come
 from evaluator.py, graph.py, and cascade/simulate.py respectively, exactly
 per CLAUDE.md's rule.
+
+Offline/demo mode: classify_query() is the only live network call anywhere
+in the request path (every dispatch handler below reads a precomputed file
+or runs a local model/deterministic engine). data/demo_query_cache.json
+holds precomputed classifications for the fixed set of questions the demo
+script actually asks (see retrieval/cache_demo_queries.py) so the demo
+never depends on Groq being reachable -- an exact cache hit skips the
+network call entirely. Anything outside that fixed set still classifies
+live when Groq is reachable.
 """
 
+import json
 import os
 import re
 from collections.abc import Callable
+from functools import lru_cache
+from pathlib import Path
 from typing import Literal
 
 import instructor
@@ -33,6 +45,21 @@ MODEL = "llama-3.3-70b-versatile"
 QueryCategory = Literal["factual", "compliance_check", "topological", "schedule"]
 
 _CLAUSE_ID_RE = re.compile(r"\b([A-Z]{2,6}-\d[\w.\-§ ]*\d)\b")
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+DEMO_CACHE_PATH = REPO_ROOT / "data" / "demo_query_cache.json"
+
+
+def _normalize(query: str) -> str:
+    return " ".join(query.strip().lower().split())
+
+
+@lru_cache(maxsize=1)
+def _demo_cache() -> dict[str, QueryCategory]:
+    if not DEMO_CACHE_PATH.exists():
+        return {}
+    entries = json.loads(DEMO_CACHE_PATH.read_text(encoding="utf-8"))
+    return {_normalize(e["query"]): e["category"] for e in entries}
 
 
 def _client() -> instructor.Instructor:
@@ -133,7 +160,13 @@ _DISPATCH: dict[QueryCategory, tuple[str, Callable[[str], dict[str, object]]]] =
 
 
 def dispatch(query: str) -> RouterResponse:
-    decision = classify_query(query)
+    cached_category = _demo_cache().get(_normalize(query))
+    if cached_category is not None:
+        decision = RouterDecision(
+            category=cached_category, reasoning="cached demo classification, no network call"
+        )
+    else:
+        decision = classify_query(query)
     engine, handler = _DISPATCH[decision.category]
     result = handler(query)
     return RouterResponse(category=decision.category, engine=engine, result=result)

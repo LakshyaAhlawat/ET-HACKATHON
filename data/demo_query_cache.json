@@ -1,0 +1,18 @@
+[
+  {
+    "query": "Does the chiller in MECH-3.4.2 meet its cooling capacity requirement?",
+    "category": "compliance_check"
+  },
+  {
+    "query": "If the transformer is delayed by 3 weeks, when will handover happen?",
+    "category": "schedule"
+  },
+  {
+    "query": "Trace the dependency chain from the chiller spec to project handover.",
+    "category": "topological"
+  },
+  {
+    "query": "What HVAC setpoint does the spec require for the data hall?",
+    "category": "factual"
+  }
+]
