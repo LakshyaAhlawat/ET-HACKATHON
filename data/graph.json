@@ -1,0 +1,1456 @@
+{
+  "nodes": [
+    {
+      "node_id": "CIVIL-MOBILIZE",
+      "node_type": "task",
+      "label": "Site Mobilization"
+    },
+    {
+      "node_id": "CIVIL-EXCAVATE",
+      "node_type": "task",
+      "label": "Excavation & Earthwork"
+    },
+    {
+      "node_id": "CIVIL-SWITCHYARD",
+      "node_type": "task",
+      "label": "Outdoor Switchyard Civil Works"
+    },
+    {
+      "node_id": "CIVIL-FOUNDATION",
+      "node_type": "task",
+      "label": "Foundation & Footings"
+    },
+    {
+      "node_id": "CIVIL-STRUCTURE",
+      "node_type": "task",
+      "label": "Structural Steel & Slab"
+    },
+    {
+      "node_id": "CIVIL-ENVELOPE",
+      "node_type": "task",
+      "label": "Building Envelope & Roofing"
+    },
+    {
+      "node_id": "CIVIL-RAISEDFLOOR",
+      "node_type": "task",
+      "label": "Raised Floor Install"
+    },
+    {
+      "node_id": "CIVIL-CONTAINMENT",
+      "node_type": "task",
+      "label": "Cable Tray & Containment"
+    },
+    {
+      "node_id": "CIVIL-FITOUT",
+      "node_type": "task",
+      "label": "Interior Fit-Out & Finishes"
+    },
+    {
+      "node_id": "XFMR-DESIGN",
+      "node_type": "task",
+      "label": "Utility Transformer: Design & Submittal Approval"
+    },
+    {
+      "node_id": "XFMR-PROCURE",
+      "node_type": "task",
+      "label": "Utility Transformer: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "XFMR-MFG",
+      "node_type": "task",
+      "label": "Utility Transformer: Manufacturing"
+    },
+    {
+      "node_id": "XFMR-FAT",
+      "node_type": "task",
+      "label": "Utility Transformer: Factory Acceptance Test"
+    },
+    {
+      "node_id": "XFMR-SHIP",
+      "node_type": "shipment",
+      "label": "Utility Transformer: Shipping & Delivery"
+    },
+    {
+      "node_id": "XFMR-RECEIVE",
+      "node_type": "task",
+      "label": "Utility Transformer: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "XFMR-INSTALL",
+      "node_type": "task",
+      "label": "Utility Transformer: Site Installation"
+    },
+    {
+      "node_id": "XFMR-SAT",
+      "node_type": "task",
+      "label": "Utility Transformer: Site Acceptance Test"
+    },
+    {
+      "node_id": "DG-DESIGN",
+      "node_type": "task",
+      "label": "Diesel Generator: Design & Submittal Approval"
+    },
+    {
+      "node_id": "DG-PROCURE",
+      "node_type": "task",
+      "label": "Diesel Generator: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "DG-MFG",
+      "node_type": "task",
+      "label": "Diesel Generator: Manufacturing"
+    },
+    {
+      "node_id": "DG-FAT",
+      "node_type": "task",
+      "label": "Diesel Generator: Factory Acceptance Test"
+    },
+    {
+      "node_id": "DG-SHIP",
+      "node_type": "shipment",
+      "label": "Diesel Generator: Shipping & Delivery"
+    },
+    {
+      "node_id": "DG-RECEIVE",
+      "node_type": "task",
+      "label": "Diesel Generator: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "DG-INSTALL",
+      "node_type": "task",
+      "label": "Diesel Generator: Site Installation"
+    },
+    {
+      "node_id": "DG-SAT",
+      "node_type": "task",
+      "label": "Diesel Generator: Site Acceptance Test"
+    },
+    {
+      "node_id": "CHW-DESIGN",
+      "node_type": "task",
+      "label": "Chiller Plant: Design & Submittal Approval"
+    },
+    {
+      "node_id": "CHW-PROCURE",
+      "node_type": "task",
+      "label": "Chiller Plant: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "CHW-MFG",
+      "node_type": "task",
+      "label": "Chiller Plant: Manufacturing"
+    },
+    {
+      "node_id": "CHW-FAT",
+      "node_type": "task",
+      "label": "Chiller Plant: Factory Acceptance Test"
+    },
+    {
+      "node_id": "CHW-SHIP",
+      "node_type": "shipment",
+      "label": "Chiller Plant: Shipping & Delivery"
+    },
+    {
+      "node_id": "CHW-RECEIVE",
+      "node_type": "task",
+      "label": "Chiller Plant: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "CHW-INSTALL",
+      "node_type": "task",
+      "label": "Chiller Plant: Site Installation"
+    },
+    {
+      "node_id": "CHW-SAT",
+      "node_type": "task",
+      "label": "Chiller Plant: Site Acceptance Test"
+    },
+    {
+      "node_id": "UPS-DESIGN",
+      "node_type": "task",
+      "label": "UPS & Battery: Design & Submittal Approval"
+    },
+    {
+      "node_id": "UPS-PROCURE",
+      "node_type": "task",
+      "label": "UPS & Battery: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "UPS-MFG",
+      "node_type": "task",
+      "label": "UPS & Battery: Manufacturing"
+    },
+    {
+      "node_id": "UPS-FAT",
+      "node_type": "task",
+      "label": "UPS & Battery: Factory Acceptance Test"
+    },
+    {
+      "node_id": "UPS-SHIP",
+      "node_type": "shipment",
+      "label": "UPS & Battery: Shipping & Delivery"
+    },
+    {
+      "node_id": "UPS-RECEIVE",
+      "node_type": "task",
+      "label": "UPS & Battery: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "UPS-INSTALL",
+      "node_type": "task",
+      "label": "UPS & Battery: Site Installation"
+    },
+    {
+      "node_id": "UPS-SAT",
+      "node_type": "task",
+      "label": "UPS & Battery: Site Acceptance Test"
+    },
+    {
+      "node_id": "FLS-DESIGN",
+      "node_type": "task",
+      "label": "Fire & Life Safety: Design & Submittal Approval"
+    },
+    {
+      "node_id": "FLS-PROCURE",
+      "node_type": "task",
+      "label": "Fire & Life Safety: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "FLS-MFG",
+      "node_type": "task",
+      "label": "Fire & Life Safety: Manufacturing"
+    },
+    {
+      "node_id": "FLS-FAT",
+      "node_type": "task",
+      "label": "Fire & Life Safety: Factory Acceptance Test"
+    },
+    {
+      "node_id": "FLS-SHIP",
+      "node_type": "shipment",
+      "label": "Fire & Life Safety: Shipping & Delivery"
+    },
+    {
+      "node_id": "FLS-RECEIVE",
+      "node_type": "task",
+      "label": "Fire & Life Safety: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "FLS-INSTALL",
+      "node_type": "task",
+      "label": "Fire & Life Safety: Site Installation"
+    },
+    {
+      "node_id": "FLS-SAT",
+      "node_type": "task",
+      "label": "Fire & Life Safety: Site Acceptance Test"
+    },
+    {
+      "node_id": "ITN-DESIGN",
+      "node_type": "task",
+      "label": "IT Networking & Security: Design & Submittal Approval"
+    },
+    {
+      "node_id": "ITN-PROCURE",
+      "node_type": "task",
+      "label": "IT Networking & Security: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "ITN-MFG",
+      "node_type": "task",
+      "label": "IT Networking & Security: Manufacturing"
+    },
+    {
+      "node_id": "ITN-FAT",
+      "node_type": "task",
+      "label": "IT Networking & Security: Factory Acceptance Test"
+    },
+    {
+      "node_id": "ITN-SHIP",
+      "node_type": "shipment",
+      "label": "IT Networking & Security: Shipping & Delivery"
+    },
+    {
+      "node_id": "ITN-RECEIVE",
+      "node_type": "task",
+      "label": "IT Networking & Security: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "ITN-INSTALL",
+      "node_type": "task",
+      "label": "IT Networking & Security: Site Installation"
+    },
+    {
+      "node_id": "ITN-SAT",
+      "node_type": "task",
+      "label": "IT Networking & Security: Site Acceptance Test"
+    },
+    {
+      "node_id": "BMS-DESIGN",
+      "node_type": "task",
+      "label": "Building Management System: Design & Submittal Approval"
+    },
+    {
+      "node_id": "BMS-PROCURE",
+      "node_type": "task",
+      "label": "Building Management System: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "BMS-MFG",
+      "node_type": "task",
+      "label": "Building Management System: Manufacturing"
+    },
+    {
+      "node_id": "BMS-FAT",
+      "node_type": "task",
+      "label": "Building Management System: Factory Acceptance Test"
+    },
+    {
+      "node_id": "BMS-SHIP",
+      "node_type": "shipment",
+      "label": "Building Management System: Shipping & Delivery"
+    },
+    {
+      "node_id": "BMS-RECEIVE",
+      "node_type": "task",
+      "label": "Building Management System: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "BMS-INSTALL",
+      "node_type": "task",
+      "label": "Building Management System: Site Installation"
+    },
+    {
+      "node_id": "BMS-SAT",
+      "node_type": "task",
+      "label": "Building Management System: Site Acceptance Test"
+    },
+    {
+      "node_id": "ELEC-DESIGN",
+      "node_type": "task",
+      "label": "LV Electrical Distribution: Design & Submittal Approval"
+    },
+    {
+      "node_id": "ELEC-PROCURE",
+      "node_type": "task",
+      "label": "LV Electrical Distribution: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "ELEC-MFG",
+      "node_type": "task",
+      "label": "LV Electrical Distribution: Manufacturing"
+    },
+    {
+      "node_id": "ELEC-FAT",
+      "node_type": "task",
+      "label": "LV Electrical Distribution: Factory Acceptance Test"
+    },
+    {
+      "node_id": "ELEC-SHIP",
+      "node_type": "shipment",
+      "label": "LV Electrical Distribution: Shipping & Delivery"
+    },
+    {
+      "node_id": "ELEC-RECEIVE",
+      "node_type": "task",
+      "label": "LV Electrical Distribution: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "ELEC-INSTALL",
+      "node_type": "task",
+      "label": "LV Electrical Distribution: Site Installation"
+    },
+    {
+      "node_id": "ELEC-SAT",
+      "node_type": "task",
+      "label": "LV Electrical Distribution: Site Acceptance Test"
+    },
+    {
+      "node_id": "SCAC-DESIGN",
+      "node_type": "task",
+      "label": "Structured Cabling & Access Control: Design & Submittal Approval"
+    },
+    {
+      "node_id": "SCAC-PROCURE",
+      "node_type": "task",
+      "label": "Structured Cabling & Access Control: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "SCAC-MFG",
+      "node_type": "task",
+      "label": "Structured Cabling & Access Control: Manufacturing"
+    },
+    {
+      "node_id": "SCAC-FAT",
+      "node_type": "task",
+      "label": "Structured Cabling & Access Control: Factory Acceptance Test"
+    },
+    {
+      "node_id": "SCAC-SHIP",
+      "node_type": "shipment",
+      "label": "Structured Cabling & Access Control: Shipping & Delivery"
+    },
+    {
+      "node_id": "SCAC-RECEIVE",
+      "node_type": "task",
+      "label": "Structured Cabling & Access Control: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "SCAC-INSTALL",
+      "node_type": "task",
+      "label": "Structured Cabling & Access Control: Site Installation"
+    },
+    {
+      "node_id": "SCAC-SAT",
+      "node_type": "task",
+      "label": "Structured Cabling & Access Control: Site Acceptance Test"
+    },
+    {
+      "node_id": "PLMB-DESIGN",
+      "node_type": "task",
+      "label": "Plumbing & Water Treatment: Design & Submittal Approval"
+    },
+    {
+      "node_id": "PLMB-PROCURE",
+      "node_type": "task",
+      "label": "Plumbing & Water Treatment: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "PLMB-MFG",
+      "node_type": "task",
+      "label": "Plumbing & Water Treatment: Manufacturing"
+    },
+    {
+      "node_id": "PLMB-FAT",
+      "node_type": "task",
+      "label": "Plumbing & Water Treatment: Factory Acceptance Test"
+    },
+    {
+      "node_id": "PLMB-SHIP",
+      "node_type": "shipment",
+      "label": "Plumbing & Water Treatment: Shipping & Delivery"
+    },
+    {
+      "node_id": "PLMB-RECEIVE",
+      "node_type": "task",
+      "label": "Plumbing & Water Treatment: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "PLMB-INSTALL",
+      "node_type": "task",
+      "label": "Plumbing & Water Treatment: Site Installation"
+    },
+    {
+      "node_id": "PLMB-SAT",
+      "node_type": "task",
+      "label": "Plumbing & Water Treatment: Site Acceptance Test"
+    },
+    {
+      "node_id": "VERT-DESIGN",
+      "node_type": "task",
+      "label": "Elevators & Vertical Transport: Design & Submittal Approval"
+    },
+    {
+      "node_id": "VERT-PROCURE",
+      "node_type": "task",
+      "label": "Elevators & Vertical Transport: Procurement / PO Issuance"
+    },
+    {
+      "node_id": "VERT-MFG",
+      "node_type": "task",
+      "label": "Elevators & Vertical Transport: Manufacturing"
+    },
+    {
+      "node_id": "VERT-FAT",
+      "node_type": "task",
+      "label": "Elevators & Vertical Transport: Factory Acceptance Test"
+    },
+    {
+      "node_id": "VERT-SHIP",
+      "node_type": "shipment",
+      "label": "Elevators & Vertical Transport: Shipping & Delivery"
+    },
+    {
+      "node_id": "VERT-RECEIVE",
+      "node_type": "task",
+      "label": "Elevators & Vertical Transport: Site Receiving & Inspection"
+    },
+    {
+      "node_id": "VERT-INSTALL",
+      "node_type": "task",
+      "label": "Elevators & Vertical Transport: Site Installation"
+    },
+    {
+      "node_id": "VERT-SAT",
+      "node_type": "task",
+      "label": "Elevators & Vertical Transport: Site Acceptance Test"
+    },
+    {
+      "node_id": "IST-POWER",
+      "node_type": "task",
+      "label": "IST - Power Systems"
+    },
+    {
+      "node_id": "IST-MECH",
+      "node_type": "task",
+      "label": "IST - Mechanical Systems"
+    },
+    {
+      "node_id": "IST-LIFE-SAFETY",
+      "node_type": "task",
+      "label": "IST - Fire & Life Safety"
+    },
+    {
+      "node_id": "IST-IT",
+      "node_type": "task",
+      "label": "IST - IT & Security Systems"
+    },
+    {
+      "node_id": "IST-VERT-PLMB",
+      "node_type": "task",
+      "label": "IST - Vertical Transport & Plumbing"
+    },
+    {
+      "node_id": "IST-INTEGRATED",
+      "node_type": "task",
+      "label": "Integrated Systems Test (Full Building)"
+    },
+    {
+      "node_id": "COMM-L3",
+      "node_type": "task",
+      "label": "Commissioning Level 3 (System Function)"
+    },
+    {
+      "node_id": "COMM-L4",
+      "node_type": "task",
+      "label": "Commissioning Level 4 (Integrated Function)"
+    },
+    {
+      "node_id": "COMM-L5",
+      "node_type": "task",
+      "label": "Commissioning Level 5 (Load / Stress Test)"
+    },
+    {
+      "node_id": "REGULATORY-UTILITY",
+      "node_type": "task",
+      "label": "Utility Energization Approval"
+    },
+    {
+      "node_id": "REGULATORY-FIRE",
+      "node_type": "task",
+      "label": "Fire Marshal Inspection"
+    },
+    {
+      "node_id": "REGULATORY-OCCUPANCY",
+      "node_type": "task",
+      "label": "Occupancy Certificate"
+    },
+    {
+      "node_id": "PUNCHLIST",
+      "node_type": "task",
+      "label": "Punch List & Snagging"
+    },
+    {
+      "node_id": "HANDOVER",
+      "node_type": "task",
+      "label": "Client Handover"
+    },
+    {
+      "node_id": "CTRL-1",
+      "node_type": "spec",
+      "label": "CTRL-1"
+    },
+    {
+      "node_id": "generator",
+      "node_type": "equipment",
+      "label": "generator"
+    },
+    {
+      "node_id": "CTRL-3",
+      "node_type": "spec",
+      "label": "CTRL-3"
+    },
+    {
+      "node_id": "ups",
+      "node_type": "equipment",
+      "label": "ups"
+    },
+    {
+      "node_id": "MECH-3.4.2",
+      "node_type": "spec",
+      "label": "MECH-3.4.2"
+    },
+    {
+      "node_id": "chiller",
+      "node_type": "equipment",
+      "label": "chiller"
+    },
+    {
+      "node_id": "Vertiv",
+      "node_type": "vendor",
+      "label": "Vertiv"
+    },
+    {
+      "node_id": "MECH-3.4.3",
+      "node_type": "spec",
+      "label": "MECH-3.4.3"
+    },
+    {
+      "node_id": "Trane",
+      "node_type": "vendor",
+      "label": "Trane"
+    },
+    {
+      "node_id": "MECH-3.5.1",
+      "node_type": "spec",
+      "label": "MECH-3.5.1"
+    },
+    {
+      "node_id": "MECH-3.5.2",
+      "node_type": "spec",
+      "label": "MECH-3.5.2"
+    },
+    {
+      "node_id": "MECH-3.6.1",
+      "node_type": "spec",
+      "label": "MECH-3.6.1"
+    },
+    {
+      "node_id": "cooling_loop",
+      "node_type": "equipment",
+      "label": "cooling_loop"
+    },
+    {
+      "node_id": "MECH-3.7.1",
+      "node_type": "spec",
+      "label": "MECH-3.7.1"
+    },
+    {
+      "node_id": "tim",
+      "node_type": "equipment",
+      "label": "tim"
+    },
+    {
+      "node_id": "DIV-16-16.1.2",
+      "node_type": "spec",
+      "label": "DIV-16-16.1.2"
+    },
+    {
+      "node_id": "ats",
+      "node_type": "equipment",
+      "label": "ats"
+    },
+    {
+      "node_id": "Schneider Electric",
+      "node_type": "vendor",
+      "label": "Schneider Electric"
+    },
+    {
+      "node_id": "ELEC-2.8.1",
+      "node_type": "spec",
+      "label": "ELEC-2.8.1"
+    },
+    {
+      "node_id": "ELEC-2.8.2",
+      "node_type": "spec",
+      "label": "ELEC-2.8.2"
+    },
+    {
+      "node_id": "ELEC-2.8.3",
+      "node_type": "spec",
+      "label": "ELEC-2.8.3"
+    },
+    {
+      "node_id": "ELEC-3.1.1",
+      "node_type": "spec",
+      "label": "ELEC-3.1.1"
+    },
+    {
+      "node_id": "Caterpillar",
+      "node_type": "vendor",
+      "label": "Caterpillar"
+    },
+    {
+      "node_id": "ELEC-4.2.1",
+      "node_type": "spec",
+      "label": "ELEC-4.2.1"
+    },
+    {
+      "node_id": "switchgear",
+      "node_type": "equipment",
+      "label": "switchgear"
+    },
+    {
+      "node_id": "ABB",
+      "node_type": "vendor",
+      "label": "ABB"
+    },
+    {
+      "node_id": "ELEC-5.1.1",
+      "node_type": "spec",
+      "label": "ELEC-5.1.1"
+    },
+    {
+      "node_id": "cable",
+      "node_type": "equipment",
+      "label": "cable"
+    }
+  ],
+  "edges": [
+    {
+      "source": "CIVIL-MOBILIZE",
+      "target": "CIVIL-EXCAVATE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-EXCAVATE",
+      "target": "CIVIL-SWITCHYARD",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-EXCAVATE",
+      "target": "CIVIL-FOUNDATION",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-SWITCHYARD",
+      "target": "XFMR-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FOUNDATION",
+      "target": "CIVIL-STRUCTURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-STRUCTURE",
+      "target": "CIVIL-ENVELOPE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-ENVELOPE",
+      "target": "CIVIL-RAISEDFLOOR",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-RAISEDFLOOR",
+      "target": "CIVIL-CONTAINMENT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-CONTAINMENT",
+      "target": "CIVIL-FITOUT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "DG-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "CHW-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "UPS-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "FLS-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "ITN-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "BMS-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "ELEC-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "SCAC-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "PLMB-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CIVIL-FITOUT",
+      "target": "VERT-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "XFMR-DESIGN",
+      "target": "XFMR-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "XFMR-PROCURE",
+      "target": "XFMR-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "XFMR-MFG",
+      "target": "XFMR-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "XFMR-FAT",
+      "target": "XFMR-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "XFMR-SHIP",
+      "target": "XFMR-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "XFMR-RECEIVE",
+      "target": "XFMR-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "XFMR-INSTALL",
+      "target": "XFMR-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "XFMR-SAT",
+      "target": "ELEC-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "XFMR-SAT",
+      "target": "IST-POWER",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "XFMR-SAT",
+      "target": "REGULATORY-UTILITY",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "DG-DESIGN",
+      "target": "DG-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "DG-PROCURE",
+      "target": "DG-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "DG-MFG",
+      "target": "DG-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "DG-FAT",
+      "target": "DG-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "DG-SHIP",
+      "target": "DG-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "DG-RECEIVE",
+      "target": "DG-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "DG-INSTALL",
+      "target": "DG-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "DG-SAT",
+      "target": "IST-POWER",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CHW-DESIGN",
+      "target": "CHW-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CHW-PROCURE",
+      "target": "CHW-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CHW-MFG",
+      "target": "CHW-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CHW-FAT",
+      "target": "CHW-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CHW-SHIP",
+      "target": "CHW-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "CHW-RECEIVE",
+      "target": "CHW-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CHW-INSTALL",
+      "target": "CHW-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CHW-SAT",
+      "target": "IST-MECH",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "UPS-DESIGN",
+      "target": "UPS-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "UPS-PROCURE",
+      "target": "UPS-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "UPS-MFG",
+      "target": "UPS-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "UPS-FAT",
+      "target": "UPS-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "UPS-SHIP",
+      "target": "UPS-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "UPS-RECEIVE",
+      "target": "UPS-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "UPS-INSTALL",
+      "target": "UPS-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "UPS-SAT",
+      "target": "IST-POWER",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "FLS-DESIGN",
+      "target": "FLS-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "FLS-PROCURE",
+      "target": "FLS-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "FLS-MFG",
+      "target": "FLS-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "FLS-FAT",
+      "target": "FLS-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "FLS-SHIP",
+      "target": "FLS-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "FLS-RECEIVE",
+      "target": "FLS-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "FLS-INSTALL",
+      "target": "FLS-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "FLS-SAT",
+      "target": "IST-LIFE-SAFETY",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ITN-DESIGN",
+      "target": "ITN-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ITN-PROCURE",
+      "target": "ITN-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ITN-MFG",
+      "target": "ITN-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ITN-FAT",
+      "target": "ITN-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ITN-SHIP",
+      "target": "ITN-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "ITN-RECEIVE",
+      "target": "ITN-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ITN-INSTALL",
+      "target": "ITN-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ITN-SAT",
+      "target": "IST-IT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "BMS-DESIGN",
+      "target": "BMS-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "BMS-PROCURE",
+      "target": "BMS-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "BMS-MFG",
+      "target": "BMS-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "BMS-FAT",
+      "target": "BMS-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "BMS-SHIP",
+      "target": "BMS-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "BMS-RECEIVE",
+      "target": "BMS-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "BMS-INSTALL",
+      "target": "BMS-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "BMS-SAT",
+      "target": "IST-MECH",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ELEC-DESIGN",
+      "target": "ELEC-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ELEC-PROCURE",
+      "target": "ELEC-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ELEC-MFG",
+      "target": "ELEC-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ELEC-FAT",
+      "target": "ELEC-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ELEC-SHIP",
+      "target": "ELEC-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "ELEC-RECEIVE",
+      "target": "ELEC-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ELEC-INSTALL",
+      "target": "ELEC-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "ELEC-SAT",
+      "target": "IST-POWER",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "SCAC-DESIGN",
+      "target": "SCAC-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "SCAC-PROCURE",
+      "target": "SCAC-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "SCAC-MFG",
+      "target": "SCAC-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "SCAC-FAT",
+      "target": "SCAC-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "SCAC-SHIP",
+      "target": "SCAC-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "SCAC-RECEIVE",
+      "target": "SCAC-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "SCAC-INSTALL",
+      "target": "SCAC-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "SCAC-SAT",
+      "target": "IST-IT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "PLMB-DESIGN",
+      "target": "PLMB-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "PLMB-PROCURE",
+      "target": "PLMB-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "PLMB-MFG",
+      "target": "PLMB-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "PLMB-FAT",
+      "target": "PLMB-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "PLMB-SHIP",
+      "target": "PLMB-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "PLMB-RECEIVE",
+      "target": "PLMB-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "PLMB-INSTALL",
+      "target": "PLMB-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "PLMB-SAT",
+      "target": "IST-VERT-PLMB",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "VERT-DESIGN",
+      "target": "VERT-PROCURE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "VERT-PROCURE",
+      "target": "VERT-MFG",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "VERT-MFG",
+      "target": "VERT-FAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "VERT-FAT",
+      "target": "VERT-SHIP",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "VERT-SHIP",
+      "target": "VERT-RECEIVE",
+      "relation": "BLOCKS"
+    },
+    {
+      "source": "VERT-RECEIVE",
+      "target": "VERT-INSTALL",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "VERT-INSTALL",
+      "target": "VERT-SAT",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "VERT-SAT",
+      "target": "IST-VERT-PLMB",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "IST-POWER",
+      "target": "IST-INTEGRATED",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "IST-MECH",
+      "target": "IST-INTEGRATED",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "IST-LIFE-SAFETY",
+      "target": "IST-INTEGRATED",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "IST-LIFE-SAFETY",
+      "target": "REGULATORY-FIRE",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "IST-IT",
+      "target": "IST-INTEGRATED",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "IST-VERT-PLMB",
+      "target": "IST-INTEGRATED",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "IST-INTEGRATED",
+      "target": "COMM-L3",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "COMM-L3",
+      "target": "COMM-L4",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "COMM-L4",
+      "target": "COMM-L5",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "COMM-L5",
+      "target": "REGULATORY-OCCUPANCY",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "COMM-L5",
+      "target": "PUNCHLIST",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "REGULATORY-UTILITY",
+      "target": "REGULATORY-OCCUPANCY",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "REGULATORY-FIRE",
+      "target": "REGULATORY-OCCUPANCY",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "REGULATORY-OCCUPANCY",
+      "target": "HANDOVER",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "PUNCHLIST",
+      "target": "HANDOVER",
+      "relation": "PRECEDES"
+    },
+    {
+      "source": "CTRL-1",
+      "target": "generator",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "generator",
+      "target": "Caterpillar",
+      "relation": "SUBMITTED_BY"
+    },
+    {
+      "source": "CTRL-3",
+      "target": "ups",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "ups",
+      "target": "Vertiv",
+      "relation": "SUBMITTED_BY"
+    },
+    {
+      "source": "MECH-3.4.2",
+      "target": "chiller",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "chiller",
+      "target": "Vertiv",
+      "relation": "SUBMITTED_BY"
+    },
+    {
+      "source": "chiller",
+      "target": "Trane",
+      "relation": "SUBMITTED_BY"
+    },
+    {
+      "source": "Vertiv",
+      "target": "CHW-SHIP",
+      "relation": "DELIVERS"
+    },
+    {
+      "source": "Vertiv",
+      "target": "UPS-SHIP",
+      "relation": "DELIVERS"
+    },
+    {
+      "source": "MECH-3.4.3",
+      "target": "chiller",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "Trane",
+      "target": "CHW-SHIP",
+      "relation": "DELIVERS"
+    },
+    {
+      "source": "MECH-3.5.1",
+      "target": "chiller",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "MECH-3.5.2",
+      "target": "chiller",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "MECH-3.6.1",
+      "target": "cooling_loop",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "MECH-3.7.1",
+      "target": "tim",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "DIV-16-16.1.2",
+      "target": "ats",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "ats",
+      "target": "Schneider Electric",
+      "relation": "SUBMITTED_BY"
+    },
+    {
+      "source": "Schneider Electric",
+      "target": "ELEC-SHIP",
+      "relation": "DELIVERS"
+    },
+    {
+      "source": "ELEC-2.8.1",
+      "target": "ups",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "ELEC-2.8.2",
+      "target": "ups",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "ELEC-2.8.3",
+      "target": "ups",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "ELEC-3.1.1",
+      "target": "generator",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "Caterpillar",
+      "target": "DG-SHIP",
+      "relation": "DELIVERS"
+    },
+    {
+      "source": "ELEC-4.2.1",
+      "target": "switchgear",
+      "relation": "REQUIRES"
+    },
+    {
+      "source": "switchgear",
+      "target": "ABB",
+      "relation": "SUBMITTED_BY"
+    },
+    {
+      "source": "ABB",
+      "target": "ELEC-SHIP",
+      "relation": "DELIVERS"
+    },
+    {
+      "source": "ELEC-5.1.1",
+      "target": "cable",
+      "relation": "REQUIRES"
+    }
+  ]
+}

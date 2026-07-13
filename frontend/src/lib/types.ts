@@ -85,6 +85,34 @@ export type RedundancyResult = {
   traced_paths: string[][];
 };
 
+export type GraphNodeType = "spec" | "equipment" | "vendor" | "shipment" | "task";
+export type GraphRelation = "REQUIRES" | "SUBMITTED_BY" | "DELIVERS" | "BLOCKS" | "PRECEDES";
+
+export type GraphNode = {
+  node_id: string;
+  node_type: GraphNodeType;
+  label: string;
+};
+
+export type GraphEdge = {
+  source: string;
+  target: string;
+  relation: GraphRelation;
+};
+
+export type GraphResult = {
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+};
+
+export type TraversalResult = {
+  start_node_id: string | null;
+  path_node_ids: string[];
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+  reason: string;
+};
+
 export type SldTopologyResult = {
   topology_id: string;
   name: string;

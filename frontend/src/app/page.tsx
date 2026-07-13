@@ -16,6 +16,11 @@ const MODULES = [
     title: "SLD Redundancy Analyser",
     description: "Computer vision on single-line diagrams to verify 2N redundancy.",
   },
+  {
+    href: "/graph",
+    title: "Knowledge Graph",
+    description: "Spec → Equipment → Vendor → Shipment → Task, traced into the real schedule.",
+  },
 ];
 
 export default function Home() {

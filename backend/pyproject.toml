@@ -28,6 +28,9 @@ dependencies = [
     "sentence-transformers>=3.2",
     "ragas>=0.2",
     "matplotlib>=3.9",
+    # ragas pulls in langchain-community; >=0.4 drops the vertexai chat
+    # model submodule that ragas 0.4.x still imports at module load time.
+    "langchain-community>=0.3,<0.4",
 ]
 
 [project.optional-dependencies]
@@ -57,7 +60,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["app*", "ingestion*", "cascade*", "sld*", "benchmark*"]
+include = ["app*", "ingestion*", "cascade*", "sld*", "benchmark*", "retrieval*", "graph*", "rfi*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
