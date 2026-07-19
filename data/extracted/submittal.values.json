@@ -9,10 +9,138 @@
     "source_page": 1,
     "source_bbox": [
       72.0,
-      605.93,
+      682.93,
       178.3,
-      622.898
+      692.18
     ],
     "extraction_confidence": 0.95
+  },
+  {
+    "equipment_class": "chiller",
+    "parameter": "iplv",
+    "value": 6.0,
+    "unit": "",
+    "condition": null,
+    "source_doc": "submittal.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      627.93,
+      109.24000000000001,
+      637.18
+    ],
+    "extraction_confidence": 0.94
+  },
+  {
+    "equipment_class": "chiller",
+    "parameter": "noise_level",
+    "value": 84.0,
+    "unit": "dBA",
+    "condition": "@1m full load",
+    "source_doc": "submittal.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      572.93,
+      104.80000000000001,
+      582.18
+    ],
+    "extraction_confidence": 0.93
+  },
+  {
+    "equipment_class": "chiller",
+    "parameter": "bearing_vibration",
+    "value": 3.1,
+    "unit": "mm/s",
+    "condition": null,
+    "source_doc": "submittal.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      517.93,
+      113.12,
+      527.18
+    ],
+    "extraction_confidence": 0.9
+  },
+  {
+    "equipment_class": "ups",
+    "parameter": "runtime",
+    "value": 20.0,
+    "unit": "min",
+    "condition": null,
+    "source_doc": "submittal_power.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      682.93,
+      120.91,
+      692.18
+    ],
+    "extraction_confidence": 0.88
+  },
+  {
+    "equipment_class": "ups",
+    "parameter": "power_capacity",
+    "value": 250.0,
+    "unit": "kVA",
+    "condition": null,
+    "source_doc": "submittal_power.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      627.93,
+      220.96,
+      637.18
+    ],
+    "extraction_confidence": 0.85
+  },
+  {
+    "equipment_class": "ups",
+    "parameter": "mtbf",
+    "value": 95000.0,
+    "unit": "hour",
+    "condition": null,
+    "source_doc": "submittal_power.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      572.93,
+      130.37,
+      582.18
+    ],
+    "extraction_confidence": 0.97
+  },
+  {
+    "equipment_class": "cpu_cooler",
+    "parameter": "tim_thermal_conductivity",
+    "value": 3.2,
+    "unit": "W/(m*K)",
+    "condition": null,
+    "source_doc": "submittal_procurement.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      682.93,
+      126.45,
+      692.18
+    ],
+    "extraction_confidence": 0.91
+  },
+  {
+    "equipment_class": "procurement",
+    "parameter": "lead_time",
+    "value": 18.0,
+    "unit": "week",
+    "condition": null,
+    "source_doc": "submittal_procurement.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      627.93,
+      322.65,
+      637.18
+    ],
+    "extraction_confidence": 0.92
   }
 ]

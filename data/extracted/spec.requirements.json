@@ -1,6 +1,6 @@
 [
   {
-    "req_id": "spec.pdf-p1-0",
+    "req_id": "MECH-3.4.2",
     "equipment_class": "chiller",
     "parameter": "cooling_capacity",
     "operator": ">=",
@@ -11,9 +11,145 @@
     "source_page": 1,
     "source_bbox": [
       72.0,
-      695.93,
-      351.00999999999993,
-      705.18
+      682.93,
+      351.01,
+      692.18
+    ]
+  },
+  {
+    "req_id": "MECH-3.4.3",
+    "equipment_class": "chiller",
+    "parameter": "iplv",
+    "operator": ">=",
+    "value": 6.2,
+    "unit": "",
+    "condition": null,
+    "source_doc": "spec.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      627.93,
+      314.31,
+      637.18
+    ]
+  },
+  {
+    "req_id": "MECH-3.4.4",
+    "equipment_class": "chiller",
+    "parameter": "noise_level",
+    "operator": "<=",
+    "value": 82.0,
+    "unit": "dBA",
+    "condition": "@1m full load",
+    "source_doc": "spec.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      572.93,
+      328.23,
+      582.18
+    ]
+  },
+  {
+    "req_id": "MECH-3.4.5",
+    "equipment_class": "chiller",
+    "parameter": "bearing_vibration",
+    "operator": "<=",
+    "value": 2.8,
+    "unit": "mm/s",
+    "condition": null,
+    "source_doc": "spec.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      517.93,
+      323.75,
+      527.18
+    ]
+  },
+  {
+    "req_id": "ELEC-2.8.1",
+    "equipment_class": "ups",
+    "parameter": "runtime",
+    "operator": ">=",
+    "value": 20.0,
+    "unit": "min",
+    "condition": "@25C ambient, @full load",
+    "source_doc": "spec_power.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      682.93,
+      412.15,
+      692.18
+    ]
+  },
+  {
+    "req_id": "ELEC-2.8.2",
+    "equipment_class": "ups",
+    "parameter": "power_capacity",
+    "operator": ">=",
+    "value": 250.0,
+    "unit": "kW",
+    "condition": null,
+    "source_doc": "spec_power.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      627.93,
+      342.13,
+      637.18
+    ]
+  },
+  {
+    "req_id": "ELEC-2.8.3",
+    "equipment_class": "ups",
+    "parameter": "mtbf",
+    "operator": ">=",
+    "value": 100000.0,
+    "unit": "hour",
+    "condition": null,
+    "source_doc": "spec_power.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      572.93,
+      351.02,
+      582.18
+    ]
+  },
+  {
+    "req_id": "IT-7.1.1",
+    "equipment_class": "cpu_cooler",
+    "parameter": "tim_thermal_conductivity",
+    "operator": ">=",
+    "value": 3.5,
+    "unit": "W/(m*K)",
+    "condition": null,
+    "source_doc": "spec_procurement.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      682.93,
+      504.91,
+      692.18
+    ]
+  },
+  {
+    "req_id": "PROC-1.1",
+    "equipment_class": "procurement",
+    "parameter": "lead_time",
+    "operator": "<=",
+    "value": 16.0,
+    "unit": "week",
+    "condition": null,
+    "source_doc": "spec_procurement.pdf",
+    "source_page": 1,
+    "source_bbox": [
+      72.0,
+      627.93,
+      362.68,
+      637.18
     ]
   }
 ]
