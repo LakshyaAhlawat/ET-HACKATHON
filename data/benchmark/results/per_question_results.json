@@ -16,7 +16,7 @@
           "Clause CTRL-5 \u2014 CRAC Sensible Cooling Capacity. Submittal: CRAC unit sensible cooling capacity rated at 125 kW."
         ],
         "delta_pct": null,
-        "latency_ms": 3.1602997332811356,
+        "latency_ms": 30.236327998864,
         "correct": null,
         "notes": "raw compare 2.0 vs -3.4 (units/condition ignored)"
       },
@@ -30,7 +30,7 @@
           "Vertiv CentraVac Chiller \u2014 Product Cut Sheet. Page 3 \u2014 Performance Data. Cooling capacity: 1688 kW."
         ],
         "delta_pct": null,
-        "latency_ms": 78354.8626000993,
+        "latency_ms": 13186.758943000314,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -41,7 +41,7 @@
         "predicted_text": "NON_CONFORMANCE: required >= 500.0 TR @35C ambient, submitted 1688.0 kW @35C ambient",
         "retrieved_context": [],
         "delta_pct": -4.005095464127021,
-        "latency_ms": 7.441500201821327,
+        "latency_ms": 30.140140999719733,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -64,7 +64,7 @@
           "Tier III Fast-Transfer Requirement. Per the project's Tier III SLA, upon ATS failure the facility must fail over to the backup generator within 4 milliseconds. Achieving this requires: dual independent ATS units in series, fast-transfer logic in the facility PLC, a generator rated to accept load within 2\u20133 milliseconds, and a static transfer switch (STS) bypass path."
         ],
         "delta_pct": null,
-        "latency_ms": 0.5266997031867504,
+        "latency_ms": 0.5862160014658002,
         "correct": null,
         "notes": "raw compare 16.1 vs -16.0 (units/condition ignored)"
       },
@@ -78,7 +78,7 @@
           "Schneider Electric ATS \u2014 Product Submittal. Enclosure rating: NEMA 4 (IP65)."
         ],
         "delta_pct": null,
-        "latency_ms": 30.879199970513582,
+        "latency_ms": 15.588779999234248,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -89,7 +89,7 @@
         "predicted_text": "NON_CONFORMANCE: required >= 66.0 dimensionless, submitted 65.0 dimensionless",
         "retrieved_context": [],
         "delta_pct": -1.5151515151515151,
-        "latency_ms": 0.2171001397073269,
+        "latency_ms": 0.09691199920780491,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -112,7 +112,7 @@
           "Clause ELEC-2.8.2 \u2014 UPS Power Capacity. UPS power capacity shall be not less than 250 kW at 0.9 power factor."
         ],
         "delta_pct": null,
-        "latency_ms": 0.6018001586198807,
+        "latency_ms": 0.43730199831770733,
         "correct": null,
         "notes": "raw compare 1.0 vs -2.8 (units/condition ignored)"
       },
@@ -126,7 +126,7 @@
           "Vertiv UPS \u2014 Product Submittal. Runtime: 20 minutes. (Ambient temperature and load condition not stated in this submittal.)"
         ],
         "delta_pct": null,
-        "latency_ms": 32.06299990415573,
+        "latency_ms": 16.77923399984138,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -137,7 +137,7 @@
         "predicted_text": "INSUFFICIENT_DATA: required >= 20.0 min @25C ambient, @full load, submitted None",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 0.031000003218650818,
+        "latency_ms": 0.013386999853537418,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -160,7 +160,7 @@
           "Clause MECH-3.6.1 \u2014 Cooling Loop Redundancy. Two independent chilled water loops are required for Tier III redundancy; any one loop shall be capable of cooling the entire facility, with isolation such that a header failure on one loop does not affect the other."
         ],
         "delta_pct": null,
-        "latency_ms": 0.489900354295969,
+        "latency_ms": 0.3337380003358703,
         "correct": null,
         "notes": "raw compare 1.0 vs -3.1 (units/condition ignored)"
       },
@@ -174,7 +174,7 @@
           "Tier III Fast-Transfer Requirement. Per the project's Tier III SLA, upon ATS failure the facility must fail over to the backup generator within 4 milliseconds. Achieving this requires: dual independent ATS units in series, fast-transfer logic in the facility PLC, a generator rated to accept load within 2\u20133 milliseconds, and a static transfer switch (STS) bypass path."
         ],
         "delta_pct": null,
-        "latency_ms": 37.467800080776215,
+        "latency_ms": 16.381371000534273,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -185,7 +185,7 @@
         "predicted_text": "NON_CONFORMANCE: required >= 2.0 dimensionless, submitted 1.0 dimensionless",
         "retrieved_context": [],
         "delta_pct": -50.0,
-        "latency_ms": 0.10369997471570969,
+        "latency_ms": 0.03292500150564592,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -208,7 +208,7 @@
           "Trane Sintesis Chiller \u2014 Product Cut Sheet. Page 4 \u2014 Cooling Loop Interface. Water inlet temperature maximum: 54\u00b0C."
         ],
         "delta_pct": null,
-        "latency_ms": 0.31299982219934464,
+        "latency_ms": 0.24772799952188507,
         "correct": null,
         "notes": "raw compare 6.0 vs 12.0 (units/condition ignored)"
       },
@@ -222,7 +222,7 @@
           "Trane Sintesis Chiller \u2014 Product Cut Sheet. Page 12 \u2014 Efficiency Data. IPLV: 6.0 EER."
         ],
         "delta_pct": null,
-        "latency_ms": 38.71549991890788,
+        "latency_ms": 13.527348999559763,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -233,7 +233,7 @@
         "predicted_text": "NON_CONFORMANCE: required >= 6.2 dimensionless, submitted 6.0 dimensionless",
         "retrieved_context": [],
         "delta_pct": -3.2258064516129057,
-        "latency_ms": 0.0950000248849392,
+        "latency_ms": 0.03246400046919007,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -256,7 +256,7 @@
           "Breaker Selectivity and Coordination. Breaker coordination (selectivity) means that for a fault at any point in the distribution system, the nearest upstream breaker clears the fault before any breaker further upstream trips \u2014 this confines an outage to the smallest possible section. Verifying selectivity requires the manufacturer's time-current characteristic (TCC) curves for each breaker pair; a coordination study cross-references these curves across the full distribution tree."
         ],
         "delta_pct": null,
-        "latency_ms": 0.489299651235342,
+        "latency_ms": 0.37076000080560334,
         "correct": null,
         "notes": "raw compare 125.0 vs -5.0 (units/condition ignored)"
       },
@@ -270,7 +270,7 @@
           "Breaker Selectivity and Coordination. Breaker coordination (selectivity) means that for a fault at any point in the distribution system, the nearest upstream breaker clears the fault before any breaker further upstream trips \u2014 this confines an outage to the smallest possible section. Verifying selectivity requires the manufacturer's time-current characteristic (TCC) curves for each breaker pair; a coordination study cross-references these curves across the full distribution tree."
         ],
         "delta_pct": null,
-        "latency_ms": 27.264900039881468,
+        "latency_ms": 14.977611999711371,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -281,7 +281,7 @@
         "predicted_text": "INSUFFICIENT_DATA: required == 1.0 dimensionless included in submittal package, not deferred, submitted None",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 0.027600210160017014,
+        "latency_ms": 0.009888999557006173,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -304,7 +304,7 @@
           "Clause CTRL-1 \u2014 Generator Prime Power. Submittal: Caterpillar generator, prime power rating 1600 kVA at 0.8 lagging power factor."
         ],
         "delta_pct": null,
-        "latency_ms": 0.34319981932640076,
+        "latency_ms": 0.23771799897076562,
         "correct": null,
         "notes": "raw compare 2.0 vs -2.8 (units/condition ignored)"
       },
@@ -318,7 +318,7 @@
           "Vertiv UPS \u2014 Product Submittal. Power rating: 250 kVA. (Power factor not stated in this submittal.)"
         ],
         "delta_pct": null,
-        "latency_ms": 39.45939987897873,
+        "latency_ms": 13.090413000099943,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -329,7 +329,7 @@
         "predicted_text": "INSUFFICIENT_DATA: required >= 250.0 kW @0.9 PF, submitted None",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 0.02329982817173004,
+        "latency_ms": 0.008076000085566193,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -352,7 +352,7 @@
           "Clause ELEC-3.1.1 \u2014 Generator Redundancy. Tier III power train requires N+1 generator redundancy: two independent generators, each capable of carrying the full IT load, such that any one generator can carry the load alone."
         ],
         "delta_pct": null,
-        "latency_ms": 0.5030999891459942,
+        "latency_ms": 0.3178059996571392,
         "correct": null,
         "notes": "raw compare 1.0 vs -3.6 (units/condition ignored)"
       },
@@ -366,7 +366,7 @@
           "Clause MECH-3.6.1 \u2014 Cooling Loop Redundancy. Two independent chilled water loops are required for Tier III redundancy; any one loop shall be capable of cooling the entire facility, with isolation such that a header failure on one loop does not affect the other."
         ],
         "delta_pct": null,
-        "latency_ms": 39.901799988001585,
+        "latency_ms": 14.908584000295377,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -377,7 +377,7 @@
         "predicted_text": "NON_CONFORMANCE: required >= 2.0 dimensionless, submitted 1.0 dimensionless",
         "retrieved_context": [],
         "delta_pct": -50.0,
-        "latency_ms": 0.09329989552497864,
+        "latency_ms": 0.03237400051148143,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -400,7 +400,7 @@
           "Vendor Submittals \u2014 Data Centre EPC Project. Synthesized vendor cut-sheet excerpts. See `README.md` for provenance."
         ],
         "delta_pct": null,
-        "latency_ms": 0.7563000544905663,
+        "latency_ms": 0.3008029998454731,
         "correct": null,
         "notes": "fewer than 2 numbers found in retrieved context"
       },
@@ -414,7 +414,7 @@
           "Clause QUAL-2.3 \u2014 Submittal Documentation. All vendor submittals shall include a certificate of compliance, test reports for the equipment, and warranty documentation, in addition to the product cut sheet."
         ],
         "delta_pct": null,
-        "latency_ms": 29.529799707233906,
+        "latency_ms": 15.542632001597667,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -425,7 +425,7 @@
         "predicted_text": "INSUFFICIENT_DATA: required == 4.0 dimensionless cut sheet + certificate of compliance + test reports + warranty, submitted None",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 0.02219993621110916,
+        "latency_ms": 0.007365000783465803,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -448,7 +448,7 @@
           "Transient Overvoltage Protection. When a large inductive load (such as a chiller compressor motor) is switched off by a contactor, the collapsing magnetic field can produce a voltage transient that damages downstream equipment. Standard protection is surge protection devices (SPDs / varistors) or RC snubber circuits across the contactor coil or load; their absence on a single-line diagram indicates a design gap that can cause nuisance equipment failures."
         ],
         "delta_pct": null,
-        "latency_ms": 0.4160003736615181,
+        "latency_ms": 0.22526400061906315,
         "correct": null,
         "notes": "raw compare 1.0 vs -3.5 (units/condition ignored)"
       },
@@ -462,7 +462,7 @@
           "Vertiv CentraVac Chiller \u2014 Product Cut Sheet. Page 6 \u2014 Acoustic Data. Sound pressure level: 84 dB(A) at 1 meter, full load."
         ],
         "delta_pct": null,
-        "latency_ms": 42.460099793970585,
+        "latency_ms": 11.98246000058134,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -473,7 +473,7 @@
         "predicted_text": "NON_CONFORMANCE: required <= 82.0 dBA @1m full load, submitted 84.0 dBA @1m full load",
         "retrieved_context": [],
         "delta_pct": 2.4390243902439024,
-        "latency_ms": 0.16609998419880867,
+        "latency_ms": 0.06494799890788272,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -496,7 +496,7 @@
           "RFI-0236 (2024-09-01) \u2014 Fire and Security Monitoring Scope. Question: Do fire suppression and security systems also need monitoring dashboards? Response: Fire suppression monitoring is required per fire code; security is a separate system, not included in the environmental dashboard."
         ],
         "delta_pct": null,
-        "latency_ms": 0.3396999090909958,
+        "latency_ms": 0.2016279995586956,
         "correct": null,
         "notes": "raw compare -3.5 vs 3.1 (units/condition ignored)"
       },
@@ -510,7 +510,7 @@
           "Clause MECH-3.5.2 \u2014 Chiller Bearing Vibration. Chiller bearing vibration shall not exceed 2.8 mm/s RMS."
         ],
         "delta_pct": null,
-        "latency_ms": 37.22729999572039,
+        "latency_ms": 11.626493000221672,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -521,7 +521,7 @@
         "predicted_text": "NON_CONFORMANCE: required <= 2.8 mm/s, submitted 3.1 mm/s",
         "retrieved_context": [],
         "delta_pct": 10.714285714285724,
-        "latency_ms": 0.5141999572515488,
+        "latency_ms": 0.15381500088551547,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -544,7 +544,7 @@
           "Cooling Loop \u2014 Chiller / Cooling Tower Interface. Trane chiller specifies a maximum water inlet temperature of 54\u00b0C. Marley cooling tower specifies a minimum water exit temperature of 32\u00b0C at design ambient of 35\u00b0C. A typical chiller approach temperature (inlet minus outlet) is around 6\u00b0C, which leaves limited margin between Marley's 32\u00b0C exit and Trane's inlet tolerance \u2014 a detailed cooling load and balance-point calculation is required before combining the two vendors' equipment in one loop."
         ],
         "delta_pct": null,
-        "latency_ms": 0.45350007712841034,
+        "latency_ms": 0.22306000028038397,
         "correct": null,
         "notes": "raw compare -3.7 vs 3.2 (units/condition ignored)"
       },
@@ -558,7 +558,7 @@
           "Clause MECH-3.7.1 \u2014 CPU Cooler Thermal Interface Material. Thermal interface material (TIM) thermal conductivity shall be not less than 3.5 W/m\u00b7K."
         ],
         "delta_pct": null,
-        "latency_ms": 49.20589970424771,
+        "latency_ms": 11.96903299933183,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -569,7 +569,7 @@
         "predicted_text": "NON_CONFORMANCE: required >= 3.5 W/m/K, submitted 3.2 W/m/K",
         "retrieved_context": [],
         "delta_pct": -8.571428571428566,
-        "latency_ms": 0.2755001187324524,
+        "latency_ms": 0.08687199988344219,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -592,7 +592,7 @@
           "Building Code Safety Systems and UPS Backup. The local building code requires emergency power backup for all safety systems. The facility's safety systems are emergency lighting, fire suppression control, and HVAC safety interlocks. The UPS load inventory for this project has not yet been cross-referenced against this full safety-system list to confirm all three are covered."
         ],
         "delta_pct": null,
-        "latency_ms": 0.5453997291624546,
+        "latency_ms": 0.4568509993987391,
         "correct": null,
         "notes": "raw compare 1.0 vs -5.1 (units/condition ignored)"
       },
@@ -606,7 +606,7 @@
           "Clause ELEC-5.1.1 \u2014 Cable Fire Rating. All power cable in cable trays within 10 meters of IT equipment shall be rated IEC 60332-1 Category A (non-propagating flame)."
         ],
         "delta_pct": null,
-        "latency_ms": 40.33490037545562,
+        "latency_ms": 12.897500999315525,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -617,7 +617,7 @@
         "predicted_text": "NON_CONFORMANCE: required == 1.0 dimensionless within 10m of IT equipment, submitted 2.0 dimensionless within 10m of IT equipment",
         "retrieved_context": [],
         "delta_pct": 100.0,
-        "latency_ms": 0.1221001148223877,
+        "latency_ms": 0.0348189987562364,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -640,7 +640,7 @@
           "Chiller Failure \u2014 Downstream Schedule Dependencies. The chiller is a single point of failure in the cooling loop. Tasks that depend on chiller operation: cooling system test, integrated systems test (IST), and commissioning. A chiller failure requiring replacement carries a lead time of at least 4 weeks, which delays all three downstream tasks by the same amount."
         ],
         "delta_pct": null,
-        "latency_ms": 0.3407001495361328,
+        "latency_ms": 0.22537400036526378,
         "correct": null,
         "notes": "raw compare 3.0 vs -2.8 (units/condition ignored)"
       },
@@ -654,7 +654,7 @@
           "Vertiv UPS \u2014 Product Submittal. MTBF: 95,000 hours."
         ],
         "delta_pct": null,
-        "latency_ms": 52.15639993548393,
+        "latency_ms": 13.287083000250277,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -665,7 +665,7 @@
         "predicted_text": "NON_CONFORMANCE: required >= 100000.0 hr, submitted 95000.0 hr",
         "retrieved_context": [],
         "delta_pct": -5.0,
-        "latency_ms": 0.16270019114017487,
+        "latency_ms": 0.047715000619064085,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -688,7 +688,7 @@
           "Change Order \u2014 IT Capacity Increase Cascading Impact. A change order that increases IT equipment capacity by 15% requires resizing the cooling loop (chiller, cooling tower, and pump capacity) by roughly 15\u201320%, along with re-engineering the electrical load calculations. If any resized component exceeds its vendor's original lead-time-committed capacity band, re-procurement is required, typically adding 6\u20138 weeks to the schedule."
         ],
         "delta_pct": null,
-        "latency_ms": 0.4213000647723675,
+        "latency_ms": 0.26700600028561894,
         "correct": null,
         "notes": "raw compare 15.0 vs 18.0 (units/condition ignored)"
       },
@@ -702,7 +702,7 @@
           "Clause PROC-1.1 \u2014 Equipment Delivery Lead Time. Equipment delivery shall occur within 16 weeks of order placement."
         ],
         "delta_pct": null,
-        "latency_ms": 34.69920018687844,
+        "latency_ms": 15.456691000508727,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -713,7 +713,7 @@
         "predicted_text": "NON_CONFORMANCE: required <= 16.0 weeks, submitted 18.0 weeks standard; 15% premium for 15wk expedite",
         "retrieved_context": [],
         "delta_pct": 12.5,
-        "latency_ms": 0.22740010172128677,
+        "latency_ms": 0.06853600098111201,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -736,7 +736,7 @@
           "Clause ELEC-3.1.1 \u2014 Generator Redundancy. Tier III power train requires N+1 generator redundancy: two independent generators, each capable of carrying the full IT load, such that any one generator can carry the load alone."
         ],
         "delta_pct": null,
-        "latency_ms": 0.332800205796957,
+        "latency_ms": 0.20875100017292425,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -750,7 +750,7 @@
           "Equipment Procurement Quote. Standard lead time: 18 weeks. Expedite available at 15% premium for a 15-week delivery."
         ],
         "delta_pct": null,
-        "latency_ms": 30.520199798047543,
+        "latency_ms": 12.366842000119505,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -765,7 +765,7 @@
           "Equipment Procurement Quote. Standard lead time: 18 weeks. Expedite available at 15% premium for a 15-week delivery."
         ],
         "delta_pct": null,
-        "latency_ms": 71512.10749987513,
+        "latency_ms": 7329.0670169990335,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -788,7 +788,7 @@
           "RFI-0124 (2024-03-15) \u2014 Chilled Water Supply Temperature. Question: What is the required chilled water supply temperature setpoint for the cooling loop? Response: 12\u00b0C \u00b1 1\u00b0C."
         ],
         "delta_pct": null,
-        "latency_ms": 0.5494002252817154,
+        "latency_ms": 0.35362699964025524,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -802,7 +802,7 @@
           "Trane Sintesis Chiller \u2014 Product Cut Sheet. Page 4 \u2014 Cooling Loop Interface. Water inlet temperature maximum: 54\u00b0C."
         ],
         "delta_pct": null,
-        "latency_ms": 28.627099934965372,
+        "latency_ms": 16.898017000130494,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -817,7 +817,7 @@
           "Thermal Design \u2014 Ambient Rise Impact. If data hall ambient rises 2\u00b0C above design (from 24\u00b0C to 26\u00b0C) while the target IT equipment inlet temperature remains 27\u00b0C, the chilled water supply temperature typically needs to be reduced by 2\u20133\u00b0C (for example, from 12\u00b0C to 9\u00b0C) to compensate \u2014 which may approach or exceed the chiller's rated capacity margin."
         ],
         "delta_pct": null,
-        "latency_ms": 1412.4266998842359,
+        "latency_ms": 2990.2859469984833,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -840,7 +840,7 @@
           "Chiller Failure \u2014 Downstream Schedule Dependencies. The chiller is a single point of failure in the cooling loop. Tasks that depend on chiller operation: cooling system test, integrated systems test (IST), and commissioning. A chiller failure requiring replacement carries a lead time of at least 4 weeks, which delays all three downstream tasks by the same amount."
         ],
         "delta_pct": null,
-        "latency_ms": 0.4390999674797058,
+        "latency_ms": 0.27966100060439203,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -854,7 +854,7 @@
           "Clause ELEC-2.8.2 \u2014 UPS Power Capacity. UPS power capacity shall be not less than 250 kW at 0.9 power factor."
         ],
         "delta_pct": null,
-        "latency_ms": 33.43459963798523,
+        "latency_ms": 11.882221999258036,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -869,7 +869,7 @@
           "RFI-0236 (2024-09-01) \u2014 Fire and Security Monitoring Scope. Question: Do fire suppression and security systems also need monitoring dashboards? Response: Fire suppression monitoring is required per fire code; security is a separate system, not included in the environmental dashboard."
         ],
         "delta_pct": null,
-        "latency_ms": 1782.2962002828717,
+        "latency_ms": 3814.77191599879,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -892,7 +892,7 @@
           "Change Order \u2014 IT Capacity Increase Cascading Impact. A change order that increases IT equipment capacity by 15% requires resizing the cooling loop (chiller, cooling tower, and pump capacity) by roughly 15\u201320%, along with re-engineering the electrical load calculations. If any resized component exceeds its vendor's original lead-time-committed capacity band, re-procurement is required, typically adding 6\u20138 weeks to the schedule."
         ],
         "delta_pct": null,
-        "latency_ms": 0.4696999676525593,
+        "latency_ms": 0.3895580011885613,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -906,7 +906,7 @@
           "Equipment Procurement Quote. Standard lead time: 18 weeks. Expedite available at 15% premium for a 15-week delivery."
         ],
         "delta_pct": null,
-        "latency_ms": 38.891800213605165,
+        "latency_ms": 12.674587000219617,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -921,7 +921,7 @@
           "Chiller Failure \u2014 Downstream Schedule Dependencies. The chiller is a single point of failure in the cooling loop. Tasks that depend on chiller operation: cooling system test, integrated systems test (IST), and commissioning. A chiller failure requiring replacement carries a lead time of at least 4 weeks, which delays all three downstream tasks by the same amount."
         ],
         "delta_pct": null,
-        "latency_ms": 1170.9111002273858,
+        "latency_ms": 2435.515219000081,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -944,7 +944,7 @@
           "Grounding Philosophy. The facility uses a single point of grounding (star grounding) for all major equipment: lower electrical noise, better EMI control, but a single-point failure risk at the star point. Multiple ground paths give better fault tolerance but introduce higher loop inductance and potential ground loops. Tier III facilities typically specify star grounding with redundant ground paths to the star point."
         ],
         "delta_pct": null,
-        "latency_ms": 0.2717999741435051,
+        "latency_ms": 0.18235999959870242,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -958,7 +958,7 @@
           "Clause MECH-3.6.1 \u2014 Cooling Loop Redundancy. Two independent chilled water loops are required for Tier III redundancy; any one loop shall be capable of cooling the entire facility, with isolation such that a header failure on one loop does not affect the other."
         ],
         "delta_pct": null,
-        "latency_ms": 34.258400090038776,
+        "latency_ms": 11.633959999016952,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -973,7 +973,7 @@
           "Piping Plan \u2014 Cooling Loop Submittal. Two chilled water loops shown, both drawing from a single chiller plant header; no isolation valves shown between the loops."
         ],
         "delta_pct": null,
-        "latency_ms": 1249.5830999687314,
+        "latency_ms": 2453.7993619996996,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -996,7 +996,7 @@
           "Building Code Safety Systems and UPS Backup. The local building code requires emergency power backup for all safety systems. The facility's safety systems are emergency lighting, fire suppression control, and HVAC safety interlocks. The UPS load inventory for this project has not yet been cross-referenced against this full safety-system list to confirm all three are covered."
         ],
         "delta_pct": null,
-        "latency_ms": 0.36610011011362076,
+        "latency_ms": 0.2523080001992639,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1010,7 +1010,7 @@
           "Utility / Generator Synchronization and ATS Logic. Where a facility is connected to both the utility grid and an on-site generator, the automatic transfer switch (ATS) must ensure the two sources never supply the load simultaneously \u2014 a phase-angle or phase-rotation mismatch between utility and generator across a shared transformer can cause a destructive short circuit that damages both. Mechanical ATS units use break-before-make logic with a brief (10\u201350 ms) transfer gap; modern static transfer switches (STS) can achieve near-zero transfer time. The single-line diagram's transfer logic annotation should state which approach is used."
         ],
         "delta_pct": null,
-        "latency_ms": 38.0579000338912,
+        "latency_ms": 11.720595000952017,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1025,7 +1025,7 @@
           "Utility / Generator Synchronization and ATS Logic. Where a facility is connected to both the utility grid and an on-site generator, the automatic transfer switch (ATS) must ensure the two sources never supply the load simultaneously \u2014 a phase-angle or phase-rotation mismatch between utility and generator across a shared transformer can cause a destructive short circuit that damages both. Mechanical ATS units use break-before-make logic with a brief (10\u201350 ms) transfer gap; modern static transfer switches (STS) can achieve near-zero transfer time. The single-line diagram's transfer logic annotation should state which approach is used."
         ],
         "delta_pct": null,
-        "latency_ms": 1515.408799983561,
+        "latency_ms": 2920.8837440000934,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1048,7 +1048,7 @@
           "RFI-0156 (2024-05-08) \u2014 Biodiesel Warranty Impact. Question: Does biodiesel fuel affect the generator warranty? Response: Biodiesel use voids manufacturer warranty unless biodiesel is specified in the original equipment submittal."
         ],
         "delta_pct": null,
-        "latency_ms": 0.43690018355846405,
+        "latency_ms": 0.28603399914572947,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1062,7 +1062,7 @@
           "Chiller Vendor \u2014 Documentation Package. Documents provided: product cut sheet, warranty. Certificate of compliance and test reports were not included in this submission."
         ],
         "delta_pct": null,
-        "latency_ms": 39.98839994892478,
+        "latency_ms": 14.176447000863845,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1077,7 +1077,7 @@
           "RFI-0251 (2024-09-10) \u2014 Facility Team Participation in IST. Question: Can the facility operations team participate in IST, or does it compromise independent verification? Response: Facility team observes but does not conduct the test. An independent third-party agency can be hired for additional verification."
         ],
         "delta_pct": null,
-        "latency_ms": 1145.1916000805795,
+        "latency_ms": 2529.186423998908,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1100,7 +1100,7 @@
           "Clause MECH-3.6.1 \u2014 Cooling Loop Redundancy. Two independent chilled water loops are required for Tier III redundancy; any one loop shall be capable of cooling the entire facility, with isolation such that a header failure on one loop does not affect the other."
         ],
         "delta_pct": null,
-        "latency_ms": 0.3231000155210495,
+        "latency_ms": 0.20605600002454594,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1114,7 +1114,7 @@
           "Equipment Procurement Quote. Standard lead time: 18 weeks. Expedite available at 15% premium for a 15-week delivery."
         ],
         "delta_pct": null,
-        "latency_ms": 34.672599751502275,
+        "latency_ms": 13.387077000516001,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1129,7 +1129,7 @@
           "Change Order \u2014 IT Capacity Increase Cascading Impact. A change order that increases IT equipment capacity by 15% requires resizing the cooling loop (chiller, cooling tower, and pump capacity) by roughly 15\u201320%, along with re-engineering the electrical load calculations. If any resized component exceeds its vendor's original lead-time-committed capacity band, re-procurement is required, typically adding 6\u20138 weeks to the schedule."
         ],
         "delta_pct": null,
-        "latency_ms": 1097.0680001191795,
+        "latency_ms": 2286.9654780006385,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1152,7 +1152,7 @@
           "RFI-0167-A (2024-06-20) \u2014 HVAC Setpoint Relaxation. Question: Can we loosen the setpoint to 26\u201328\u00b0C to save energy? Response: Energy savings possible, but IT equipment inlet temperatures may exceed 30\u00b0C, risking thermal shutdown. Recommendation: maintain 24\u00b0C \u00b1 2\u00b0C per specification."
         ],
         "delta_pct": null,
-        "latency_ms": 0.4468001425266266,
+        "latency_ms": 0.2894200006267056,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1166,7 +1166,7 @@
           "RFI-0076 (2024-02-14) \u2014 HVAC Setpoint. Question: What HVAC temperature setpoint is required for data hall ambient? Response: 24\u00b0C \u00b1 2\u00b0C (allowable range 22\u201326\u00b0C)."
         ],
         "delta_pct": null,
-        "latency_ms": 35.040799994021654,
+        "latency_ms": 14.48168299975805,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1181,7 +1181,7 @@
           "RFI-0124 (2024-03-15) \u2014 Chilled Water Supply Temperature. Question: What is the required chilled water supply temperature setpoint for the cooling loop? Response: 12\u00b0C \u00b1 1\u00b0C."
         ],
         "delta_pct": null,
-        "latency_ms": 1676.4734997414052,
+        "latency_ms": 2642.2693929998786,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1204,7 +1204,7 @@
           "Chiller Failure \u2014 Downstream Schedule Dependencies. The chiller is a single point of failure in the cooling loop. Tasks that depend on chiller operation: cooling system test, integrated systems test (IST), and commissioning. A chiller failure requiring replacement carries a lead time of at least 4 weeks, which delays all three downstream tasks by the same amount."
         ],
         "delta_pct": null,
-        "latency_ms": 0.4749000072479248,
+        "latency_ms": 0.30860900005791336,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1218,7 +1218,7 @@
           "Thermal Design \u2014 Ambient Rise Impact. If data hall ambient rises 2\u00b0C above design (from 24\u00b0C to 26\u00b0C) while the target IT equipment inlet temperature remains 27\u00b0C, the chilled water supply temperature typically needs to be reduced by 2\u20133\u00b0C (for example, from 12\u00b0C to 9\u00b0C) to compensate \u2014 which may approach or exceed the chiller's rated capacity margin."
         ],
         "delta_pct": null,
-        "latency_ms": 31.458199955523014,
+        "latency_ms": 16.146747000675532,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1233,7 +1233,7 @@
           "Clause MECH-3.4.2 \u2014 Chiller Cooling Capacity. Chiller cooling capacity shall be not less than 500 TR at 35\u00b0C ambient."
         ],
         "delta_pct": null,
-        "latency_ms": 5131.412799935788,
+        "latency_ms": 2559.3639229991823,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1256,7 +1256,7 @@
           "Harmonic Distortion from Variable Frequency Drives. Variable frequency drive (VFD) motors generate 5th, 7th, 11th, and 13th harmonic currents. Sensitive IT equipment (servers, storage) is vulnerable to harmonic distortion above roughly 5% total harmonic distortion (THD). Where VFDs share a switchboard with sensitive IT loads, mitigation is line reactors on VFD inputs and/or active harmonic filters on the switchboard."
         ],
         "delta_pct": null,
-        "latency_ms": 0.36639999598264694,
+        "latency_ms": 0.23747799968987238,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1270,7 +1270,7 @@
           "Clause ELEC-3.1.1 \u2014 Generator Redundancy. Tier III power train requires N+1 generator redundancy: two independent generators, each capable of carrying the full IT load, such that any one generator can carry the load alone."
         ],
         "delta_pct": null,
-        "latency_ms": 37.768200039863586,
+        "latency_ms": 12.988401000257,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1281,7 +1281,7 @@
         "predicted_text": "sld-01 (True 2N (fully redundant)): claimed 2N, holds=False. Only 0 path(s) found from source to IT-load; 2N requires at least two",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 11.660899966955185,
+        "latency_ms": 4.422394000357599,
         "correct": null,
         "notes": "real YOLOv8 + Hough + NetworkX pipeline (backend/sld)"
       }
@@ -1304,7 +1304,7 @@
           "Breaker Selectivity and Coordination. Breaker coordination (selectivity) means that for a fault at any point in the distribution system, the nearest upstream breaker clears the fault before any breaker further upstream trips \u2014 this confines an outage to the smallest possible section. Verifying selectivity requires the manufacturer's time-current characteristic (TCC) curves for each breaker pair; a coordination study cross-references these curves across the full distribution tree."
         ],
         "delta_pct": null,
-        "latency_ms": 0.5053002387285233,
+        "latency_ms": 0.4139160009799525,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1318,7 +1318,7 @@
           "Chiller Failure \u2014 Downstream Schedule Dependencies. The chiller is a single point of failure in the cooling loop. Tasks that depend on chiller operation: cooling system test, integrated systems test (IST), and commissioning. A chiller failure requiring replacement carries a lead time of at least 4 weeks, which delays all three downstream tasks by the same amount."
         ],
         "delta_pct": null,
-        "latency_ms": 31.993099953979254,
+        "latency_ms": 11.944424000830622,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1329,7 +1329,7 @@
         "predicted_text": "sld-02 (SPOF: shared ATS before load): claimed 2N, holds=False. Only 0 path(s) found from source to IT-load; 2N requires at least two",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 0.002299901098012924,
+        "latency_ms": 0.0013829994713887572,
         "correct": null,
         "notes": "real YOLOv8 + Hough + NetworkX pipeline (backend/sld)"
       }
@@ -1352,7 +1352,7 @@
           "Clause ELEC-4.2.1 \u2014 Switchgear Coordination Study. The electrical design package shall include a breaker coordination study demonstrating that each upstream breaker clears slower than its downstream breaker (proper selectivity), submitted with the single-line diagram."
         ],
         "delta_pct": null,
-        "latency_ms": 0.4533999599516392,
+        "latency_ms": 0.307345000692294,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1366,7 +1366,7 @@
           "Switchgear Package \u2014 Electrical Design Submittal. Single-line diagram submitted. Coordination study: \"available upon request, not included in this package.\" Breaker CB-05 rated 125A 3-phase; breaker CB-02 rated 300A, upstream of CB-05."
         ],
         "delta_pct": null,
-        "latency_ms": 29.19329982250929,
+        "latency_ms": 13.74764799948025,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1377,7 +1377,7 @@
         "predicted_text": "sld-03 (SPOF: shared busbar upstream): claimed 2N, holds=False. Every path from source to IT-load shares node 'det-1' \u2014 single point of failure SPOF node: det-1.",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 0.00090012326836586,
+        "latency_ms": 0.0004610010364558548,
         "correct": null,
         "notes": "real YOLOv8 + Hough + NetworkX pipeline (backend/sld)"
       }
@@ -1400,7 +1400,7 @@
           "Tier III Fast-Transfer Requirement. Per the project's Tier III SLA, upon ATS failure the facility must fail over to the backup generator within 4 milliseconds. Achieving this requires: dual independent ATS units in series, fast-transfer logic in the facility PLC, a generator rated to accept load within 2\u20133 milliseconds, and a static transfer switch (STS) bypass path."
         ],
         "delta_pct": null,
-        "latency_ms": 0.45010028406977654,
+        "latency_ms": 0.2938190009444952,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1414,7 +1414,7 @@
           "Tier III Fast-Transfer Requirement. Per the project's Tier III SLA, upon ATS failure the facility must fail over to the backup generator within 4 milliseconds. Achieving this requires: dual independent ATS units in series, fast-transfer logic in the facility PLC, a generator rated to accept load within 2\u20133 milliseconds, and a static transfer switch (STS) bypass path."
         ],
         "delta_pct": null,
-        "latency_ms": 38.06809987872839,
+        "latency_ms": 12.397418000546168,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1425,7 +1425,7 @@
         "predicted_text": "sld-04 (True 2N with generator backup on path A): claimed 2N, holds=True. Found node-disjoint paths: det-3 -> det-0 -> det-6 -> det-4 and det-5 -> det-2 -> det-7 -> det-4",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 0.0006002373993396759,
+        "latency_ms": 0.0005109995981911197,
         "correct": null,
         "notes": "real YOLOv8 + Hough + NetworkX pipeline (backend/sld)"
       }
@@ -1448,7 +1448,7 @@
           "RFI-0098 (2024-03-05) \u2014 UPS Battery Chemistry. Question: What UPS battery chemistry is approved? Response: Valve-regulated lead-acid (VRLA) or lithium-ion, vendor's choice."
         ],
         "delta_pct": null,
-        "latency_ms": 0.6013000383973122,
+        "latency_ms": 0.38829599907330703,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1462,7 +1462,7 @@
           "Vertiv UPS \u2014 Product Submittal. Power rating: 250 kVA. (Power factor not stated in this submittal.)"
         ],
         "delta_pct": null,
-        "latency_ms": 29.5138000510633,
+        "latency_ms": 13.511387000107788,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1473,7 +1473,7 @@
         "predicted_text": "sld-05 (SPOF: shared final breaker before load): claimed 2N, holds=False. Only 0 path(s) found from source to IT-load; 2N requires at least two",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 0.0007003545761108398,
+        "latency_ms": 0.00024099972506519407,
         "correct": null,
         "notes": "real YOLOv8 + Hough + NetworkX pipeline (backend/sld)"
       }
@@ -1496,7 +1496,7 @@
           "Neutral Grounding Resistor (NGR) Fault Current. The project's neutral grounding resistor is rated 6.25 Ohms on a 3-phase 415V system. For a line-to-ground fault, fault current is approximately 415V / 6.25\u03a9 \u2248 66A. This is a moderate fault current for a 415V industrial system and should be cleared in under 1 second by coordinated protective relays to prevent transformer heating."
         ],
         "delta_pct": null,
-        "latency_ms": 0.42479997500777245,
+        "latency_ms": 0.2682090016605798,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1510,7 +1510,7 @@
           "Spare Parts \u2014 Critical Path Inventory. Three pieces of equipment are on the critical path for spare parts during operations: generator fuel filters (consumable, recommended 1-month stock on-site), UPS battery cells (high lead time, recommended 1 full set on-site), and the ATS control board (long lead time, recommended 1 spare on-site)."
         ],
         "delta_pct": null,
-        "latency_ms": 40.052300319075584,
+        "latency_ms": 10.27596299900324,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1525,7 +1525,7 @@
           "Chiller Failure \u2014 Downstream Schedule Dependencies. The chiller is a single point of failure in the cooling loop. Tasks that depend on chiller operation: cooling system test, integrated systems test (IST), and commissioning. A chiller failure requiring replacement carries a lead time of at least 4 weeks, which delays all three downstream tasks by the same amount."
         ],
         "delta_pct": null,
-        "latency_ms": 7432.5934001244605,
+        "latency_ms": 3697.980185999768,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1548,7 +1548,7 @@
           "Breaker Selectivity and Coordination. Breaker coordination (selectivity) means that for a fault at any point in the distribution system, the nearest upstream breaker clears the fault before any breaker further upstream trips \u2014 this confines an outage to the smallest possible section. Verifying selectivity requires the manufacturer's time-current characteristic (TCC) curves for each breaker pair; a coordination study cross-references these curves across the full distribution tree."
         ],
         "delta_pct": null,
-        "latency_ms": 0.4064999520778656,
+        "latency_ms": 0.2614659988466883,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1562,7 +1562,7 @@
           "Grounding Philosophy. The facility uses a single point of grounding (star grounding) for all major equipment: lower electrical noise, better EMI control, but a single-point failure risk at the star point. Multiple ground paths give better fault tolerance but introduce higher loop inductance and potential ground loops. Tier III facilities typically specify star grounding with redundant ground paths to the star point."
         ],
         "delta_pct": null,
-        "latency_ms": 27.12700003758073,
+        "latency_ms": 13.330330000826507,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1577,7 +1577,7 @@
           "Breaker Selectivity and Coordination. Breaker coordination (selectivity) means that for a fault at any point in the distribution system, the nearest upstream breaker clears the fault before any breaker further upstream trips \u2014 this confines an outage to the smallest possible section. Verifying selectivity requires the manufacturer's time-current characteristic (TCC) curves for each breaker pair; a coordination study cross-references these curves across the full distribution tree."
         ],
         "delta_pct": null,
-        "latency_ms": 5660.350599791855,
+        "latency_ms": 2598.679701999572,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1600,7 +1600,7 @@
           "RFI Log \u2014 Data Centre EPC Project. Synthesized RFI (Request for Information) log. See `README.md` for provenance. Each entry is a question/response pair as logged during design review. Two RFIs (RFI-0201-A on transformer oil and RFI-0201-B on UPS battery replacement) were logged in the same week and share a number prefix in this synthesized log \u2014 a real-world RFI numbering collision, preserved here exactly as it appears in the ground-truth key rather than silently fixed."
         ],
         "delta_pct": null,
-        "latency_ms": 0.33289985731244087,
+        "latency_ms": 0.2310959989699768,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1614,7 +1614,7 @@
           "Clause CTRL-3 \u2014 UPS Input THDi. UPS input total harmonic distortion (THDi) shall not exceed 5% at full load."
         ],
         "delta_pct": null,
-        "latency_ms": 38.15069980919361,
+        "latency_ms": 16.232773999945493,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1629,7 +1629,7 @@
           "Change Order \u2014 IT Capacity Increase Cascading Impact. A change order that increases IT equipment capacity by 15% requires resizing the cooling loop (chiller, cooling tower, and pump capacity) by roughly 15\u201320%, along with re-engineering the electrical load calculations. If any resized component exceeds its vendor's original lead-time-committed capacity band, re-procurement is required, typically adding 6\u20138 weeks to the schedule."
         ],
         "delta_pct": null,
-        "latency_ms": 5608.133899979293,
+        "latency_ms": 2726.3416799996776,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1652,7 +1652,7 @@
           "Piping Plan \u2014 Cooling Loop Submittal. Two chilled water loops shown, both drawing from a single chiller plant header; no isolation valves shown between the loops."
         ],
         "delta_pct": null,
-        "latency_ms": 0.3917999565601349,
+        "latency_ms": 0.30862899984640535,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1666,7 +1666,7 @@
           "Harmonic Distortion from Variable Frequency Drives. Variable frequency drive (VFD) motors generate 5th, 7th, 11th, and 13th harmonic currents. Sensitive IT equipment (servers, storage) is vulnerable to harmonic distortion above roughly 5% total harmonic distortion (THD). Where VFDs share a switchboard with sensitive IT loads, mitigation is line reactors on VFD inputs and/or active harmonic filters on the switchboard."
         ],
         "delta_pct": null,
-        "latency_ms": 38.12040016055107,
+        "latency_ms": 12.8283720005129,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1681,7 +1681,7 @@
           "Harmonic Distortion from Variable Frequency Drives. Variable frequency drive (VFD) motors generate 5th, 7th, 11th, and 13th harmonic currents. Sensitive IT equipment (servers, storage) is vulnerable to harmonic distortion above roughly 5% total harmonic distortion (THD). Where VFDs share a switchboard with sensitive IT loads, mitigation is line reactors on VFD inputs and/or active harmonic filters on the switchboard."
         ],
         "delta_pct": null,
-        "latency_ms": 5199.853800237179,
+        "latency_ms": 2690.669428999172,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1704,7 +1704,7 @@
           "PR-Curve Negative-Class Controls. **Not part of the official 50-question ground-truth key.** The key's 15 planted deviations are all `NON_CONFORMANCE` or `INSUFFICIENT_DATA` \u2014 there is no compliant (`PASS`) case among them, so on their own they cannot populate the negative class a precision/recall curve needs (there's nothing for the evaluator to falsely flag). These five control cases are synthesized, clearly compliant, and added solely so `benchmark/scoring.py` has true negatives to score false-positive rate against. See `data/benchmark/pr_curve_controls.json` for the manifest and `README.md` in this folder for the wider provenance disclosure."
         ],
         "delta_pct": null,
-        "latency_ms": 0.46999985352158546,
+        "latency_ms": 0.30867799978295807,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1718,7 +1718,7 @@
           "Tier III Fast-Transfer Requirement. Per the project's Tier III SLA, upon ATS failure the facility must fail over to the backup generator within 4 milliseconds. Achieving this requires: dual independent ATS units in series, fast-transfer logic in the facility PLC, a generator rated to accept load within 2\u20133 milliseconds, and a static transfer switch (STS) bypass path."
         ],
         "delta_pct": null,
-        "latency_ms": 39.182200096547604,
+        "latency_ms": 13.83830300073896,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1733,7 +1733,7 @@
           "Spare Parts \u2014 Critical Path Inventory. Three pieces of equipment are on the critical path for spare parts during operations: generator fuel filters (consumable, recommended 1-month stock on-site), UPS battery cells (high lead time, recommended 1 full set on-site), and the ATS control board (long lead time, recommended 1 spare on-site)."
         ],
         "delta_pct": null,
-        "latency_ms": 7378.4010000526905,
+        "latency_ms": 3874.3464759991184,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1756,7 +1756,7 @@
           "RFI-0076 (2024-02-14) \u2014 HVAC Setpoint. Question: What HVAC temperature setpoint is required for data hall ambient? Response: 24\u00b0C \u00b1 2\u00b0C (allowable range 22\u201326\u00b0C)."
         ],
         "delta_pct": null,
-        "latency_ms": 0.9123999625444412,
+        "latency_ms": 0.4181639997113962,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1770,7 +1770,7 @@
           "RFI-0287 (2024-09-22) \u2014 Chiller Sizing vs. Supply Temperature. Question: Chiller is sized for 13\u00b0C supply temperature \u2014 can we operate at 13\u00b0C instead of 12\u00b0C? Response: Chiller sizing assumes 13\u00b0C; IT equipment inlet limits have not been re-confirmed against this value."
         ],
         "delta_pct": null,
-        "latency_ms": 39.63660029694438,
+        "latency_ms": 20.04461199976504,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1785,7 +1785,7 @@
           "Cooling Loop \u2014 Chiller / Cooling Tower Interface. Trane chiller specifies a maximum water inlet temperature of 54\u00b0C. Marley cooling tower specifies a minimum water exit temperature of 32\u00b0C at design ambient of 35\u00b0C. A typical chiller approach temperature (inlet minus outlet) is around 6\u00b0C, which leaves limited margin between Marley's 32\u00b0C exit and Trane's inlet tolerance \u2014 a detailed cooling load and balance-point calculation is required before combining the two vendors' equipment in one loop."
         ],
         "delta_pct": null,
-        "latency_ms": 6389.435400255024,
+        "latency_ms": 3407.302317000358,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1808,7 +1808,7 @@
           "RFI-0219 (2024-08-30) \u2014 CRAC Variable-Capacity Mode. Question: Can CRAC units run in variable-capacity mode for efficiency? Response: Yes, modulating valve control available at an additional cost of \u20b98 lakh per unit."
         ],
         "delta_pct": null,
-        "latency_ms": 0.6778002716600895,
+        "latency_ms": 0.38423799924203195,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1822,7 +1822,7 @@
           "RFI-0156 (2024-05-08) \u2014 Biodiesel Warranty Impact. Question: Does biodiesel fuel affect the generator warranty? Response: Biodiesel use voids manufacturer warranty unless biodiesel is specified in the original equipment submittal."
         ],
         "delta_pct": null,
-        "latency_ms": 41.58939979970455,
+        "latency_ms": 18.863380999391666,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1837,7 +1837,7 @@
           "RFI-0219 (2024-08-30) \u2014 CRAC Variable-Capacity Mode. Question: Can CRAC units run in variable-capacity mode for efficiency? Response: Yes, modulating valve control available at an additional cost of \u20b98 lakh per unit."
         ],
         "delta_pct": null,
-        "latency_ms": 4489.238599780947,
+        "latency_ms": 2646.0722150004585,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1860,7 +1860,7 @@
           "RFI-0132 (2024-04-10) \u2014 CRAC Control Strategy. Question: What control strategy is used for CRAC units? Response: Temperature-based on-off control; CRAC shuts down below 20\u00b0C supply air, energises above 24\u00b0C."
         ],
         "delta_pct": null,
-        "latency_ms": 0.8125999011099339,
+        "latency_ms": 0.7557879998785211,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1874,7 +1874,7 @@
           "RFI-0245 (2024-07-11) \u2014 Transformer Oil Temperature Rating. Question: Does eco-friendly oil reduce transformer life? Response: Yes \u2014 vegetable oil has a lower temperature rating (65\u00b0C rise vs. 55\u00b0C for mineral oil), requiring derating."
         ],
         "delta_pct": null,
-        "latency_ms": 49.00189954787493,
+        "latency_ms": 25.151605999781168,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1889,7 +1889,7 @@
           "RFI-0132 (2024-04-10) \u2014 CRAC Control Strategy. Question: What control strategy is used for CRAC units? Response: Temperature-based on-off control; CRAC shuts down below 20\u00b0C supply air, energises above 24\u00b0C."
         ],
         "delta_pct": null,
-        "latency_ms": 5617.746300064027,
+        "latency_ms": 2866.0538730000553,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1912,7 +1912,7 @@
           "Thermal Design \u2014 Ambient Rise Impact. If data hall ambient rises 2\u00b0C above design (from 24\u00b0C to 26\u00b0C) while the target IT equipment inlet temperature remains 27\u00b0C, the chilled water supply temperature typically needs to be reduced by 2\u20133\u00b0C (for example, from 12\u00b0C to 9\u00b0C) to compensate \u2014 which may approach or exceed the chiller's rated capacity margin."
         ],
         "delta_pct": null,
-        "latency_ms": 1.0104002431035042,
+        "latency_ms": 0.7678460005990928,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1926,7 +1926,7 @@
           "RFI-0167-A (2024-06-20) \u2014 HVAC Setpoint Relaxation. Question: Can we loosen the setpoint to 26\u201328\u00b0C to save energy? Response: Energy savings possible, but IT equipment inlet temperatures may exceed 30\u00b0C, risking thermal shutdown. Recommendation: maintain 24\u00b0C \u00b1 2\u00b0C per specification."
         ],
         "delta_pct": null,
-        "latency_ms": 51.17279989644885,
+        "latency_ms": 23.478807999708806,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1941,7 +1941,7 @@
           "RFI-0167-A (2024-06-20) \u2014 HVAC Setpoint Relaxation. Question: Can we loosen the setpoint to 26\u201328\u00b0C to save energy? Response: Energy savings possible, but IT equipment inlet temperatures may exceed 30\u00b0C, risking thermal shutdown. Recommendation: maintain 24\u00b0C \u00b1 2\u00b0C per specification."
         ],
         "delta_pct": null,
-        "latency_ms": 6496.0984997451305,
+        "latency_ms": 3337.0796679992054,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -1964,7 +1964,7 @@
           "RFI-0098 (2024-03-05) \u2014 UPS Battery Chemistry. Question: What UPS battery chemistry is approved? Response: Valve-regulated lead-acid (VRLA) or lithium-ion, vendor's choice."
         ],
         "delta_pct": null,
-        "latency_ms": 0.929300207644701,
+        "latency_ms": 0.5630100004054839,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -1978,7 +1978,7 @@
           "RFI-0178 (2024-07-01) \u2014 Lithium-Ion Battery Replacement Interval. Question: Lithium-ion UPS battery \u2014 how often must it be replaced? Response: 10-year design life; replacement every 10 years."
         ],
         "delta_pct": null,
-        "latency_ms": 52.23789997398853,
+        "latency_ms": 25.79635199981567,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -1993,7 +1993,7 @@
           "RFI Log \u2014 Data Centre EPC Project. Synthesized RFI (Request for Information) log. See `README.md` for provenance. Each entry is a question/response pair as logged during design review. Two RFIs (RFI-0201-A on transformer oil and RFI-0201-B on UPS battery replacement) were logged in the same week and share a number prefix in this synthesized log \u2014 a real-world RFI numbering collision, preserved here exactly as it appears in the ground-truth key rather than silently fixed."
         ],
         "delta_pct": null,
-        "latency_ms": 8162.773699965328,
+        "latency_ms": 3913.828185000966,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -2016,7 +2016,7 @@
           "Clause CTRL-5 \u2014 CRAC Sensible Cooling Capacity. CRAC unit sensible cooling capacity shall be not less than 120 kW per unit."
         ],
         "delta_pct": null,
-        "latency_ms": 1.2302999384701252,
+        "latency_ms": 0.5473990004247753,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2030,7 +2030,7 @@
           "RFI-0219 (2024-08-30) \u2014 CRAC Variable-Capacity Mode. Question: Can CRAC units run in variable-capacity mode for efficiency? Response: Yes, modulating valve control available at an additional cost of \u20b98 lakh per unit."
         ],
         "delta_pct": null,
-        "latency_ms": 52.70050000399351,
+        "latency_ms": 23.747860999719705,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2045,7 +2045,7 @@
           "RFI-0201-A (2024-04-30) \u2014 Transformer Oil Type. Question: Is eco-friendly (vegetable-based) transformer oil acceptable? Response: Yes, vegetable oil acceptable per IEEE C57.147."
         ],
         "delta_pct": null,
-        "latency_ms": 4120.831300038844,
+        "latency_ms": 2797.004291000121,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -2068,7 +2068,7 @@
           "Building Code Safety Systems and UPS Backup. The local building code requires emergency power backup for all safety systems. The facility's safety systems are emergency lighting, fire suppression control, and HVAC safety interlocks. The UPS load inventory for this project has not yet been cross-referenced against this full safety-system list to confirm all three are covered."
         ],
         "delta_pct": null,
-        "latency_ms": 0.8409000001847744,
+        "latency_ms": 0.5451050001283875,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2082,7 +2082,7 @@
           "RFI-0236 (2024-09-01) \u2014 Fire and Security Monitoring Scope. Question: Do fire suppression and security systems also need monitoring dashboards? Response: Fire suppression monitoring is required per fire code; security is a separate system, not included in the environmental dashboard."
         ],
         "delta_pct": null,
-        "latency_ms": 47.988999634981155,
+        "latency_ms": 18.330205999518512,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2097,7 +2097,7 @@
           "Building Code Safety Systems and UPS Backup. The local building code requires emergency power backup for all safety systems. The facility's safety systems are emergency lighting, fire suppression control, and HVAC safety interlocks. The UPS load inventory for this project has not yet been cross-referenced against this full safety-system list to confirm all three are covered."
         ],
         "delta_pct": null,
-        "latency_ms": 1909.4909001141787,
+        "latency_ms": 2801.863926000806,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -2120,7 +2120,7 @@
           "RFI-0189 (2024-07-15) \u2014 Test Record Retention. Question: How long must IST test records and logs be retained? Response: Per TIA-942 Tier III: minimum 10 years for major systems, 5 years for auxiliary systems."
         ],
         "delta_pct": null,
-        "latency_ms": 0.8610999211668968,
+        "latency_ms": 0.5180610005481867,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2134,7 +2134,7 @@
           "RFI-0251 (2024-09-10) \u2014 Facility Team Participation in IST. Question: Can the facility operations team participate in IST, or does it compromise independent verification? Response: Facility team observes but does not conduct the test. An independent third-party agency can be hired for additional verification."
         ],
         "delta_pct": null,
-        "latency_ms": 40.975899901241064,
+        "latency_ms": 22.915685000043595,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2149,7 +2149,7 @@
           "Chiller Warranty \u2014 Water Quality Requirement. The chiller warranty is void if water quality does not meet ISO 11162 (particle count, pH, corrosion inhibitor concentration). Responsibility for verifying water treatment before commissioning: the mechanical engineering team pre-commissioning, and the facility operations team on an ongoing basis, coordinating with the chiller vendor and the water treatment vendor. Verification is via water sampling and lab analysis."
         ],
         "delta_pct": null,
-        "latency_ms": 6355.114399921149,
+        "latency_ms": 3203.345370000534,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -2172,7 +2172,7 @@
           "RFI-0178 (2024-07-01) \u2014 Lithium-Ion Battery Replacement Interval. Question: Lithium-ion UPS battery \u2014 how often must it be replaced? Response: 10-year design life; replacement every 10 years."
         ],
         "delta_pct": null,
-        "latency_ms": 0.8874000050127506,
+        "latency_ms": 0.5516569999599596,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2186,7 +2186,7 @@
           "RFI-0267 (2024-09-25) \u2014 Digital vs. Paper Test Records. Question: Can test records be stored digitally, or must paper copies be retained? Response: Digital records are acceptable if certified and access-controlled; paper copies are recommended for critical tests."
         ],
         "delta_pct": null,
-        "latency_ms": 46.66330013424158,
+        "latency_ms": 18.822840000211727,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2201,7 +2201,7 @@
           "RFI-0167-B (2024-06-18) \u2014 IST Responsibility. Question: Who is responsible for conducting the Integrated Systems Test (IST)? Response: EPC contractor plus equipment manufacturer representatives."
         ],
         "delta_pct": null,
-        "latency_ms": 5716.03689994663,
+        "latency_ms": 2641.3100310001028,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -2224,7 +2224,7 @@
           "Change Order \u2014 IT Capacity Increase Cascading Impact. A change order that increases IT equipment capacity by 15% requires resizing the cooling loop (chiller, cooling tower, and pump capacity) by roughly 15\u201320%, along with re-engineering the electrical load calculations. If any resized component exceeds its vendor's original lead-time-committed capacity band, re-procurement is required, typically adding 6\u20138 weeks to the schedule."
         ],
         "delta_pct": null,
-        "latency_ms": 0.884499866515398,
+        "latency_ms": 0.6702909995510709,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2238,7 +2238,7 @@
           "RFI-0284 (2024-10-05) \u2014 Minor Change Threshold. Question: If a change is minor (e.g., +5% load increase), does it require full CCB approval? Response: Yes \u2014 any change with \u22651% cost or schedule impact requires CCB approval; \"minor\" is not separately defined."
         ],
         "delta_pct": null,
-        "latency_ms": 51.14990007132292,
+        "latency_ms": 20.726946999275242,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2253,7 +2253,7 @@
           "RFI-0167-B (2024-06-18) \u2014 IST Responsibility. Question: Who is responsible for conducting the Integrated Systems Test (IST)? Response: EPC contractor plus equipment manufacturer representatives."
         ],
         "delta_pct": null,
-        "latency_ms": 7063.777300063521,
+        "latency_ms": 5670.771697999953,
         "correct": null,
         "notes": "BM25 + vector, RRF-fused, cross-encoder reranked"
       }
@@ -2276,7 +2276,7 @@
           "Thermal Design \u2014 Ambient Rise Impact. If data hall ambient rises 2\u00b0C above design (from 24\u00b0C to 26\u00b0C) while the target IT equipment inlet temperature remains 27\u00b0C, the chilled water supply temperature typically needs to be reduced by 2\u20133\u00b0C (for example, from 12\u00b0C to 9\u00b0C) to compensate \u2014 which may approach or exceed the chiller's rated capacity margin."
         ],
         "delta_pct": null,
-        "latency_ms": 0.5634999834001064,
+        "latency_ms": 0.3649200007203035,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2290,7 +2290,7 @@
           "Equipment Procurement Quote. Standard lead time: 18 weeks. Expedite available at 15% premium for a 15-week delivery."
         ],
         "delta_pct": null,
-        "latency_ms": 31.92890016362071,
+        "latency_ms": 14.412409998840303,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2301,7 +2301,7 @@
         "predicted_text": "Simulated p50 handover day 234.3 (target 240), a slip of -0.8 weeks; P(handover > target) = 0.35. Monsoon seasonal window is applied automatically by the simulator when the delayed installation start falls inside it.",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 46.93809989839792,
+        "latency_ms": 33.636017999015166,
         "correct": null,
         "notes": "real DAG + Monte Carlo simulation (cascade/simulate.py)"
       }
@@ -2324,7 +2324,7 @@
           "RFI-0267 (2024-09-25) \u2014 Digital vs. Paper Test Records. Question: Can test records be stored digitally, or must paper copies be retained? Response: Digital records are acceptable if certified and access-controlled; paper copies are recommended for critical tests."
         ],
         "delta_pct": null,
-        "latency_ms": 0.36880001425743103,
+        "latency_ms": 0.25309899865533225,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2338,7 +2338,7 @@
           "Transformer Expedite Cost vs. Monsoon Schedule Impact. Expediting the transformer delivery from 18 weeks to 14 weeks costs \u20b945 lakh. If the transformer delay instead pushes commissioning into the monsoon window, testing duration increases by approximately 4 weeks; each week of extended schedule costs approximately \u20b945 lakh in crew and facility rental."
         ],
         "delta_pct": null,
-        "latency_ms": 39.9461998604238,
+        "latency_ms": 10.658097999112215,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2349,7 +2349,7 @@
         "predicted_text": "Simulated combined p50 handover day 234.3 vs transformer-only 234.3 -- the two delays are not simply additive on the critical path; aggregate slip is -0.8 weeks.",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 88.95450038835406,
+        "latency_ms": 42.569494999042945,
         "correct": null,
         "notes": "real DAG + Monte Carlo simulation (cascade/simulate.py)"
       }
@@ -2372,7 +2372,7 @@
           "Clause CTRL-4 \u2014 Transformer Impedance. Submittal: Transformer impedance rated at 6.0%."
         ],
         "delta_pct": null,
-        "latency_ms": 0.5357000045478344,
+        "latency_ms": 0.34503000097174663,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2386,7 +2386,7 @@
           "RFI-0245 (2024-07-11) \u2014 Transformer Oil Temperature Rating. Question: Does eco-friendly oil reduce transformer life? Response: Yes \u2014 vegetable oil has a lower temperature rating (65\u00b0C rise vs. 55\u00b0C for mineral oil), requiring derating."
         ],
         "delta_pct": null,
-        "latency_ms": 36.50370007380843,
+        "latency_ms": 15.34820300003048,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2397,7 +2397,7 @@
         "predicted_text": "Ranked mitigations from mitigate.py: Resequence trades: fast-track LV electrical off transformer install (\u0394p_slip=+0.107, cost=\u20b90L), Split the integrated systems test into concurrent phases (\u0394p_slip=+0.086, cost=\u20b94L), Add a second crew to the transformer install (\u0394p_slip=+0.140, cost=\u20b99L), Air-freight the transformer (\u0394p_slip=+0.265, cost=\u20b928L) | Parsed cost/week figures from question: [45.0] lakh over [3.0, 1.5, 4.0] week(s) -> ~\u20b915.0L/week reference rate.",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 263.34960013628006,
+        "latency_ms": 170.32672200002708,
         "correct": null,
         "notes": "real DAG + Monte Carlo simulation (cascade/simulate.py)"
       }
@@ -2420,7 +2420,7 @@
           "Harmonic Distortion from Variable Frequency Drives. Variable frequency drive (VFD) motors generate 5th, 7th, 11th, and 13th harmonic currents. Sensitive IT equipment (servers, storage) is vulnerable to harmonic distortion above roughly 5% total harmonic distortion (THD). Where VFDs share a switchboard with sensitive IT loads, mitigation is line reactors on VFD inputs and/or active harmonic filters on the switchboard."
         ],
         "delta_pct": null,
-        "latency_ms": 0.38109999150037766,
+        "latency_ms": 0.24573399969085585,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2434,7 +2434,7 @@
           "Transformer Expedite Cost vs. Monsoon Schedule Impact. Expediting the transformer delivery from 18 weeks to 14 weeks costs \u20b945 lakh. If the transformer delay instead pushes commissioning into the monsoon window, testing duration increases by approximately 4 weeks; each week of extended schedule costs approximately \u20b945 lakh in crew and facility rental."
         ],
         "delta_pct": null,
-        "latency_ms": 53.167200181633234,
+        "latency_ms": 14.584184000341338,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2445,7 +2445,7 @@
         "predicted_text": "Ranked mitigations from mitigate.py: Resequence trades: fast-track LV electrical off transformer install (\u0394p_slip=+0.107, cost=\u20b90L), Split the integrated systems test into concurrent phases (\u0394p_slip=+0.086, cost=\u20b94L), Add a second crew to the transformer install (\u0394p_slip=+0.140, cost=\u20b99L), Air-freight the transformer (\u0394p_slip=+0.265, cost=\u20b928L)",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 265.59519954025745,
+        "latency_ms": 158.12998600085848,
         "correct": null,
         "notes": "real DAG + Monte Carlo simulation (cascade/simulate.py)"
       }
@@ -2468,7 +2468,7 @@
           "Transformer Expedite Cost vs. Monsoon Schedule Impact. Expediting the transformer delivery from 18 weeks to 14 weeks costs \u20b945 lakh. If the transformer delay instead pushes commissioning into the monsoon window, testing duration increases by approximately 4 weeks; each week of extended schedule costs approximately \u20b945 lakh in crew and facility rental."
         ],
         "delta_pct": null,
-        "latency_ms": 0.6226999685168266,
+        "latency_ms": 0.40146200080926064,
         "correct": null,
         "notes": "keyword retrieval only, no synthesis"
       },
@@ -2482,7 +2482,7 @@
           "Clause PROC-1.1 \u2014 Equipment Delivery Lead Time. Equipment delivery shall occur within 16 weeks of order placement."
         ],
         "delta_pct": null,
-        "latency_ms": 32.78689971193671,
+        "latency_ms": 15.235726001264993,
         "correct": null,
         "notes": "single-vector retrieval only, no rerank, no synthesis"
       },
@@ -2493,7 +2493,7 @@
         "predicted_text": "Ranked mitigations from mitigate.py: Resequence trades: fast-track LV electrical off transformer install (\u0394p_slip=+0.107, cost=\u20b90L), Split the integrated systems test into concurrent phases (\u0394p_slip=+0.086, cost=\u20b94L), Add a second crew to the transformer install (\u0394p_slip=+0.140, cost=\u20b99L), Air-freight the transformer (\u0394p_slip=+0.265, cost=\u20b928L) | Parsed cost/week figures from question: [100.0] lakh over [7.0] week(s) -> ~\u20b914.3L/week reference rate.",
         "retrieved_context": [],
         "delta_pct": null,
-        "latency_ms": 242.8539996035397,
+        "latency_ms": 135.4818449999584,
         "correct": null,
         "notes": "real DAG + Monte Carlo simulation (cascade/simulate.py)"
       }
@@ -2516,7 +2516,7 @@
           "Clause ELEC-2.8.2 \u2014 UPS Power Capacity. UPS power capacity shall be not less than 250 kW at 0.9 power factor."
         ],
         "delta_pct": null,
-        "latency_ms": 0.3279000520706177,
+        "latency_ms": 0.2484400010871468,
         "correct": null,
         "notes": "raw compare 1600.0 vs -1.0 (units/condition ignored)"
       },
@@ -2530,7 +2530,7 @@
           "Clause CTRL-1 \u2014 Generator Prime Power. Diesel generator prime power rating shall be not less than 1500 kVA at 0.8 lagging power factor."
         ],
         "delta_pct": null,
-        "latency_ms": 35.35429993644357,
+        "latency_ms": 13.212982999903033,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -2541,7 +2541,7 @@
         "predicted_text": "PASS: required >= 1500.0 kVA @0.8 lagging PF, submitted 1600.0 kVA @0.8 lagging PF",
         "retrieved_context": [],
         "delta_pct": 6.666666666666667,
-        "latency_ms": 0.4727998748421669,
+        "latency_ms": 0.7500020001316443,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -2564,7 +2564,7 @@
           "Specification Requirements \u2014 Data Centre EPC Project. Synthesized specification excerpts. See `README.md` in this folder for provenance. Every clause below states one testable requirement in prose, tagged with a machine-parseable FACT annotation."
         ],
         "delta_pct": null,
-        "latency_ms": 0.19929977133870125,
+        "latency_ms": 0.13962499906483572,
         "correct": null,
         "notes": "raw compare 4500.0 vs -2.0 (units/condition ignored)"
       },
@@ -2578,7 +2578,7 @@
           "Clause CTRL-2 \u2014 Busway Current Rating. Submittal: Busway continuous current rating 4500A."
         ],
         "delta_pct": null,
-        "latency_ms": 30.73680028319359,
+        "latency_ms": 11.95383199956268,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -2589,7 +2589,7 @@
         "predicted_text": "PASS: required >= 4000.0 A, submitted 4500.0 A",
         "retrieved_context": [],
         "delta_pct": 12.5,
-        "latency_ms": 0.16559986397624016,
+        "latency_ms": 0.09411599967279471,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -2612,7 +2612,7 @@
           "Vertiv CentraVac Chiller \u2014 Product Cut Sheet. Page 6 \u2014 Acoustic Data. Sound pressure level: 84 dB(A) at 1 meter, full load."
         ],
         "delta_pct": null,
-        "latency_ms": 0.2824002876877785,
+        "latency_ms": 0.18140700012736488,
         "correct": null,
         "notes": "raw compare 3.2 vs -3.0 (units/condition ignored)"
       },
@@ -2626,7 +2626,7 @@
           "Clause CTRL-3 \u2014 UPS Input THDi. UPS input total harmonic distortion (THDi) shall not exceed 5% at full load."
         ],
         "delta_pct": null,
-        "latency_ms": 36.04729985818267,
+        "latency_ms": 11.973566999586183,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -2637,7 +2637,7 @@
         "predicted_text": "PASS: required <= 5.0 percent @full load, submitted 3.2 percent @full load",
         "retrieved_context": [],
         "delta_pct": -36.0,
-        "latency_ms": 0.15990016981959343,
+        "latency_ms": 0.13822300024912693,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -2660,7 +2660,7 @@
           "Specification Requirements \u2014 Data Centre EPC Project. Synthesized specification excerpts. See `README.md` in this folder for provenance. Every clause below states one testable requirement in prose, tagged with a machine-parseable FACT annotation."
         ],
         "delta_pct": null,
-        "latency_ms": 0.21500000730156898,
+        "latency_ms": 0.1367899985780241,
         "correct": null,
         "notes": "raw compare 5.5 vs -4.0 (units/condition ignored)"
       },
@@ -2674,7 +2674,7 @@
           "Clause CTRL-4 \u2014 Transformer Impedance. Distribution transformer impedance shall be not less than 5.5% and not more than 6.5%."
         ],
         "delta_pct": null,
-        "latency_ms": 32.40509983152151,
+        "latency_ms": 11.886572001458262,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -2685,7 +2685,7 @@
         "predicted_text": "PASS: required >= 5.5 percent, submitted 6.0 percent",
         "retrieved_context": [],
         "delta_pct": 9.090909090909092,
-        "latency_ms": 0.05940021947026253,
+        "latency_ms": 0.037984998925821856,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
@@ -2708,7 +2708,7 @@
           "RFI-0219 (2024-08-30) \u2014 CRAC Variable-Capacity Mode. Question: Can CRAC units run in variable-capacity mode for efficiency? Response: Yes, modulating valve control available at an additional cost of \u20b98 lakh per unit."
         ],
         "delta_pct": null,
-        "latency_ms": 0.2492000348865986,
+        "latency_ms": 0.16109700118249748,
         "correct": null,
         "notes": "raw compare 120.0 vs -5.0 (units/condition ignored)"
       },
@@ -2722,7 +2722,7 @@
           "Clause CTRL-5 \u2014 CRAC Sensible Cooling Capacity. CRAC unit sensible cooling capacity shall be not less than 120 kW per unit."
         ],
         "delta_pct": null,
-        "latency_ms": 34.36229983344674,
+        "latency_ms": 10.097080999912578,
         "correct": null,
         "notes": "sentiment-keyword guess on top-1 chunk; never abstains"
       },
@@ -2733,7 +2733,7 @@
         "predicted_text": "PASS: required >= 120.0 kW, submitted 125.0 kW",
         "retrieved_context": [],
         "delta_pct": 4.166666666666666,
-        "latency_ms": 0.2117999829351902,
+        "latency_ms": 0.1308190003328491,
         "correct": null,
         "notes": "app.services.compliance.evaluator.evaluate_requirement (production code path)"
       }
