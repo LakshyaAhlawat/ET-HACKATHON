@@ -23,6 +23,13 @@ COPY rfi ./rfi
 
 RUN pip install --no-cache-dir .
 
+# retrieval/hybrid.py loads these two models lazily at request time, with
+# HF_HUB_OFFLINE=1 set at runtime (see docker-compose.yml) so a demo never
+# depends on network being up. That only works if the weights are already
+# in the HF cache -- bake them in at build time, when network access is
+# actually available, instead of leaving a first-request network dependency.
+RUN python -c "from sentence_transformers import SentenceTransformer, CrossEncoder; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2'); CrossEncoder('BAAI/bge-reranker-v2-m3')"
+
 COPY tests ./tests
 
 EXPOSE 8000
